@@ -1,6 +1,19 @@
 <span><h1>Current Bitcoin rate</h1></span>
-<div>{{ eurService.coinData.chartName }}</div>
-<div>
-    <div>{{ eurService.coins.rate }}</div>
+
+<div class="container">
+    <div class="container-Euro">
+        <div class="mt-64">1 {{ eurService.coinData.chartName }}</div>
+        <div>=</div>
+        <div>{{ eurService.coins.rate_float }} {{ eurService.coins.description }}</div>
+        <div class="mb-64">Updated: {{ eurService.time }}</div>
+    </div>
+    <div class="container-Euro d-none">
+        <div class="mt-64">1 {{ gbService.coinData.chartName }} = {{ gbService.coins.rate_float }} {{ gbService.coins.description }}</div>
+        <div class="mb-64">{{ gbService.time }}</div>
+    </div>
+    <div class="container-Euro d-none">
+        <div class="mt-64">1 {{ usService.coinData.chartName }} = {{ usService.coins.rate_float }} {{ usService.coins.description }}</div>
+        <div class="mb-64">{{ usService.time }}</div>
+    </div>
 </div>
-<div>{{ eurService.time }}</div>
+<p class="mb-32">{{ eurService.coinData.disclaimer }}</p>

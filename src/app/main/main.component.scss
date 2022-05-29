@@ -16,3 +16,35 @@ h1 {
     font-size: 56px;
     text-shadow: 7px 9px 6px rgba(140, 219, 255, 0.5);
 }
+
+p {
+    width: 80%;
+    text-align: center;
+    font-size: larger;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.container {
+    height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-Euro {
+    font-size: x-large;
+    width: 40%;
+    height: 300px;
+    border: 1px solid white;
+    border-radius: 6px;
+    box-shadow: 7px 9px 17px 0px rgba(255, 255, 255, 0.69);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.d-none {
+    display: none;
+}
