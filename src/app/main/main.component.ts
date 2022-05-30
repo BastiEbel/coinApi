@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EurService } from '../eur.service';
-import { GbpService } from '../gbp.service';
-import { UsdService } from '../usd.service';
+import { EurService } from '../services/eur.service';
+import { GbpService } from '../services/gbp.service';
+import { UsdService } from '../services/usd.service';
 
 @Component({
   selector: 'app-main',
