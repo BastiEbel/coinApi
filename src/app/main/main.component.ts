@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { UrlCoinService } from '../services/url-coin.service';
+import zoomPlugin from 'chartjs-plugin-zoom';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -12,16 +14,18 @@ export class MainComponent implements OnInit {
   coinPrice: any;
   coinName: any;
   chart: any = [];
+  zoom = false;
 
   constructor(public service: UrlCoinService, private http: HttpClient) {
     Chart.register(...registerables);
+    Chart.register(zoomPlugin);
   }
 
   ngOnInit(): void {
     this.getData();
   }
 
-  getData(){
+  getData() {
     this.service.getConfig().then((res) => {
       this.result = res;
       console.log(this.result);
@@ -52,9 +56,39 @@ export class MainComponent implements OnInit {
                 color: '#f5f5f5'
               }
             }
+          },
+          plugins: {
+            zoom: {
+              zoom: {
+                wheel: {
+                  enabled: true
+                },
+                mode: 'xy'
+              }
+            }
           }
         }
       });
+      this.chart.render();
     });
+  }
+
+  resetZoom() {
+    this.chart.destroy();
+    this.getData();
+    this.zoom = false;
+  }
+
+  @HostListener('wheel', ['$event']) onMouseWheel(event: any = WheelEvent) {
+    if (event) {
+      this.zoom = true;
+    }
+  }
+
+  @HostListener('mouseleave', ['$event']) onLeave(event: MouseEvent) {
+    if (this.zoom == true) {
+      this.resetZoom();
+
+    }
   }
 }

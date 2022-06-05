@@ -1,6 +1,6 @@
 <span><h1>Current Bitcoin price</h1></span>
 
 <div class="container">
-    <canvas class="container-info" id="myChart">{{ chart }}</canvas>
+    <canvas (wheel)="onMouseWheel($event)" class="container-info" id="myChart">{{ chart }}</canvas>
 </div>
 <!-- <p class="mb-32">{{ result[0].last_updated }}</p> -->

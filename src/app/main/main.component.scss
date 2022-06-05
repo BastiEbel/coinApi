@@ -34,10 +34,10 @@ p {
 }
 
 canvas {
-    width: 80% !important;
+    max-width: 80% !important;
     max-height: 70%;
     &:hover {
-        cursor: pointer;
+        cursor: zoom-in;
     }
 }
 
@@ -50,7 +50,6 @@ canvas {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    scale: 1.5;
 }
 
 .d-none {
