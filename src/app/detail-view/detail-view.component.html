@@ -1,1 +1,13 @@
-<p>detail-view works!</p>
+<app-menu></app-menu>
+<h1 class="mt-64">Detail of Coins</h1>
+<div class="container mt-64 mb-32">
+    <div class="container-field mb-32" *ngFor="let results of result; let i = index;">
+        <img class="ml-32" src="{{ results.image }}">
+        <span class="single-info"><span class="name-color">Name:</span> {{ results.name }}</span>
+        <span class="single-info"><span class="name-color">Price:</span> {{ results.current_price}} €</span>
+        <span class="last-24"><span class="name-color">Low Price last 24h:</span> {{ results.low_24h }} €</span>
+        <span class="last-24"><span class="name-color">Highest Price last 24h:</span> {{ results.high_24h }} €</span>
+        <span class="last-24"><span class="name-color">Price changed in 24h:</span> {{ results.price_change_percentage_24h }} %</span>
+    </div>
+</div>
+<app-footer></app-footer>

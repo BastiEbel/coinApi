@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { UrlCoinService } from '../services/url-coin.service';
@@ -17,7 +16,7 @@ export class MainComponent implements OnInit {
   zoom = false;
   date = new Date();
 
-  constructor(public service: UrlCoinService, private http: HttpClient) {
+  constructor(public service: UrlCoinService) {
     Chart.register(...registerables);
     Chart.register(zoomPlugin);
   }
@@ -78,7 +77,7 @@ export class MainComponent implements OnInit {
   resetZoom() {
     this.chart.destroy();
     this.getData();
-    this.zoom = false;
+    
   }
 
   @HostListener('wheel', ['$event']) onMouseWheel(event: any = WheelEvent) {
@@ -90,7 +89,7 @@ export class MainComponent implements OnInit {
   @HostListener('mouseleave', ['$event']) onLeave(event: MouseEvent) {
     if (this.zoom == true) {
       this.resetZoom();
-
+      this.zoom = false;
     }
   }
 }
