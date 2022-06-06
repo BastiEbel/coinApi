@@ -10,6 +10,10 @@ import { MenuComponent } from './menu/menu.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { DataProtectionComponent } from './data-protection/data-protection.component';
 import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SingleViewComponent } from './single-view/single-view.component';
+
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -20,12 +24,15 @@ import { FooterComponent } from './footer/footer.component';
     MenuComponent,
     ImprintComponent,
     DataProtectionComponent,
-    FooterComponent
+    FooterComponent,
+    SingleViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

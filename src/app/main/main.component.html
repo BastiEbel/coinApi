@@ -3,7 +3,7 @@
     <span><h1>Current Bitcoin price</h1></span>
     <div (wheel)="onMouseWheel($event)" class="container">
         <canvas class="container-info" id="myChart">{{ chart }}</canvas>
-        <p class="mt-32">Last update: {{ date | date: 'dd.MM.yyyy' }}</p>
+        <p>Last update: {{ date | date: 'dd.MM.yyyy' }}</p>
     </div>
 </div>
 <app-footer></app-footer>

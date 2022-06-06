@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlCoinService } from '../services/url-coin.service';
+import {MatDialog} from '@angular/material/dialog';
+import { SingleViewComponent } from '../single-view/single-view.component';
 
 @Component({
   selector: 'app-detail-view',
@@ -10,10 +12,14 @@ export class DetailViewComponent implements OnInit {
 
   result:any = [];
 
-  constructor(public service: UrlCoinService) { }
+  constructor(public service: UrlCoinService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getDetail();
+  }
+
+  openDialog() {
+    this.dialog.open(SingleViewComponent);
   }
 
   getDetail(){
