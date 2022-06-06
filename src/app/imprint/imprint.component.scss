@@ -1,25 +1,29 @@
 .container-imprint {
+    margin-left: 10%;
     height: calc(100vh - 290px);
+    color: white;
+}
+
+a {
+    color: white;
 }
 
 @media (max-width: 400px) {
-    .container-imprint{
-        h1{
+    .container-imprint {
+        h1 {
             font-size: 24px;
         }
-
-        h2{
+        h2 {
             font-size: 16px;
         }
-
-        p{
+        p {
             font-size: 12px;
         }
     }
 }
 
 @media (max-height: 750px) {
-    .container-imprint{
+    .container-imprint {
         height: 100%;
     }
 }

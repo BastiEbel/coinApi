@@ -10,8 +10,14 @@
     align-items: center;
 }
 
+.navigation {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
 .button-info {
-    width: 150px;
+    width: 120px;
     height: 40px;
     font-size: larger;
     color: whitesmoke;
