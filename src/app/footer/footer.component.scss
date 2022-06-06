@@ -1,0 +1,19 @@
+.container-footer {
+    background-color: rgba(36, 36, 92, 0.5);
+    height: 80px;
+    border-top: 2px solid white;
+    padding-left: 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+a {
+    color: white;
+    font-size: x-large;
+    text-decoration: none;
+    &:hover {
+        color: rgb(255, 112, 112);
+        text-shadow: 5px 4px 11px rgb(255, 112, 112);
+    }
+}

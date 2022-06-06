@@ -15,6 +15,7 @@ export class MainComponent implements OnInit {
   coinName: any;
   chart: any = [];
   zoom = false;
+  date = new Date();
 
   constructor(public service: UrlCoinService, private http: HttpClient) {
     Chart.register(...registerables);
@@ -31,6 +32,7 @@ export class MainComponent implements OnInit {
       console.log(this.result);
       this.coinPrice = this.result.map((coin: any) => coin.current_price);
       this.coinName = this.result.map((coin: any) => coin.name);
+      this.date = this.result[0]['last_updated'];
 
       this.chart = new Chart('myChart', {
         type: 'line',

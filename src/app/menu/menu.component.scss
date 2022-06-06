@@ -1,0 +1,28 @@
+.container {
+    height: 80px;
+    padding-right: 10%;
+    padding-left: 10%;
+    border-bottom: 1px solid white;
+    background-color: rgba(36, 36, 92, 0.5);
+    box-shadow: 7px 0px 17px 0px rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-info {
+    width: 150px;
+    height: 40px;
+    font-size: larger;
+    color: whitesmoke;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    &:hover {
+        border: 1px solid white;
+        box-shadow: 2px 4px 8px 0px rgba(255, 112, 112, 0.5);
+        color: rgb(255, 112, 112);
+    }
+}
