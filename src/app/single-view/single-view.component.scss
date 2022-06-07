@@ -1,0 +1,47 @@
+img {
+    margin-right: 16px;
+    width: 50px;
+    height: 50px;
+}
+
+h1 {
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+}
+
+.mat-dialog-content {
+    width: 450px;
+    font-size: larger;
+}
+
+.content {
+    padding-left: 8px;
+    padding-right: 8px;
+    border-bottom: 1px solid black;
+    width: 96%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-info {
+    width: 100px;
+    height: 30px;
+    font-size: larger;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(211, 211, 211, 0.61);
+    }
+}
+
+.fill-section {
+    background-color: rgba(211, 211, 211, 0.308);
+}

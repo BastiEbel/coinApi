@@ -1,7 +1,7 @@
 <app-menu></app-menu>
-<h1 class="mt-64">Detail of Coins</h1>
+<h1>Detail of Coins</h1>
 <div class="container mt-64 mb-32">
-    <div class="container-field mb-32" (click)="openDialog()" *ngFor="let results of result; let i = index;">
+    <div class="container-field mb-32" (click)="openDialog(results)" *ngFor="let results of result; let i = index;">
         <img class="ml-32" src="{{ results.image }}">
         <span class="single-info"><span class="name-color">Name:</span> {{ results.name }}</span>
         <span class="single-info"><span class="name-color">Price:</span> {{ results.current_price}} €</span>

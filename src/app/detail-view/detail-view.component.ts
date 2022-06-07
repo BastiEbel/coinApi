@@ -18,8 +18,10 @@ export class DetailViewComponent implements OnInit {
     this.getDetail();
   }
 
-  openDialog() {
-    this.dialog.open(SingleViewComponent);
+  openDialog(results: any) :void {
+    this.dialog.open(SingleViewComponent, {
+      data: { results }
+    });
   }
 
   getDetail(){
