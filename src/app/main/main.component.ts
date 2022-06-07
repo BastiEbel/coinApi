@@ -86,8 +86,8 @@ export class MainComponent implements OnInit {
     }
   }
 
-  @HostListener('mouseleave', ['$event']) onLeave(event: MouseEvent) {
-    if (this.zoom == true) {
+  @HostListener('mouseout', ['$event']) onLeave(event: MouseEvent) {
+    if (this.zoom && event) {
       this.resetZoom();
       this.zoom = false;
     }
