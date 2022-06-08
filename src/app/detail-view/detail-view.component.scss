@@ -69,6 +69,10 @@ pagination-template>div {
     }
 }
 
+.border-none {
+    border: none !important;
+}
+
 .current {
     background-color: rgba(0, 250, 250, 0.274);
 }

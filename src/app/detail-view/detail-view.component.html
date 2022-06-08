@@ -10,7 +10,7 @@
         <span class="last-24"><span class="name-color">Price changed in 24h:</span> {{ results.price_change_percentage_24h }} %</span>
     </div>
     <pagination-template #pagination="paginationApi" (pageChange)="onPageEvent($event)">
-        <div class="pagination-previous" [class.disabled]="pagination.isFirstPage()">
+        <div class="pagination-previous border-none" [class.disabled]="pagination.isFirstPage()">
             <a *ngIf="!pagination.isFirstPage()" (click)="pagination.previous()">
                 < </a>
         </div>
@@ -22,7 +22,7 @@
                 <span>{{ page.label }}</span>
             </div>
         </div>
-        <div class="pagination-next" [class.disabled]="pagination.isLastPage()">
+        <div class="pagination-next border-none" [class.disabled]="pagination.isLastPage()">
             <a *ngIf="!pagination.isLastPage()" (click)="pagination.next()"> > </a>
         </div>
     </pagination-template>
