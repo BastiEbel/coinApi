@@ -1,12 +1,9 @@
 h1 {
     width: 88%;
     height: 100px;
+    margin-top: 30px;
     margin-left: 6%;
     margin-right: 6%;
-    margin-top: 64px;
-    border: 1px solid white;
-    border-radius: 6px;
-    box-shadow: 7px 9px 17px 0px rgba(255, 255, 255, 0.69);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,4 +52,23 @@ img {
 
 .name-color {
     color: rgb(255, 112, 112)
+}
+
+pagination-template {
+    display: flex;
+    justify-content: center;
+}
+
+pagination-template>div {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid white;
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+
+.current {
+    background-color: rgba(0, 250, 250, 0.274);
 }

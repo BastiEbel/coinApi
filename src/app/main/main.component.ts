@@ -38,7 +38,7 @@ export class MainComponent implements OnInit {
         data: {
           labels: this.coinName,
           datasets: [{
-            label: 'Coin Price',
+            label: 'Coin Diagram',
             data: this.coinPrice,
             borderWidth: 2,
             fill: false,
@@ -70,7 +70,6 @@ export class MainComponent implements OnInit {
           }
         }
       });
-      this.chart.render();
     });
   }
 

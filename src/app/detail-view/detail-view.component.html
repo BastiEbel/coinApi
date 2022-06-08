@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <h1>Detail of Coins</h1>
-<div class="container mt-64 mb-32">
-    <div class="container-field mb-32" (click)="openDialog(results)" *ngFor="let results of result; let i = index;">
+<div class="container mt-32 mb-32">
+    <div class="container-field mb-32" (click)="openDialog(results)" *ngFor="let results of result | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
         <img class="ml-32" src="{{ results.image }}">
         <span class="single-info"><span class="name-color">Name:</span> {{ results.name }}</span>
         <span class="single-info"><span class="name-color">Price:</span> {{ results.current_price}} €</span>
@@ -9,5 +9,22 @@
         <span class="last-24"><span class="name-color">Highest Price last 24h:</span> {{ results.high_24h }} €</span>
         <span class="last-24"><span class="name-color">Price changed in 24h:</span> {{ results.price_change_percentage_24h }} %</span>
     </div>
+    <pagination-template #pagination="paginationApi" (pageChange)="onPageEvent($event)">
+        <div class="pagination-previous" [class.disabled]="pagination.isFirstPage()">
+            <a *ngIf="!pagination.isFirstPage()" (click)="pagination.previous()">
+                < </a>
+        </div>
+        <div *ngFor="let page of pagination.pages" [class.current]="pagination.getCurrent() === page.value">
+            <a (click)="pagination.setCurrent(page.value)" *ngIf="pagination.getCurrent() !== page.value">
+                <span>{{ page.label }}</span>
+            </a>
+            <div *ngIf="pagination.getCurrent() === page.value">
+                <span>{{ page.label }}</span>
+            </div>
+        </div>
+        <div class="pagination-next" [class.disabled]="pagination.isLastPage()">
+            <a *ngIf="!pagination.isLastPage()" (click)="pagination.next()"> > </a>
+        </div>
+    </pagination-template>
 </div>
 <app-footer></app-footer>

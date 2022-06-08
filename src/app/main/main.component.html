@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <div class="main-container">
-    <span><h1>Current Bitcoin price</h1></span>
+    <span><h1>Current coin price</h1></span>
     <div (wheel)="onMouseWheel($event)" class="container">
         <canvas class="container-info" id="myChart">{{ chart }}</canvas>
         <p>Last update: {{ date | date: 'dd.MM.yyyy' }}</p>

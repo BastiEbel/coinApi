@@ -11,11 +11,18 @@ import { SingleViewComponent } from '../single-view/single-view.component';
 export class DetailViewComponent implements OnInit {
 
   result:any = [];
+  p = 1;
+  pages = Array(Math.ceil(100 / 2)).fill(null).map((_, i) => ({label: i, value: i}));
 
   constructor(public service: UrlCoinService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getDetail();
+  }
+
+  onPageEvent(event: any) {
+    this.p = event;
+    console.log(event);
   }
 
   openDialog(results: any) :void {

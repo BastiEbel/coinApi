@@ -15,6 +15,8 @@ import { SingleViewComponent } from './single-view/single-view.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
