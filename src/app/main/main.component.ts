@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
   zoom = false;
   date = new Date();
 
+
   constructor(public service: UrlCoinService) {
     Chart.register(...registerables);
     Chart.register(zoomPlugin);
@@ -32,51 +33,55 @@ export class MainComponent implements OnInit {
       this.coinPrice = this.result.map((coin: any) => coin.current_price);
       this.coinName = this.result.map((coin: any) => coin.name);
       this.date = this.result[0]['last_updated'];
+      this.renderChart();
+      
+    });
+  }
 
-      this.chart = new Chart('myChart', {
-        type: 'line',
-        data: {
-          labels: this.coinName,
-          datasets: [{
-            label: 'Coin Diagram',
-            data: this.coinPrice,
-            borderWidth: 2,
-            fill: false,
-            borderColor: '#f5f5f5',
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              ticks: {
-                color: '#f5f5f5'
-              }
-            },
-            x: {
-              ticks: {
-                color: '#f5f5f5'
-              }
+  renderChart() { 
+    this.chart = new Chart('myChart', {
+      type: 'line',
+      data: {
+        labels: this.coinName,
+        datasets: [{
+          label: 'Coin Diagram',
+          data: this.coinPrice,
+          borderWidth: 2,
+          fill: false,
+          borderColor: '#f5f5f5',
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            ticks: {
+              color: '#f5f5f5'
             }
           },
-          plugins: {
+          x: {
+            ticks: {
+              color: '#f5f5f5'
+            }
+          }
+        },
+        plugins: {
+          zoom: {
             zoom: {
-              zoom: {
-                wheel: {
-                  enabled: true
-                },
-                mode: 'xy'
-              }
+              wheel: {
+                enabled: true
+              },
+              mode: 'xy'
             }
           }
         }
-      });
+      }
     });
   }
 
   resetZoom() {
     this.chart.destroy();
     this.getData();
-    
+
   }
 
   @HostListener('wheel', ['$event']) onMouseWheel(event: any = WheelEvent) {

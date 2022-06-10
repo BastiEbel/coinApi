@@ -12,8 +12,10 @@ import { DataProtectionComponent } from './data-protection/data-protection.compo
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SingleViewComponent } from './single-view/single-view.component';
+import { LoadingComponent } from './main/loading';
 
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -27,7 +29,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ImprintComponent,
     DataProtectionComponent,
     FooterComponent,
-    SingleViewComponent
+    SingleViewComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

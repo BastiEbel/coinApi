@@ -22,7 +22,6 @@ export class DetailViewComponent implements OnInit {
 
   onPageEvent(event: any) {
     this.p = event;
-    console.log(event);
   }
 
   openDialog(results: any) :void {
@@ -34,7 +33,6 @@ export class DetailViewComponent implements OnInit {
   getDetail(){
     this.service.getConfig().then((res) => {
       this.result = res;
-      console.log(this.result);
     });
   }
 }
