@@ -12,7 +12,7 @@ import { DataProtectionComponent } from './data-protection/data-protection.compo
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SingleViewComponent } from './single-view/single-view.component';
-import { LoadingComponent } from './main/loading';
+import { LoadingComponent } from './services/loading';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
