@@ -21,6 +21,7 @@ export class MainComponent implements OnInit {
   highestPrice = false;
   lowestPrice = false;
 
+  //TODO for commentation
 
   constructor(public service: UrlCoinService) {
     Chart.register(...registerables);
@@ -34,7 +35,6 @@ export class MainComponent implements OnInit {
   getData() {
     this.service.getConfig().then((res) => {
       this.result = res;
-      console.log(this.result);
       this.coinPrice = this.result.map((coin: any) => coin.current_price);
       this.coinName = this.result.map((coin: any) => coin.name);
       this.date = this.result[0]['last_updated'];

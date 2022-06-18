@@ -2,12 +2,12 @@
 <app-menu></app-menu>
 <span><h1>Current coin price</h1></span>
 <div class="main-container">
-    <div>
+    <div class="button-container">
         <button [class.button-active]="currentPrice" [disabled]="currentPrice" (click)="renderCurrentPrice()" class="button-info">Current price</button>
-        <button [class.button-active]="pricePercentage" [disabled]="pricePercentage" (click)="renderPricePercentage()" class="button-info">Price change last 24h in %</button>
-        <button [class.button-active]="priceChange" [disabled]="priceChange" (click)="renderPriceChange()" class="button-info">Price change last 24h in €</button>
-        <button [class.button-active]="highestPrice" [disabled]="highestPrice" (click)="renderHighestPrice()" class="button-info">Highest price last 24h in €</button>
-        <button [class.button-active]="lowestPrice" [disabled]="lowestPrice" (click)="renderLowestPrice()" class="button-info">Lowest price last 24h in €</button>
+        <button [class.button-active]="pricePercentage" [disabled]="pricePercentage" (click)="renderPricePercentage()" class="button-info ml-16">Price change last 24h in %</button>
+        <button [class.button-active]="priceChange" [disabled]="priceChange" (click)="renderPriceChange()" class="button-info ml-16">Price change last 24h in €</button>
+        <button [class.button-active]="highestPrice" [disabled]="highestPrice" (click)="renderHighestPrice()" class="button-info ml-16">Highest price last 24h in €</button>
+        <button [class.button-active]="lowestPrice" [disabled]="lowestPrice" (click)="renderLowestPrice()" class="button-info ml-16">Lowest price last 24h in €</button>
     </div>
     <div (wheel)="onMouseWheel($event)" class="container">
         <canvas class="container-info" id="myChart">{{ chart }}</canvas>
