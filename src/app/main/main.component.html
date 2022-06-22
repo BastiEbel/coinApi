@@ -1,6 +1,6 @@
 <loading *ngIf="service.isLoading">{{ service.isLoading }}</loading>
 <app-menu></app-menu>
-<span><h1>Current coin price</h1></span>
+<span><h1>Coin's chart</h1></span>
 <div class="main-container">
     <div class="button-container">
         <button [class.button-active]="currentPrice" [disabled]="currentPrice" (click)="renderCurrentPrice()" class="button-info">Current price</button>

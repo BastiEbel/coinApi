@@ -17,3 +17,12 @@ a {
         text-shadow: 5px 4px 11px rgb(255, 112, 112);
     }
 }
+
+@media screen and ( width: 280px) and ( height: 653px) {
+    a {
+        font-size: large;
+    }
+    .container-footer {
+        height: 50px;
+    }
+}

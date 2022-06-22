@@ -63,7 +63,7 @@ canvas {
 }
 
 .button-info {
-    width: 220px;
+    width: 180px;
     height: 80px;
     margin-bottom: 40px;
     margin-left: 32px;
@@ -179,5 +179,296 @@ canvas {
 @media (max-width: 655px) {
     .button-info {
         width: 110px;
+    }
+}
+
+
+/* IPhone SE */
+
+@media screen and ( width: 375px) and ( height: 667px) {
+    .container {
+        height: unset;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0px;
+    }
+    .container-info {
+        height: 218px !important;
+    }
+}
+
+
+/*iPhone XR*/
+
+@media screen and ( width: 414px) and ( height: 896px) {
+    span {
+        margin-top: 32px;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .container-info {
+        height: 250px !important;
+    }
+    .main-container {
+        height: calc(100vh - 320px);
+        margin-bottom: 22px;
+    }
+}
+
+
+/*iPhone 12 Pro*/
+
+@media screen and ( width: 390px) and ( height: 844px) {
+    span {
+        margin-top: 32px;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .container-info {
+        height: 218px !important;
+    }
+    .main-container {
+        height: calc(100vh - 318px);
+        margin-bottom: 22px;
+    }
+}
+
+
+/*Pixel 5*/
+
+@media screen and ( width: 393px) and ( height: 851px) {
+    span {
+        margin-top: 32px;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .container-info {
+        height: 200px !important;
+    }
+    .main-container {
+        height: calc(100vh - 318px);
+        margin-bottom: 22px;
+    }
+}
+
+
+/*Samsung S8*/
+
+@media screen and ( width: 360px) and ( height: 740px) {
+    span {
+        margin-bottom: 32px;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .container-info {
+        height: 200px !important;
+    }
+    .main-container {
+        height: calc(100vh - 318px);
+        margin-bottom: 22px;
+    }
+}
+
+
+/* Samsung S20 */
+
+@media screen and ( width: 412px) and ( height: 915px) {
+    span {
+        margin-top: 32px;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .container-info {
+        height: 275px !important;
+    }
+    .main-container {
+        height: calc(100vh - 318px);
+        margin-bottom: 22px;
+    }
+}
+
+
+/*iPad Air*/
+
+@media screen and ( width: 820px) and ( height: 1180px) {
+    h1 {
+        font-size: 48px;
+    }
+    span {
+        margin-top: 64px;
+    }
+    .button-container {
+        width: 80%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 32px;
+    }
+    .container-info {
+        height: 375px !important;
+    }
+    .main-container {
+        height: calc(100vh - 350px);
+        margin-bottom: 22px;
+    }
+    p {
+        margin-top: 64px;
+    }
+}
+
+
+/*iPad Mini */
+
+@media screen and ( width: 768px) and ( height: 1024px) {
+    h1 {
+        font-size: 40px;
+    }
+    span {
+        margin-top: 32px;
+    }
+    .button-container {
+        width: 80%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    .container-info {
+        height: 375px !important;
+    }
+    .main-container {
+        height: calc(100vh - 318px);
+        margin-bottom: 22px;
+    }
+    p {
+        margin-top: 48px;
+    }
+}
+
+
+/* Surface Pro*/
+
+@media screen and ( width: 912px) and ( height: 1368px) {
+    h1 {
+        font-size: 48px;
+    }
+    span {
+        margin-top: 64px;
+    }
+    .button-container {
+        width: 88%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 64px;
+    }
+    .button-info {
+        width: 220px;
+        height: 80px;
+        font-size: x-large;
+    }
+    .container-info {
+        height: 475px !important;
+    }
+    .main-container {
+        height: calc(100vh - 328px);
+    }
+    p {
+        font-size: 32px;
+        margin-top: 48px;
+    }
+}
+
+
+/*Surface Duo*/
+
+@media screen and ( width: 540px) and ( height: 720px) {
+    h1 {
+        font-size: 24px;
+    }
+    span {
+        margin-top: 8px;
+        height: 80px;
+    }
+    .button-container {
+        width: 88%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    .button-info {
+        height: 40px;
+        font-size: x-small;
+        margin-bottom: 16px;
+    }
+    .container-info {
+        height: 275px !important;
+    }
+    .main-container {
+        height: calc(100vh - 252px);
+    }
+    p {
+        font-size: 20px;
+        margin-top: 24px;
+    }
+}
+
+
+/* Galaxy Fold */
+
+@media screen and ( width: 280px) and ( height: 653px) {
+    h1 {
+        font-size: 24px;
+    }
+    span {
+        margin-top: 8px;
+        height: 80px;
+    }
+    .button-container {
+        width: 88%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+    .button-info {
+        height: 40px;
+        font-size: x-small;
+        margin-bottom: 24px;
+        box-shadow: 0px 3px 12px 0px rgb(255, 255, 255, 0.5);
+    }
+    .container-info {
+        height: 180px !important;
+    }
+    .main-container {
+        height: calc(100vh - 192px);
+    }
+    p {
+        font-size: 16px;
+        margin-top: 24px;
     }
 }

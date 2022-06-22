@@ -33,3 +33,74 @@
         background-color: rgba(0, 250, 250, 0.274);
     }
 }
+
+
+/* IPhone SE */
+
+@media screen and ( width: 375px) and ( height: 667px) {
+    .button-info {
+        width: 100px;
+    }
+}
+
+
+/*iPhone XR*/
+
+@media screen and ( width: 414px) and ( height: 896px) {
+    .button-info {
+        width: 100px;
+    }
+}
+
+
+/*iPhone 12 Pro*/
+
+@media screen and ( width: 390px) and ( height: 844px) {
+    .button-info {
+        width: 100px;
+    }
+}
+
+
+/*Pixel 5*/
+
+@media screen and ( width: 393px) and ( height: 851px) {
+    .button-info {
+        width: 100px;
+    }
+}
+
+
+/*Samsung S8*/
+
+@media screen and ( width: 360px) and ( height: 740px) {
+    .button-info {
+        width: 100px;
+    }
+}
+
+
+/* Samsung S20 */
+
+@media screen and ( width: 412px) and ( height: 915px) {
+    .button-info {
+        width: 100px;
+    }
+}
+
+
+/* Galaxy Fold */
+
+@media screen and ( width: 280px) and ( height: 653px) {
+    .button-info {
+        width: 90px;
+        font-size: medium;
+    }
+    .container {
+        height: 50px;
+    }
+    img {
+        width: 32px;
+        height: 32px;
+    }
+}
