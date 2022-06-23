@@ -19,7 +19,7 @@
 .button-info {
     width: 120px;
     height: 40px;
-    font-size: larger;
+    font-size: x-large;
     color: whitesmoke;
     text-decoration: none;
     display: flex;
@@ -40,6 +40,7 @@
 @media screen and ( width: 375px) and ( height: 667px) {
     .button-info {
         width: 100px;
+        font-size: large;
     }
 }
 
@@ -49,6 +50,7 @@
 @media screen and ( width: 414px) and ( height: 896px) {
     .button-info {
         width: 100px;
+        font-size: large;
     }
 }
 
@@ -58,6 +60,7 @@
 @media screen and ( width: 390px) and ( height: 844px) {
     .button-info {
         width: 100px;
+        font-size: large;
     }
 }
 
@@ -67,6 +70,7 @@
 @media screen and ( width: 393px) and ( height: 851px) {
     .button-info {
         width: 100px;
+        font-size: large;
     }
 }
 
@@ -76,6 +80,7 @@
 @media screen and ( width: 360px) and ( height: 740px) {
     .button-info {
         width: 100px;
+        font-size: large;
     }
 }
 
@@ -85,6 +90,7 @@
 @media screen and ( width: 412px) and ( height: 915px) {
     .button-info {
         width: 100px;
+        font-size: large;
     }
 }
 
@@ -102,5 +108,11 @@
     img {
         width: 32px;
         height: 32px;
+    }
+}
+
+@media screen and ( width: 412px) and ( height: 914px) {
+    .button-info {
+        width: 100px;
     }
 }
