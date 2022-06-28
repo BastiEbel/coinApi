@@ -45,3 +45,262 @@ h1 {
 .fill-section {
     background-color: rgba(211, 211, 211, 0.308);
 }
+
+@media (max-width: 500px) {
+    .mat-dialog-content {
+        max-width: 326px !important;
+        max-height: 75vh !important;
+        font-size: small !important;
+    }
+    .content {
+        width: unset;
+    }
+}
+
+@media (max-width: 380px) {
+    .mat-dialog-content {
+        max-width: 230px !important;
+        max-height: 75vh !important;
+        font-size: x-small !important;
+    }
+    .content {
+        width: unset;
+    }
+}
+
+
+/* IPhone SE */
+
+@media screen and ( width: 375px) and ( height: 667px) {
+    .mat-dialog-content {
+        max-width: 326px !important;
+        max-height: 75vh !important;
+        font-size: small !important;
+    }
+    .content {
+        width: unset;
+    }
+}
+
+@media screen and ( width: 667px) and ( height: 375px) {
+    .mat-dialog-content {
+        width: 92vw !important;
+        height: 57vh;
+    }
+    .content {
+        width: unset;
+    }
+}
+
+
+/*iPhone XR*/
+
+@media screen and ( width: 414px) and ( height: 896px) {
+    .mat-dialog-content {
+        width: 366px !important;
+        height: 82vh !important;
+        font-size: small !important;
+        max-height: unset;
+    }
+}
+
+@media screen and ( width: 896px) and ( height: 414px) {
+    .mat-dialog-content {
+        width: 94vw !important;
+        height: 64vh;
+    }
+    .mat-dialog-actions {
+        min-height: 40px;
+    }
+}
+
+
+/*iPhone 12 Pro*/
+
+@media screen and ( width: 390px) and ( height: 844px) {
+    .mat-dialog-content {
+        width: 342px !important;
+        height: 82vh !important;
+        font-size: small !important;
+        max-height: unset;
+    }
+}
+
+@media screen and ( width: 844px) and ( height: 390px) {
+    .mat-dialog-content {
+        width: 94vw !important;
+        height: 62vh;
+    }
+    .mat-dialog-actions {
+        min-height: 40px;
+    }
+}
+
+
+/*Pixel 5*/
+
+@media screen and ( width: 393px) and ( height: 851px) {
+    .mat-dialog-content {
+        width: 345px !important;
+        height: 81vh !important;
+        font-size: small !important;
+        max-height: unset;
+    }
+}
+
+@media screen and ( width: 851px) and ( height: 393px) {
+    .mat-dialog-content {
+        width: 94vw !important;
+        height: 62vh;
+    }
+    .mat-dialog-actions {
+        min-height: 40px;
+    }
+}
+
+
+/*Samsung S8*/
+
+@media screen and ( width: 360px) and ( height: 740px) {
+    .mat-dialog-content {
+        width: 312px !important;
+        height: 78vh !important;
+        font-size: small !important;
+        max-height: unset;
+    }
+}
+
+@media screen and ( width: 740px) and ( height: 360px) {
+    .mat-dialog-content {
+        width: 93vw !important;
+        height: 59vh;
+    }
+    .mat-dialog-actions {
+        min-height: 40px;
+    }
+}
+
+
+/* Samsung S20 */
+
+@media screen and ( width: 412px) and ( height: 915px) {
+    .mat-dialog-content {
+        width: 364px !important;
+        height: 82vh !important;
+        font-size: small !important;
+        max-height: unset;
+    }
+}
+
+@media screen and ( width: 915px) and ( height: 412px) {
+    .mat-dialog-content {
+        width: 94vw !important;
+        height: 64vh;
+    }
+    .mat-dialog-actions {
+        min-height: 40px;
+    }
+}
+
+
+/*iPad Mini*/
+
+@media screen and ( width: 1024px) and ( height: 768px) {
+    .mat-dialog-content {
+        max-height: unset;
+    }
+}
+
+
+/* Surface Duo */
+
+@media screen and ( width: 540px) and ( height: 720px) {
+    .mat-dialog-content {
+        width: 492px !important;
+        height: 78vh !important;
+        font-size: small !important;
+        max-height: unset;
+    }
+}
+
+@media screen and ( width: 720px) and ( height: 540px) {
+    .mat-dialog-content {
+        width: 93vw !important;
+        height: 73vh;
+        max-height: unset;
+    }
+    .mat-dialog-actions {
+        min-height: 40px;
+    }
+}
+
+
+/* Galaxy Fold */
+
+@media screen and ( width: 280px) and ( height: 653px) {
+    .mat-dialog-content {
+        width: 225px !important;
+        height: 73vh !important;
+        font-size: x-small !important;
+        max-height: unset;
+    }
+    .content {
+        width: unset;
+    }
+}
+
+@media screen and ( width: 653px) and ( height: 280px) {
+    .mat-dialog-content {
+        width: 92vw !important;
+        height: 48vh;
+    }
+    .mat-dialog-actions {
+        min-height: 40px;
+    }
+}
+
+
+/* Galaxy A51/71 */
+
+@media screen and ( width: 412px) and ( height: 914px) {
+    .mat-dialog-content {
+        width: 364px !important;
+        height: 82vh !important;
+        font-size: small !important;
+        max-height: unset;
+    }
+}
+
+@media screen and ( width: 914px) and ( height: 412px) {
+    .mat-dialog-content {
+        width: 94vw !important;
+        height: 64vh;
+    }
+    .mat-dialog-actions {
+        min-height: 40px;
+    }
+}
+
+
+/* Nest Hub Max */
+
+@media screen and ( width: 1280px) and ( height: 800px) {
+    .mat-dialog-content {
+        width: 500px !important;
+        height: 80vh !important;
+        font-size: small !important;
+        max-height: unset;
+    }
+}
+
+
+/*Nest Hub*/
+
+@media screen and ( width: 1024px) and ( height: 600px) {
+    .mat-dialog-content {
+        width: 500px !important;
+        height: 73vh !important;
+        font-size: small !important;
+        max-height: unset;
+    }
+}

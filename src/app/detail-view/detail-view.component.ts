@@ -26,6 +26,8 @@ export class DetailViewComponent implements OnInit {
 
   openDialog(results: any) :void {
     this.dialog.open(SingleViewComponent, {
+      maxWidth: '100vw',
+      maxHeight: '100vh',
       data: { results }
     });
   }

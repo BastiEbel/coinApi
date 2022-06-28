@@ -6,8 +6,8 @@
         <span class="single-info"><span class="name-color">Name:</span> {{ results.name }}</span>
         <span class="single-info"><span class="name-color">Price:</span> {{ results.current_price}} €</span>
         <span class="last-24"><span class="name-color">Low Price last 24h:</span> {{ results.low_24h }} €</span>
-        <span class="last-24"><span class="name-color">Highest Price last 24h:</span> {{ results.high_24h }} €</span>
-        <span class="last-24"><span class="name-color">Price changed in 24h:</span> {{ results.price_change_percentage_24h }} %</span>
+        <span class="last-24 price-high"><span class="name-color">Highest Price last 24h:</span> {{ results.high_24h }} €</span>
+        <span class="last-24 percentage"><span class="name-color">Price changed in 24h:</span> {{ results.price_change_percentage_24h }} %</span>
     </div>
     <pagination-template #pagination="paginationApi" (pageChange)="onPageEvent($event)">
         <div class="pagination-previous border-none" [class.disabled]="pagination.isFirstPage()">

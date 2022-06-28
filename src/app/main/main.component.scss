@@ -127,7 +127,7 @@ canvas {
 
 @media (max-width: 1024px) {
     .main-container {
-        height: calc(100vh - 180px);
+        height: calc(100vh - 265px);
     }
     span {
         margin-top: 0px;
@@ -144,6 +144,9 @@ canvas {
 }
 
 @media (max-width: 1000px) {
+    h1 {
+        margin-top: 64px;
+    }
     .button-info {
         width: 160px;
     }
@@ -151,7 +154,7 @@ canvas {
         height: auto;
     }
     .main-container {
-        height: auto;
+        height: calc(100vh - 265px);
     }
     canvas {
         height: 400px !important;
@@ -161,9 +164,12 @@ canvas {
     }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 865px) {
     .button-info {
-        width: 150px;
+        width: 135px;
+    }
+    .main-container {
+        height: calc(100vh - 265px);
     }
 }
 
@@ -179,6 +185,31 @@ canvas {
 @media (max-width: 655px) {
     .button-info {
         width: 110px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        margin-top: 48px;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        height: 300px;
+    }
+    .main-container {
+        height: calc(100vh - 263px);
     }
 }
 

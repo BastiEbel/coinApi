@@ -34,6 +34,13 @@
     }
 }
 
+@media (max-width: 400px) {
+    .button-info {
+        width: 80px;
+        font-size: medium;
+    }
+}
+
 
 /* IPhone SE */
 
@@ -95,6 +102,23 @@
 }
 
 
+/* Surface Duo */
+
+@media screen and ( width: 540px) and ( height: 720px) {
+    .button-info {
+        width: 90px;
+        font-size: medium;
+    }
+    .container {
+        height: 50px;
+    }
+    img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
 /* Galaxy Fold */
 
 @media screen and ( width: 280px) and ( height: 653px) {
@@ -111,8 +135,12 @@
     }
 }
 
+
+/*Galaxy A51/71*/
+
 @media screen and ( width: 412px) and ( height: 914px) {
     .button-info {
         width: 100px;
+        font-size: medium;
     }
 }

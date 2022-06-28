@@ -18,11 +18,116 @@ a {
     }
 }
 
+@media (max-width: 400px) {
+    a {
+        font-size: medium;
+    }
+}
+
+
+/* IPhone SE */
+
+@media screen and ( width: 375px) and ( height: 667px) {
+    a {
+        font-size: large;
+    }
+    .container-footer {
+        height: 80px;
+    }
+}
+
+
+/*iPhone XR*/
+
+@media screen and ( width: 414px) and ( height: 896px) {
+    a {
+        font-size: large;
+    }
+    .container-footer {
+        height: 80px;
+    }
+}
+
+
+/*iPhone 12 Pro*/
+
+@media screen and ( width: 390px) and ( height: 844px) {
+    a {
+        font-size: large;
+    }
+    .container-footer {
+        height: 80px;
+    }
+}
+
+
+/*Pixel 5*/
+
+@media screen and ( width: 393px) and ( height: 851px) {
+    a {
+        font-size: large;
+    }
+    .container-footer {
+        height: 80px;
+    }
+}
+
+
+/*Samsung S8*/
+
+@media screen and ( width: 360px) and ( height: 740px) {
+    a {
+        font-size: large;
+    }
+    .container-footer {
+        height: 80px;
+    }
+}
+
+
+/* Samsung S20 */
+
+@media screen and ( width: 412px) and ( height: 915px) {
+    a {
+        font-size: large;
+    }
+    .container-footer {
+        height: 80px;
+    }
+}
+
+
+/* Galaxy Fold*/
+
 @media screen and ( width: 280px) and ( height: 653px) {
     a {
         font-size: large;
     }
     .container-footer {
         height: 50px;
+    }
+}
+
+
+/* Surface Duo*/
+
+@media screen and ( width: 540px) and ( height: 720px) {
+    a {
+        font-size: large;
+    }
+    .container-footer {
+        height: 50px;
+    }
+}
+
+
+/* Galaxy A51/71 */
+
+@media screen and ( width: 412px) and ( height: 914px) {
+    a {
+        font-size: large;
+    }
+    .container-footer {
+        height: 80px;
     }
 }
