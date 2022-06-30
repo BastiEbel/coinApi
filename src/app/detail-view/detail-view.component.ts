@@ -20,10 +20,20 @@ export class DetailViewComponent implements OnInit {
     this.getDetail();
   }
 
+  /**
+   * 
+   * @param event it`s important to switch the page
+   * 
+   */
   onPageEvent(event: any) {
     this.p = event;
   }
 
+  /**
+   * 
+   * @param results give the info about data for the dialog box
+   * 
+   */
   openDialog(results: any) :void {
     this.dialog.open(SingleViewComponent, {
       maxWidth: '100vw',
@@ -32,6 +42,10 @@ export class DetailViewComponent implements OnInit {
     });
   }
 
+  /**
+   * 
+   * get infos for the Detail view
+   */
   getDetail(){
     this.service.getConfig().then((res) => {
       this.result = res;

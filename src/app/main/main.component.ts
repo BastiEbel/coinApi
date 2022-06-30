@@ -21,7 +21,6 @@ export class MainComponent implements OnInit {
   highestPrice = false;
   lowestPrice = false;
 
-  //TODO for commentation
 
   constructor(public service: UrlCoinService) {
     Chart.register(...registerables);
@@ -32,6 +31,10 @@ export class MainComponent implements OnInit {
     this.getData();
   }
 
+  /**
+   * this function gets the data from the service
+   * 
+   */
   getData() {
     this.service.getConfig().then((res) => {
       this.result = res;
@@ -42,6 +45,10 @@ export class MainComponent implements OnInit {
     });
   }
 
+  /**
+   * this function renders the current price in the chart
+   * 
+   */
   renderPrice() {
     this.currentPrice = true;
     this.pricePercentage = false;
@@ -93,12 +100,20 @@ export class MainComponent implements OnInit {
     this.chart.render();
   }
 
+  /**
+   * this function updates the chart
+   * 
+   */
   renderCurrentPrice() {
     this.chart.destroy();
     this.renderPrice();
     this.chart.render();
   }
 
+  /**
+   * this function renders the price in percent in the chart
+   * 
+   */
   renderPricePercentage() {
     this.currentPrice = false;
     this.pricePercentage = true;
@@ -152,6 +167,10 @@ export class MainComponent implements OnInit {
     this.chart.render();
   }
 
+  /**
+   * this function renders the price changes from the last 24h in the chart
+   * 
+   */
   renderPriceChange() {
     this.currentPrice = false;
     this.pricePercentage = false;
@@ -205,6 +224,10 @@ export class MainComponent implements OnInit {
     this.chart.render();
   }
 
+  /**
+   * this function renders the highest price from the last 24h in the chart
+   * 
+   */
   renderHighestPrice() {
     this.currentPrice = false;
     this.pricePercentage = false;
@@ -258,6 +281,10 @@ export class MainComponent implements OnInit {
     this.chart.render();
   }
 
+  /**
+   * this function renders the lowest from the last 24h in the chart
+   * 
+   */
   renderLowestPrice() {
     this.currentPrice = false;
     this.pricePercentage = false;
@@ -311,6 +338,10 @@ export class MainComponent implements OnInit {
     this.chart.render();
   }
 
+  /**
+   * this function reset the zoom if you zoom in the chart
+   * 
+   */
   resetZoom() {
     this.chart.destroy();
     this.getData();

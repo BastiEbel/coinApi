@@ -9,6 +9,10 @@ export class UrlCoinService {
   isLoading = true;
   constructor(public http: HttpClient) { }
 
+  /**
+   * 
+   * @returns  it returns the REST APi (url)
+   */
   getConfig() {
     this.isLoading = true;
     return this.http.get(this.url).toPromise().then((data) => {
