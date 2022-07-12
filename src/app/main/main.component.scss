@@ -498,7 +498,7 @@ canvas {
     }
     .main-container {
         flex-direction: column;
-        height: calc(100vh - 333px);
+        height: auto;
         margin-bottom: 22px;
     }
 }
