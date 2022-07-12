@@ -128,9 +128,9 @@ pagination-template>div {
 }
 
 @media (max-width: 435px) {
-    .last-24 {
+    /* .last-24 {
         display: none;
-    }
+    } */
     .single-info {
         width: 25%;
     }
@@ -169,6 +169,12 @@ pagination-template>div {
         margin-right: 16px;
     }
     .last-24 {
+        width: 35%;
+    }
+    .percentage {
+        display: none;
+    }
+    .price-high {
         display: none;
     }
     .name-color {
@@ -215,6 +221,12 @@ pagination-template>div {
         margin-right: 16px;
     }
     .last-24 {
+        width: 35%;
+    }
+    .percentage {
+        display: none;
+    }
+    .price-high {
         display: none;
     }
     .name-color {
@@ -262,6 +274,12 @@ pagination-template>div {
         margin-right: 16px;
     }
     .last-24 {
+        width: 35%;
+    }
+    .percentage {
+        display: none;
+    }
+    .price-high {
         display: none;
     }
     .name-color {
@@ -460,7 +478,7 @@ pagination-template>div {
         font-size: xx-large;
     }
     .container {
-        height: calc(100vh - 345px);
+        height: calc(100vh - 350px);
         margin-top: 0px;
     }
     .container-field {

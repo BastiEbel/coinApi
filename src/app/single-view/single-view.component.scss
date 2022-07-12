@@ -85,7 +85,7 @@ h1 {
 @media screen and ( width: 667px) and ( height: 375px) {
     .mat-dialog-content {
         width: 92vw !important;
-        height: 57vh;
+        height: 55vh;
     }
     .content {
         width: unset;
@@ -98,16 +98,19 @@ h1 {
 @media screen and ( width: 414px) and ( height: 896px) {
     .mat-dialog-content {
         width: 366px !important;
-        height: 82vh !important;
+        height: 81vh !important;
         font-size: small !important;
         max-height: unset;
+    }
+    .content {
+        width: unset;
     }
 }
 
 @media screen and ( width: 896px) and ( height: 414px) {
     .mat-dialog-content {
         width: 94vw !important;
-        height: 64vh;
+        height: 62vh;
     }
     .mat-dialog-actions {
         min-height: 40px;
@@ -120,7 +123,7 @@ h1 {
 @media screen and ( width: 390px) and ( height: 844px) {
     .mat-dialog-content {
         width: 342px !important;
-        height: 82vh !important;
+        height: 80vh !important;
         font-size: small !important;
         max-height: unset;
     }
@@ -129,7 +132,7 @@ h1 {
 @media screen and ( width: 844px) and ( height: 390px) {
     .mat-dialog-content {
         width: 94vw !important;
-        height: 62vh;
+        height: 60vh;
     }
     .mat-dialog-actions {
         min-height: 40px;
@@ -142,7 +145,7 @@ h1 {
 @media screen and ( width: 393px) and ( height: 851px) {
     .mat-dialog-content {
         width: 345px !important;
-        height: 81vh !important;
+        height: 80vh !important;
         font-size: small !important;
         max-height: unset;
     }
@@ -151,7 +154,7 @@ h1 {
 @media screen and ( width: 851px) and ( height: 393px) {
     .mat-dialog-content {
         width: 94vw !important;
-        height: 62vh;
+        height: 60vh;
     }
     .mat-dialog-actions {
         min-height: 40px;
@@ -173,7 +176,7 @@ h1 {
 @media screen and ( width: 740px) and ( height: 360px) {
     .mat-dialog-content {
         width: 93vw !important;
-        height: 59vh;
+        height: 58vh;
     }
     .mat-dialog-actions {
         min-height: 40px;
@@ -189,6 +192,10 @@ h1 {
         height: 82vh !important;
         font-size: small !important;
         max-height: unset;
+    }
+    .mat-dialog-container {
+        display: flex !important;
+        justify-content: center !important;
     }
 }
 
@@ -217,7 +224,7 @@ h1 {
 @media screen and ( width: 540px) and ( height: 720px) {
     .mat-dialog-content {
         width: 492px !important;
-        height: 78vh !important;
+        height: 77vh !important;
         font-size: small !important;
         max-height: unset;
     }
@@ -287,7 +294,7 @@ h1 {
 @media screen and ( width: 1280px) and ( height: 800px) {
     .mat-dialog-content {
         width: 500px !important;
-        height: 80vh !important;
+        height: 78vh !important;
         font-size: small !important;
         max-height: unset;
     }

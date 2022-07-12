@@ -185,6 +185,7 @@ canvas {
 @media (max-width: 655px) {
     .button-info {
         width: 110px;
+        font-size: small;
     }
 }
 
@@ -219,15 +220,58 @@ canvas {
 @media screen and ( width: 375px) and ( height: 667px) {
     .container {
         height: unset;
+        width: 90%;
+        margin-top: 16px;
     }
     .button-container {
+        margin-top: 32px;
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
         margin-bottom: 0px;
     }
+    .button-info {
+        width: 120px;
+        height: 50px;
+        margin-bottom: 16px;
+        margin-left: 16px;
+        font-size: small;
+    }
     .container-info {
         height: 218px !important;
+    }
+    .main-container {
+        height: calc(100vh - 180px);
+        flex-direction: column;
+        margin-bottom: 22px;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and ( width: 667px) and ( height: 375px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .button-container {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-info {
+        margin-left: 16px;
+        width: 160px;
+        height: 60px;
+        font-size: medium;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .container {
+        width: 100%;
     }
 }
 
@@ -238,18 +282,60 @@ canvas {
     span {
         margin-top: 32px;
     }
+    .container {
+        height: unset;
+        width: 90%;
+        margin-top: 16px;
+    }
     .button-container {
+        margin-top: 32px;
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
+    }
+    .button-info {
+        width: 100px;
+        height: 50px;
+        margin-bottom: 16px;
+        margin-left: unset;
+        font-size: small;
+    }
+    .ml-16 {
+        margin-left: 16px;
     }
     .container-info {
-        height: 250px !important;
+        height: 230px !important;
     }
     .main-container {
-        height: calc(100vh - 320px);
+        flex-direction: column;
         margin-bottom: 22px;
+        height: calc(100vh - 318px);
+    }
+}
+
+@media screen and ( width: 896px) and ( height: 414px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .button-container {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-info {
+        margin-left: 16px;
+        width: 160px;
+        height: 60px;
+        font-size: medium;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .container {
+        width: 100%;
     }
 }
 
@@ -260,18 +346,59 @@ canvas {
     span {
         margin-top: 32px;
     }
+    .container {
+        height: unset;
+        width: 90%;
+        margin-top: 16px;
+    }
     .button-container {
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
     }
+    .button-info {
+        width: 100px;
+        height: 50px;
+        margin-bottom: 16px;
+        margin-left: unset;
+        font-size: small;
+    }
+    .ml-16 {
+        margin-left: 16px;
+    }
     .container-info {
         height: 218px !important;
     }
     .main-container {
+        flex-direction: column;
         height: calc(100vh - 318px);
         margin-bottom: 22px;
+    }
+}
+
+@media screen and ( width: 844px) and ( height: 390px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .button-container {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-info {
+        margin-left: 16px;
+        width: 160px;
+        height: 60px;
+        font-size: medium;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .container {
+        width: 100%;
     }
 }
 
@@ -282,18 +409,59 @@ canvas {
     span {
         margin-top: 32px;
     }
+    .container {
+        height: unset;
+        width: 90%;
+        margin-top: 16px;
+    }
     .button-container {
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
     }
+    .button-info {
+        width: 100px;
+        height: 50px;
+        margin-bottom: 16px;
+        margin-left: unset;
+        font-size: small;
+    }
+    .ml-16 {
+        margin-left: 16px;
+    }
     .container-info {
         height: 200px !important;
     }
     .main-container {
+        flex-direction: column;
         height: calc(100vh - 318px);
         margin-bottom: 22px;
+    }
+}
+
+@media screen and ( width: 851px) and ( height: 393px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .button-container {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-info {
+        margin-left: 16px;
+        width: 160px;
+        height: 60px;
+        font-size: medium;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .container {
+        width: 100%;
     }
 }
 
@@ -304,18 +472,59 @@ canvas {
     span {
         margin-bottom: 32px;
     }
+    .container {
+        height: unset;
+        width: 90%;
+        margin-top: 16px;
+    }
     .button-container {
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
     }
+    .button-info {
+        width: 100px;
+        height: 50px;
+        margin-bottom: 16px;
+        margin-left: unset;
+        font-size: small;
+    }
+    .ml-16 {
+        margin-left: 16px;
+    }
     .container-info {
         height: 200px !important;
     }
     .main-container {
-        height: calc(100vh - 318px);
+        flex-direction: column;
+        height: calc(100vh - 333px);
         margin-bottom: 22px;
+    }
+}
+
+@media screen and ( width: 740px) and ( height: 360px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .button-container {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-info {
+        margin-left: 16px;
+        width: 160px;
+        height: 60px;
+        font-size: medium;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .container {
+        width: 100%;
     }
 }
 
@@ -326,18 +535,59 @@ canvas {
     span {
         margin-top: 32px;
     }
+    .container {
+        height: unset;
+        width: 90%;
+        margin-top: 16px;
+    }
     .button-container {
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
     }
+    .button-info {
+        width: 100px;
+        height: 50px;
+        margin-bottom: 16px;
+        margin-left: unset;
+        font-size: small;
+    }
+    .ml-16 {
+        margin-left: 16px;
+    }
     .container-info {
         height: 275px !important;
     }
     .main-container {
+        flex-direction: column;
         height: calc(100vh - 318px);
         margin-bottom: 22px;
+    }
+}
+
+@media screen and ( width: 915px) and ( height: 412px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .button-container {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-info {
+        margin-left: 16px;
+        width: 160px;
+        height: 60px;
+        font-size: medium;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .container {
+        width: 100%;
     }
 }
 
@@ -352,7 +602,8 @@ canvas {
         margin-top: 64px;
     }
     .button-container {
-        width: 80%;
+        width: 90%;
+        margin-top: 16px;
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
@@ -361,12 +612,22 @@ canvas {
     .container-info {
         height: 375px !important;
     }
+    .container {
+        width: 90%;
+    }
     .main-container {
+        flex-direction: column;
         height: calc(100vh - 350px);
         margin-bottom: 22px;
     }
     p {
         margin-top: 64px;
+    }
+}
+
+@media screen and ( width: 1180px) and ( height: 820px) {
+    .main-container {
+        height: calc(100vh - 200px);
     }
 }
 
@@ -381,7 +642,7 @@ canvas {
         margin-top: 32px;
     }
     .button-container {
-        width: 80%;
+        width: 100%;
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
@@ -390,12 +651,25 @@ canvas {
     .container-info {
         height: 375px !important;
     }
+    .container {
+        width: 90%;
+    }
     .main-container {
-        height: calc(100vh - 318px);
+        flex-direction: column;
+        height: calc(100vh - 317px);
         margin-bottom: 22px;
     }
     p {
         margin-top: 48px;
+    }
+}
+
+@media screen and ( width: 1024px) and ( height: 768px) {
+    .main-container {
+        height: calc(100vh - 185px);
+    }
+    span {
+        height: 90px;
     }
 }
 
@@ -414,18 +688,24 @@ canvas {
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
-        margin-bottom: 64px;
+        margin-bottom: 0px;
     }
     .button-info {
         width: 220px;
         height: 80px;
         font-size: x-large;
     }
+    .container {
+        width: 90%;
+        height: auto;
+    }
     .container-info {
         height: 475px !important;
     }
     .main-container {
-        height: calc(100vh - 328px);
+        margin-top: 64px;
+        flex-direction: column;
+        height: calc(100vh - 392px);
     }
     p {
         font-size: 32px;
@@ -452,19 +732,57 @@ canvas {
         margin-bottom: 16px;
     }
     .button-info {
-        height: 40px;
+        height: 50px;
+        width: 125px;
         font-size: x-small;
         margin-bottom: 16px;
+        margin-left: 0px;
+        box-shadow: 2px 4px 12px 1px rgb(255 255 255 / 50%);
+        &:hover {
+            box-shadow: 2px 4px 12px 1px rgb(255 112 112 / 50%);
+        }
+    }
+    .ml-16 {
+        margin-left: 16px;
     }
     .container-info {
         height: 275px !important;
     }
     .main-container {
-        height: calc(100vh - 252px);
+        flex-direction: column;
+        height: calc(100vh - 191px);
+    }
+    .container {
+        width: 90%;
     }
     p {
         font-size: 20px;
         margin-top: 24px;
+    }
+}
+
+@media screen and ( width: 720px) and ( height: 540px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .button-container {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-info {
+        margin-left: 16px;
+        width: 160px;
+        height: 60px;
+        font-size: medium;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .container {
+        width: 100%;
     }
 }
 
@@ -480,7 +798,7 @@ canvas {
         height: 80px;
     }
     .button-container {
-        width: 88%;
+        width: 98%;
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
@@ -488,19 +806,53 @@ canvas {
     }
     .button-info {
         height: 50px;
+        width: 80px;
         font-size: x-small;
         margin-bottom: 24px;
         box-shadow: 0px 3px 12px 0px rgb(255, 255, 255, 0.5);
+        margin-left: 0px;
+    }
+    .ml-16 {
+        margin-left: 8px;
+    }
+    .container {
+        width: 98%;
     }
     .container-info {
         height: 200px !important;
     }
     .main-container {
+        flex-direction: column;
         height: calc(100vh - 192px);
     }
     p {
         font-size: 16px;
         margin-top: 24px;
+    }
+}
+
+@media screen and ( width: 653px) and ( height: 280px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .button-container {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-info {
+        margin-left: 16px;
+        width: 160px;
+        height: 60px;
+        font-size: medium;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .container {
+        width: 100%;
     }
 }
 
@@ -516,26 +868,106 @@ canvas {
         height: 80px;
     }
     .button-container {
-        width: 88%;
+        width: 100%;
         flex-wrap: wrap;
         display: flex;
         justify-content: center;
-        margin-bottom: 32px;
+        margin-bottom: 16px;
+        margin-top: 16px;
     }
     .button-info {
+        margin-right: 8px;
+        margin-left: 0px;
         height: 60px;
+        width: 140px;
         font-size: medium;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
         box-shadow: 3px 3px 12px 1px rgb(255, 255, 255, 0.5);
+    }
+    .ml-16 {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .container {
+        width: 90%;
     }
     .container-info {
         height: 275px !important;
     }
     .main-container {
+        flex-direction: column;
         height: calc(100vh - 275px);
     }
     p {
         font-size: 20px;
         margin-top: 32px;
+    }
+}
+
+@media screen and ( width: 914px) and ( height: 412px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .button-container {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-info {
+        margin-left: 16px;
+        width: 160px;
+        height: 60px;
+        font-size: medium;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .container {
+        width: 100%;
+    }
+}
+
+
+/*Nest Hub*/
+
+@media screen and ( width: 1024px) and ( height: 600px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .container {
+        width: 90%;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+    p {
+        margin-bottom: 32px;
+    }
+}
+
+
+/*Nest Hub Max*/
+
+@media screen and ( width: 1280px) and ( height: 800px) {
+    .main-container {
+        height: auto;
+        flex-direction: column;
+    }
+    .container {
+        width: 90%;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 32px;
+    }
+    p {
+        margin-bottom: 32px;
     }
 }
