@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { UrlCoinService } from '../services/url-coin.service';
 import zoomPlugin from 'chartjs-plugin-zoom';
@@ -10,9 +10,12 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 })
 export class MainComponent implements OnInit {
   result: any = [];
-  coinPrice: any;
+  ctxResult: any = [];
   coinName: any;
-  chart: any = [];
+  coinPrice: any = [];
+  coindate: any = [];
+  updateDate = new Date();
+  chart: any = {};
   zoom = false;
   date = new Date();
   currentPrice = false;
@@ -21,6 +24,7 @@ export class MainComponent implements OnInit {
   highestPrice = false;
   lowestPrice = false;
 
+  @ViewChild('myChart') canvas: ElementRef;
 
   constructor(public service: UrlCoinService) {
     Chart.register(...registerables);
@@ -29,45 +33,80 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+    //this.getTimeData();
   }
 
-  /**
+/**
    * this function gets the data from the service
-   * 
+   *
    */
-  getData() {
-    this.service.getConfig().then((res) => {
-      this.result = res;
-      this.coinPrice = this.result.map((coin: any) => coin.current_price);
-      this.coinName = this.result.map((coin: any) => coin.name);
-      this.date = this.result[0]['last_updated'];
+ async getData() {
+  await this.service.getFullList().then((res) => {
+    this.result = res;
+    this.coinName = this.result.map((coin) => coin.name);
+  });
+  this.getTimeData();
+}
+
+  async getTimeData(){
+    await this.service.getPriceDaily().then((price) => {
+      console.log(price);
+      let currentDate: any = [];
+      let timestamp;
+      this.ctxResult = price['prices'].map((coin: any) => coin);
+      this.coinPrice = this.ctxResult.map((currentCoin:any) => currentCoin['1']);
+      for (let i = 0; i < this.ctxResult.length; i++) {
+        timestamp = this.ctxResult[i]['0'];
+        let timeFormat: any = { formatMatcher: 'basic', hour: 'numeric', minute: 'numeric', hourCycle: 'h24' };
+        currentDate.push(new Date(timestamp).toLocaleTimeString('de', timeFormat));
+        this.coindate.push(currentDate[1]);
+      }
       this.renderPrice();
     });
   }
 
+  canvasColor(){
+    const ctx = this.canvas.nativeElement.getContext('2d');
+    let gradientFill = ctx.createLinearGradient(0, 20, 300, 800);
+    gradientFill.addColorStop(0.1, '#13e2a4');
+    gradientFill.addColorStop(0.8, '#e902b3');
+    gradientFill.addColorStop(1, '#e902b3');
+    ctx.borderColor = 'green';
+    ctx.backgroundColor = gradientFill;
+    ctx.strokeStyle = gradientFill;
+
+    return gradientFill
+  }
+
   /**
    * this function renders the current price in the chart
-   * 
+   *
    */
   renderPrice() {
-    this.currentPrice = true;
+    /* this.currentPrice = true;
     this.pricePercentage = false;
     this.priceChange = false;
     this.highestPrice = false;
-    this.lowestPrice = false;
+    this.lowestPrice = false; */
     this.chart = new Chart('myChart', {
       type: 'line',
       data: {
-        labels: this.coinName,
+        labels: this.coindate,
         datasets: [{
-          label: 'Current price',
+          label: this.coinName[0],
           data: this.coinPrice,
           borderWidth: 2,
-          fill: false,
+          fill: true,
+          pointRadius: 2,
+          pointStyle: 'point',
+          backgroundColor: this.canvasColor(),
+          pointBackgroundColor: 'transparent',
+          pointBorderWidth: 1,
           borderColor: '#f5f5f5',
         }]
       },
       options: {
+        responsive: true,
         scales: {
           y: {
             ticks: {
@@ -86,14 +125,14 @@ export class MainComponent implements OnInit {
               color: "#f5f5f5"
             }
           },
-          zoom: {
+          /* zoom: {
             zoom: {
               wheel: {
                 enabled: true
               },
               mode: 'xy'
             }
-          }
+          } */
         }
       }
     });
@@ -102,7 +141,7 @@ export class MainComponent implements OnInit {
 
   /**
    * this function updates the chart
-   * 
+   *
    */
   renderCurrentPrice() {
     this.chart.destroy();
@@ -112,9 +151,9 @@ export class MainComponent implements OnInit {
 
   /**
    * this function renders the price in percent in the chart
-   * 
+   *
    */
-  renderPricePercentage() {
+  /* renderPricePercentage() {
     this.currentPrice = false;
     this.pricePercentage = true;
     this.priceChange = false;
@@ -125,7 +164,7 @@ export class MainComponent implements OnInit {
     this.chart = new Chart('myChart', {
       type: 'line',
       data: {
-        labels: this.coinName,
+        labels: this.service.coinName,
         datasets: [{
           label: 'Price change last 24h in %',
           data: coinPercentage,
@@ -165,13 +204,13 @@ export class MainComponent implements OnInit {
       }
     });
     this.chart.render();
-  }
+  } */
 
   /**
    * this function renders the price changes from the last 24h in the chart
-   * 
+   *
    */
-  renderPriceChange() {
+  /* renderPriceChange() {
     this.currentPrice = false;
     this.pricePercentage = false;
     this.priceChange = true;
@@ -222,13 +261,13 @@ export class MainComponent implements OnInit {
       }
     });
     this.chart.render();
-  }
+  } */
 
   /**
    * this function renders the highest price from the last 24h in the chart
-   * 
+   *
    */
-  renderHighestPrice() {
+  /* renderHighestPrice() {
     this.currentPrice = false;
     this.pricePercentage = false;
     this.priceChange = false;
@@ -279,13 +318,13 @@ export class MainComponent implements OnInit {
       }
     });
     this.chart.render();
-  }
+  } */
 
   /**
    * this function renders the lowest from the last 24h in the chart
-   * 
+   *
    */
-  renderLowestPrice() {
+  /* renderLowestPrice() {
     this.currentPrice = false;
     this.pricePercentage = false;
     this.priceChange = false;
@@ -336,19 +375,19 @@ export class MainComponent implements OnInit {
       }
     });
     this.chart.render();
-  }
+  } */
 
   /**
    * this function reset the zoom if you zoom in the chart
-   * 
+   *
    */
-  resetZoom() {
+  /* resetZoom() {
     this.chart.destroy();
     this.getData();
 
-  }
+  } */
 
-  @HostListener('wheel', ['$event']) onMouseWheel(event: any = WheelEvent) {
+  /* @HostListener('wheel', ['$event']) onMouseWheel(event: any = WheelEvent) {
     if (event) {
       this.zoom = true;
     }
@@ -359,5 +398,5 @@ export class MainComponent implements OnInit {
       this.resetZoom();
       this.zoom = false;
     }
-  }
+  } */
 }

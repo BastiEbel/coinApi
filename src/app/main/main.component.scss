@@ -10,7 +10,7 @@ span {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 64px;
     text-shadow: 7px 9px 6px rgba(140, 219, 255, 0.616);
 }
 
@@ -25,10 +25,12 @@ p {
 }
 
 .main-container {
+    margin-top: 48px;
+    margin-bottom: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 280px);
+    height: 100%;
 }
 
 .container {
@@ -42,10 +44,7 @@ p {
 
 canvas {
     max-width: 88% !important;
-    max-height: 80%;
-    &:hover {
-        cursor: zoom-in;
-    }
+    max-height: auto;
 }
 
 .container-info {
@@ -504,6 +503,10 @@ canvas {
 }
 
 @media screen and ( width: 740px) and ( height: 360px) {
+    span {
+        margin-bottom: 64px;
+        height: 50px;
+    }
     .main-container {
         height: auto;
         flex-direction: column;
