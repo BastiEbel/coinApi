@@ -11,8 +11,8 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 export class MainComponent implements OnInit {
   result: any = [];
   ctxResult: any = [];
-  coinName: any;
   coinPrice: any = [];
+  coinName: any;
   coindate: any = [];
   updateDate = new Date();
   chart: any = {};
@@ -36,17 +36,18 @@ export class MainComponent implements OnInit {
     //this.getTimeData();
   }
 
-/**
+  /**
    * this function gets the data from the service
    *
    */
- async getData() {
-  await this.service.getFullList().then((res) => {
-    this.result = res;
-    this.coinName = this.result.map((coin) => coin.name);
-  });
-  this.getTimeData();
-}
+  async getData() {
+    await this.service.getFullList().then((res) => {
+      this.result = res;
+      this.coinName = this.result.map((coin) => coin.name)
+      console.log('result', res);
+    });
+    this.getTimeData();
+  }
 
   async getTimeData(){
     await this.service.getPriceDaily().then((price) => {
@@ -58,8 +59,8 @@ export class MainComponent implements OnInit {
       for (let i = 0; i < this.ctxResult.length; i++) {
         timestamp = this.ctxResult[i]['0'];
         let timeFormat: any = { formatMatcher: 'basic', hour: 'numeric', minute: 'numeric', hourCycle: 'h24' };
-        currentDate.push(new Date(timestamp).toLocaleTimeString('de', timeFormat));
-        this.coindate.push(currentDate[1]);
+        currentDate = new Date(timestamp).toLocaleTimeString('de', timeFormat);
+        this.coindate.push(currentDate);
       }
       this.renderPrice();
     });
@@ -83,17 +84,12 @@ export class MainComponent implements OnInit {
    *
    */
   renderPrice() {
-    /* this.currentPrice = true;
-    this.pricePercentage = false;
-    this.priceChange = false;
-    this.highestPrice = false;
-    this.lowestPrice = false; */
     this.chart = new Chart('myChart', {
       type: 'line',
       data: {
         labels: this.coindate,
         datasets: [{
-          label: this.coinName[0],
+          label: this.coinName,
           data: this.coinPrice,
           borderWidth: 2,
           fill: true,
@@ -124,15 +120,7 @@ export class MainComponent implements OnInit {
             labels: {
               color: "#f5f5f5"
             }
-          },
-          /* zoom: {
-            zoom: {
-              wheel: {
-                enabled: true
-              },
-              mode: 'xy'
-            }
-          } */
+          }
         }
       }
     });
@@ -148,255 +136,4 @@ export class MainComponent implements OnInit {
     this.renderPrice();
     this.chart.render();
   }
-
-  /**
-   * this function renders the price in percent in the chart
-   *
-   */
-  /* renderPricePercentage() {
-    this.currentPrice = false;
-    this.pricePercentage = true;
-    this.priceChange = false;
-    this.highestPrice = false;
-    this.lowestPrice = false;
-    this.chart.destroy();
-    let coinPercentage = this.result.map((coin: any) => coin.price_change_percentage_24h)
-    this.chart = new Chart('myChart', {
-      type: 'line',
-      data: {
-        labels: this.service.coinName,
-        datasets: [{
-          label: 'Price change last 24h in %',
-          data: coinPercentage,
-          borderWidth: 2,
-          fill: false,
-          borderColor: '#f5f5f5',
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            ticks: {
-              color: '#f5f5f5'
-            }
-          },
-          x: {
-            ticks: {
-              color: '#f5f5f5'
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            labels: {
-              color: "#f5f5f5"
-            }
-          },
-          zoom: {
-            zoom: {
-              wheel: {
-                enabled: true
-              },
-              mode: 'xy'
-            }
-          }
-        }
-      }
-    });
-    this.chart.render();
-  } */
-
-  /**
-   * this function renders the price changes from the last 24h in the chart
-   *
-   */
-  /* renderPriceChange() {
-    this.currentPrice = false;
-    this.pricePercentage = false;
-    this.priceChange = true;
-    this.highestPrice = false;
-    this.lowestPrice = false;
-    this.chart.destroy();
-    let coinPriceChange = this.result.map((coin: any) => coin.price_change_24h)
-    this.chart = new Chart('myChart', {
-      type: 'line',
-      data: {
-        labels: this.coinName,
-        datasets: [{
-          label: 'Price change last 24h in €',
-          data: coinPriceChange,
-          borderWidth: 2,
-          fill: false,
-          borderColor: '#f5f5f5',
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            ticks: {
-              color: '#f5f5f5'
-            }
-          },
-          x: {
-            ticks: {
-              color: '#f5f5f5'
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            labels: {
-              color: "#f5f5f5"
-            }
-          },
-          zoom: {
-            zoom: {
-              wheel: {
-                enabled: true
-              },
-              mode: 'xy'
-            }
-          }
-        }
-      }
-    });
-    this.chart.render();
-  } */
-
-  /**
-   * this function renders the highest price from the last 24h in the chart
-   *
-   */
-  /* renderHighestPrice() {
-    this.currentPrice = false;
-    this.pricePercentage = false;
-    this.priceChange = false;
-    this.highestPrice = true;
-    this.lowestPrice = false;
-    this.chart.destroy();
-    let coinHighestPrice = this.result.map((coin: any) => coin.high_24h)
-    this.chart = new Chart('myChart', {
-      type: 'line',
-      data: {
-        labels: this.coinName,
-        datasets: [{
-          label: 'Highest price last 24h in €',
-          data: coinHighestPrice,
-          borderWidth: 2,
-          fill: false,
-          borderColor: '#f5f5f5',
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            ticks: {
-              color: '#f5f5f5'
-            }
-          },
-          x: {
-            ticks: {
-              color: '#f5f5f5'
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            labels: {
-              color: "#f5f5f5"
-            }
-          },
-          zoom: {
-            zoom: {
-              wheel: {
-                enabled: true
-              },
-              mode: 'xy'
-            }
-          }
-        }
-      }
-    });
-    this.chart.render();
-  } */
-
-  /**
-   * this function renders the lowest from the last 24h in the chart
-   *
-   */
-  /* renderLowestPrice() {
-    this.currentPrice = false;
-    this.pricePercentage = false;
-    this.priceChange = false;
-    this.highestPrice = false;
-    this.lowestPrice = true;
-    this.chart.destroy();
-    let coinLowestPrice = this.result.map((coin: any) => coin.low_24h)
-    this.chart = new Chart('myChart', {
-      type: 'line',
-      data: {
-        labels: this.coinName,
-        datasets: [{
-          label: 'Lowest price last 24h in €',
-          data: coinLowestPrice,
-          borderWidth: 2,
-          fill: false,
-          borderColor: '#f5f5f5',
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            ticks: {
-              color: '#f5f5f5'
-            }
-          },
-          x: {
-            ticks: {
-              color: '#f5f5f5'
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            labels: {
-              color: "#f5f5f5"
-            }
-          },
-          zoom: {
-            zoom: {
-              wheel: {
-                enabled: true
-              },
-              mode: 'xy'
-            }
-          }
-        }
-      }
-    });
-    this.chart.render();
-  } */
-
-  /**
-   * this function reset the zoom if you zoom in the chart
-   *
-   */
-  /* resetZoom() {
-    this.chart.destroy();
-    this.getData();
-
-  } */
-
-  /* @HostListener('wheel', ['$event']) onMouseWheel(event: any = WheelEvent) {
-    if (event) {
-      this.zoom = true;
-    }
-  }
-
-  @HostListener('mouseout', ['$event']) onLeave(event: MouseEvent) {
-    if (this.zoom && event) {
-      this.resetZoom();
-      this.zoom = false;
-    }
-  } */
 }
