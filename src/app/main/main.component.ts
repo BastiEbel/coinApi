@@ -89,7 +89,7 @@ export class MainComponent implements OnInit {
       data: {
         labels: this.coindate,
         datasets: [{
-          label: this.coinName,
+          label: `${this.coinName['0']}`,
           data: this.coinPrice,
           borderWidth: 2,
           fill: true,
