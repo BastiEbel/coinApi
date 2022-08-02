@@ -14,15 +14,10 @@ export class MainComponent implements OnInit {
   coinPrice: any = [];
   coinName: any;
   coindate: any = [];
-  updateDate = new Date();
   chart: any = {};
-  zoom = false;
   date = new Date();
-  currentPrice = false;
-  pricePercentage = false;
-  priceChange = false;
-  highestPrice = false;
-  lowestPrice = false;
+  p = 1;
+  pages = Array(Math.ceil(100 / 2)).fill(null).map((_, i) => ({label: i, value: i}));
 
   @ViewChild('myChart') canvas: ElementRef;
 
@@ -34,6 +29,15 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.getData();
     //this.getTimeData();
+  }
+
+  /**
+   *
+   * @param event it`s important to switch the page
+   *
+   */
+   onPageEvent(event: any) {
+    this.p = event;
   }
 
   /**
@@ -89,7 +93,7 @@ export class MainComponent implements OnInit {
       data: {
         labels: this.coindate,
         datasets: [{
-          label: `${this.coinName['0']}`,
+          label: `24h View ${this.coinName['0']}`,
           data: this.coinPrice,
           borderWidth: 2,
           fill: true,
