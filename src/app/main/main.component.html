@@ -3,7 +3,7 @@
 <span class="mt-32 container-header"><h1>Coin's chart</h1></span>
 <div class="main-container">
     <div class="coin-main-container">
-        <div class="coin-container" *ngFor="let results of result | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
+        <div (click)="selectedCoin(results.id)" class="coin-container" *ngFor="let results of result | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
             <img class="ml-16" src="{{ results.image }}">
             <span class="single-info"><span class="name-color">Name:</span> {{ results.name }}</span>
             <span class="single-info"><span class="name-color">Price:</span> {{ results.current_price}} €</span>

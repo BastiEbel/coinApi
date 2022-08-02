@@ -11,13 +11,13 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 export class MainComponent implements OnInit {
   result: any = [];
   ctxResult: any = [];
-  coinPrice: any = [];
-  coinName: any;
+  coinPrice: object = {};
+  coinName: any = 'Bitcoin';
   coindate: any = [];
-  chart: any = {};
+  chart: any;
   date = new Date();
   p = 1;
-  pages = Array(Math.ceil(100 / 2)).fill(null).map((_, i) => ({label: i, value: i}));
+  pages = Array(Math.ceil(100 / 2)).fill(null).map((_, i) => ({ label: i, value: i }));
 
   @ViewChild('myChart') canvas: ElementRef;
 
@@ -28,7 +28,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
-    //this.getTimeData();
   }
 
   /**
@@ -36,7 +35,7 @@ export class MainComponent implements OnInit {
    * @param event it`s important to switch the page
    *
    */
-   onPageEvent(event: any) {
+  onPageEvent(event: any) {
     this.p = event;
   }
 
@@ -47,19 +46,19 @@ export class MainComponent implements OnInit {
   async getData() {
     await this.service.getFullList().then((res) => {
       this.result = res;
-      this.coinName = this.result.map((coin) => coin.name)
+      this.service.data$ = this.coinName;
       console.log('result', res);
     });
     this.getTimeData();
   }
 
-  async getTimeData(){
+  async getTimeData() {
+    let currentDate: any = [];
+    let timestamp;
     await this.service.getPriceDaily().then((price) => {
       console.log(price);
-      let currentDate: any = [];
-      let timestamp;
       this.ctxResult = price['prices'].map((coin: any) => coin);
-      this.coinPrice = this.ctxResult.map((currentCoin:any) => currentCoin['1']);
+      this.coinPrice = this.ctxResult.map((currentCoin: any) => currentCoin['1']);
       for (let i = 0; i < this.ctxResult.length; i++) {
         timestamp = this.ctxResult[i]['0'];
         let timeFormat: any = { formatMatcher: 'basic', hour: 'numeric', minute: 'numeric', hourCycle: 'h24' };
@@ -70,7 +69,16 @@ export class MainComponent implements OnInit {
     });
   }
 
-  canvasColor(){
+  async changeChart() {
+    let currentDate: any = [];
+    let timestamp;
+    await this.service.getDailyCoins().then((newPrice) => {
+      this.ctxResult = newPrice['prices'].map((coin: any) => coin);
+      this.coinPrice = this.ctxResult.map((currentCoin: any) => currentCoin['1']);
+    });
+  }
+
+  canvasColor() {
     const ctx = this.canvas.nativeElement.getContext('2d');
     let gradientFill = ctx.createLinearGradient(0, 20, 300, 800);
     gradientFill.addColorStop(0.1, '#13e2a4');
@@ -83,6 +91,17 @@ export class MainComponent implements OnInit {
     return gradientFill
   }
 
+  selectedCoin(id) {
+    this.service.data$ = this.coinName;
+    for (let i = 0; i < this.result.length; i++) {
+      if (id == this.result[i]['id']) {
+        this.service.data$ = id;
+        this.coinName = this.result[i]['name'];
+      }
+    }
+    this.renderCurrentPrice();
+  }
+
   /**
    * this function renders the current price in the chart
    *
@@ -93,7 +112,7 @@ export class MainComponent implements OnInit {
       data: {
         labels: this.coindate,
         datasets: [{
-          label: `24h View ${this.coinName['0']}`,
+          label: `24h View ${this.coinName}`,
           data: this.coinPrice,
           borderWidth: 2,
           fill: true,
@@ -114,6 +133,7 @@ export class MainComponent implements OnInit {
             }
           },
           x: {
+            beginAtZero: true,
             ticks: {
               color: '#f5f5f5'
             }
@@ -128,15 +148,15 @@ export class MainComponent implements OnInit {
         }
       }
     });
-    this.chart.render();
   }
 
   /**
    * this function updates the chart
    *
    */
-  renderCurrentPrice() {
+  async renderCurrentPrice() {
     this.chart.destroy();
+    await this.changeChart();
     this.renderPrice();
     this.chart.render();
   }

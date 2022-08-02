@@ -99,6 +99,10 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 250, 250, 0.274);
+    }
 }
 
 pagination-template {
