@@ -312,28 +312,12 @@ pagination-template>div {
 @media screen and (width: 375px) and (height: 667px) {
     .container {
         height: unset;
-        width: 90%;
         margin-top: 16px;
-    }
-    .button-container {
-        margin-top: 32px;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 0px;
-    }
-    .button-info {
-        width: 120px;
-        height: 50px;
-        margin-bottom: 16px;
-        margin-left: 16px;
-        font-size: small;
     }
     .container-info {
         height: 218px !important;
     }
     .main-container {
-        height: calc(100vh - 180px);
         flex-direction: column;
         margin-bottom: 22px;
     }
@@ -347,18 +331,6 @@ pagination-template>div {
         height: auto;
         flex-direction: column;
     }
-    .button-container {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .button-info {
-        margin-left: 16px;
-        width: 160px;
-        height: 60px;
-        font-size: medium;
-    }
     p {
         margin-bottom: 32px;
     }
@@ -371,38 +343,23 @@ pagination-template>div {
 /*iPhone XR*/
 
 @media screen and (width: 414px) and (height: 896px) {
-    span {
-        margin-top: 32px;
+    h1 {
+        -webkit-text-stroke-width: 2px;
     }
     .container {
         height: unset;
-        width: 90%;
         margin-top: 16px;
-    }
-    .button-container {
-        margin-top: 32px;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 0px;
-    }
-    .button-info {
-        width: 100px;
-        height: 50px;
-        margin-bottom: 16px;
-        margin-left: unset;
-        font-size: small;
     }
     .ml-16 {
         margin-left: 16px;
     }
-    .container-info {
-        height: 230px !important;
+    canvas {
+        max-width: 300px !important;
+        height: 220px !important;
     }
     .main-container {
         flex-direction: column;
         margin-bottom: 22px;
-        height: calc(100vh - 318px);
     }
 }
 
@@ -410,18 +367,6 @@ pagination-template>div {
     .main-container {
         height: auto;
         flex-direction: column;
-    }
-    .button-container {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .button-info {
-        margin-left: 16px;
-        width: 160px;
-        height: 60px;
-        font-size: medium;
     }
     p {
         margin-bottom: 32px;
@@ -435,36 +380,23 @@ pagination-template>div {
 /*iPhone 12 Pro*/
 
 @media screen and (width: 390px) and (height: 844px) {
-    span {
-        margin-top: 32px;
+    h1 {
+        -webkit-text-stroke-width: 2px;
     }
     .container {
         height: unset;
         width: 90%;
         margin-top: 16px;
     }
-    .button-container {
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    .button-info {
-        width: 100px;
-        height: 50px;
-        margin-bottom: 16px;
-        margin-left: unset;
-        font-size: small;
+    canvas {
+        max-width: 300px !important;
+        height: 220px !important;
     }
     .ml-16 {
         margin-left: 16px;
     }
-    .container-info {
-        height: 218px !important;
-    }
     .main-container {
         flex-direction: column;
-        height: calc(100vh - 318px);
         margin-bottom: 22px;
     }
 }
@@ -498,36 +430,23 @@ pagination-template>div {
 /*Pixel 5*/
 
 @media screen and (width: 393px) and (height: 851px) {
-    span {
-        margin-top: 32px;
+    h1 {
+        -webkit-text-stroke-width: 2px;
     }
     .container {
         height: unset;
         width: 90%;
         margin-top: 16px;
     }
-    .button-container {
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    .button-info {
-        width: 100px;
-        height: 50px;
-        margin-bottom: 16px;
-        margin-left: unset;
-        font-size: small;
+    canvas {
+        max-width: 300px !important;
+        height: 220px !important;
     }
     .ml-16 {
         margin-left: 16px;
     }
-    .container-info {
-        height: 200px !important;
-    }
     .main-container {
         flex-direction: column;
-        height: calc(100vh - 318px);
         margin-bottom: 22px;
     }
 }
@@ -536,18 +455,6 @@ pagination-template>div {
     .main-container {
         height: auto;
         flex-direction: column;
-    }
-    .button-container {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .button-info {
-        margin-left: 16px;
-        width: 160px;
-        height: 60px;
-        font-size: medium;
     }
     p {
         margin-bottom: 32px;
@@ -561,45 +468,24 @@ pagination-template>div {
 /*Samsung S8*/
 
 @media screen and (width: 360px) and (height: 740px) {
-    span {
-        margin-bottom: 32px;
+    h1 {
+        -webkit-text-stroke-width: 2px;
     }
     .container {
         height: unset;
         width: 90%;
         margin-top: 16px;
     }
-    .button-container {
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    .button-info {
-        width: 100px;
-        height: 50px;
-        margin-bottom: 16px;
-        margin-left: unset;
-        font-size: small;
-    }
     .ml-16 {
         margin-left: 16px;
     }
-    .container-info {
-        height: 200px !important;
-    }
     .main-container {
         flex-direction: column;
-        height: auto;
         margin-bottom: 22px;
     }
 }
 
 @media screen and (width: 740px) and (height: 360px) {
-    span {
-        margin-bottom: 64px;
-        height: 50px;
-    }
     .main-container {
         height: auto;
         flex-direction: column;
@@ -628,36 +514,23 @@ pagination-template>div {
 /* Samsung S20 */
 
 @media screen and (width: 412px) and (height: 915px) {
-    span {
-        margin-top: 32px;
+    h1 {
+        -webkit-text-stroke-width: 2px;
     }
     .container {
         height: unset;
         width: 90%;
         margin-top: 16px;
     }
-    .button-container {
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    .button-info {
-        width: 100px;
-        height: 50px;
-        margin-bottom: 16px;
-        margin-left: unset;
-        font-size: small;
+    canvas {
+        max-width: 300px !important;
+        height: 220px !important;
     }
     .ml-16 {
         margin-left: 16px;
     }
-    .container-info {
-        height: 275px !important;
-    }
     .main-container {
         flex-direction: column;
-        height: calc(100vh - 318px);
         margin-bottom: 22px;
     }
 }
@@ -666,18 +539,6 @@ pagination-template>div {
     .main-container {
         height: auto;
         flex-direction: column;
-    }
-    .button-container {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .button-info {
-        margin-left: 16px;
-        width: 160px;
-        height: 60px;
-        font-size: medium;
     }
     p {
         margin-bottom: 32px;
@@ -692,10 +553,7 @@ pagination-template>div {
 
 @media screen and (width: 820px) and (height: 1180px) {
     h1 {
-        font-size: 48px;
-    }
-    span {
-        margin-top: 64px;
+        font-size: 80px;
     }
     .button-container {
         width: 90%;
@@ -705,15 +563,12 @@ pagination-template>div {
         justify-content: center;
         margin-bottom: 32px;
     }
-    .container-info {
-        height: 375px !important;
-    }
-    .container {
-        width: 90%;
+    canvas {
+        max-width: 450px !important;
+        height: 300px !important;
     }
     .main-container {
         flex-direction: column;
-        height: calc(100vh - 350px);
         margin-bottom: 22px;
     }
     p {
@@ -732,27 +587,14 @@ pagination-template>div {
 
 @media screen and (width: 768px) and (height: 1024px) {
     h1 {
-        font-size: 40px;
+        font-size: 80px;
     }
-    span {
-        margin-top: 32px;
-    }
-    .button-container {
-        width: 100%;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 16px;
-    }
-    .container-info {
-        height: 375px !important;
-    }
-    .container {
-        width: 90%;
+    canvas {
+        max-width: 450px !important;
+        height: 300px !important;
     }
     .main-container {
         flex-direction: column;
-        height: calc(100vh - 317px);
         margin-bottom: 22px;
     }
     p {
@@ -764,9 +606,6 @@ pagination-template>div {
     .main-container {
         height: calc(100vh - 185px);
     }
-    span {
-        height: 90px;
-    }
 }
 
 
@@ -774,34 +613,20 @@ pagination-template>div {
 
 @media screen and (width: 912px) and (height: 1368px) {
     h1 {
-        font-size: 48px;
+        font-size: 80px;
     }
-    span {
-        margin-top: 64px;
+    canvas {
+        max-width: 500px !important;
+        height: 350px !important;
     }
-    .button-container {
-        width: 88%;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 0px;
-    }
-    .button-info {
-        width: 220px;
-        height: 80px;
-        font-size: x-large;
-    }
-    .container {
-        width: 90%;
-        height: auto;
-    }
-    .container-info {
-        height: 475px !important;
+    .coin-main-container {
+        width: 300px;
+        margin-left: 16px;
     }
     .main-container {
+        height: 63vh;
         margin-top: 64px;
         flex-direction: column;
-        height: calc(100vh - 392px);
     }
     p {
         font-size: 32px;
@@ -814,42 +639,13 @@ pagination-template>div {
 
 @media screen and (width: 540px) and (height: 720px) {
     h1 {
-        font-size: 24px;
-    }
-    span {
-        margin-top: 8px;
-        height: 80px;
-    }
-    .button-container {
-        width: 88%;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 16px;
-    }
-    .button-info {
-        height: 50px;
-        width: 125px;
-        font-size: x-small;
-        margin-bottom: 16px;
-        margin-left: 0px;
-        box-shadow: 2px 4px 12px 1px rgb(255 255 255 / 50%);
-        &:hover {
-            box-shadow: 2px 4px 12px 1px rgb(255 112 112 / 50%);
-        }
+        font-size: 64px;
     }
     .ml-16 {
         margin-left: 16px;
     }
-    .container-info {
-        height: 275px !important;
-    }
     .main-container {
         flex-direction: column;
-        height: calc(100vh - 191px);
-    }
-    .container {
-        width: 90%;
     }
     p {
         font-size: 20px;
@@ -861,18 +657,6 @@ pagination-template>div {
     .main-container {
         height: auto;
         flex-direction: column;
-    }
-    .button-container {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .button-info {
-        margin-left: 16px;
-        width: 160px;
-        height: 60px;
-        font-size: medium;
     }
     p {
         margin-bottom: 32px;
@@ -888,38 +672,13 @@ pagination-template>div {
 @media screen and (width: 280px) and (height: 653px) {
     h1 {
         font-size: 24px;
-    }
-    span {
-        margin-top: 8px;
-        height: 80px;
-    }
-    .button-container {
-        width: 98%;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 8px;
-    }
-    .button-info {
-        height: 50px;
-        width: 80px;
-        font-size: x-small;
-        margin-bottom: 24px;
-        box-shadow: 0px 3px 12px 0px rgb(255, 255, 255, 0.5);
-        margin-left: 0px;
+        -webkit-text-stroke-width: 2px;
     }
     .ml-16 {
         margin-left: 8px;
     }
-    .container {
-        width: 98%;
-    }
-    .container-info {
-        height: 200px !important;
-    }
     .main-container {
         flex-direction: column;
-        height: calc(100vh - 192px);
     }
     p {
         font-size: 16px;
@@ -931,18 +690,6 @@ pagination-template>div {
     .main-container {
         height: auto;
         flex-direction: column;
-    }
-    .button-container {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .button-info {
-        margin-left: 16px;
-        width: 160px;
-        height: 60px;
-        font-size: medium;
     }
     p {
         margin-bottom: 32px;
@@ -958,41 +705,14 @@ pagination-template>div {
 @media screen and (width: 412px) and (height: 914px) {
     h1 {
         font-size: 32px;
-    }
-    span {
-        margin-top: 32px;
-        height: 80px;
-    }
-    .button-container {
-        width: 100%;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 16px;
-        margin-top: 16px;
-    }
-    .button-info {
-        margin-right: 8px;
-        margin-left: 0px;
-        height: 60px;
-        width: 140px;
-        font-size: medium;
-        margin-bottom: 16px;
-        box-shadow: 3px 3px 12px 1px rgb(255, 255, 255, 0.5);
+        -webkit-text-stroke-width: 2px;
     }
     .ml-16 {
         margin-left: 8px;
         margin-right: 8px;
     }
-    .container {
-        width: 90%;
-    }
-    .container-info {
-        height: 275px !important;
-    }
     .main-container {
         flex-direction: column;
-        height: calc(100vh - 275px);
     }
     p {
         font-size: 20px;
@@ -1004,18 +724,6 @@ pagination-template>div {
     .main-container {
         height: auto;
         flex-direction: column;
-    }
-    .button-container {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .button-info {
-        margin-left: 16px;
-        width: 160px;
-        height: 60px;
-        font-size: medium;
     }
     p {
         margin-bottom: 32px;
@@ -1036,11 +744,6 @@ pagination-template>div {
     .container {
         width: 90%;
     }
-    .button-container {
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-    }
     p {
         margin-bottom: 32px;
     }
@@ -1052,16 +755,9 @@ pagination-template>div {
 @media screen and (width: 1280px) and (height: 800px) {
     .main-container {
         height: auto;
-        flex-direction: column;
     }
-    .container {
-        width: 90%;
-    }
-    .button-container {
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 32px;
+    h1 {
+        bottom: -210px;
     }
     p {
         margin-bottom: 32px;
