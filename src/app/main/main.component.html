@@ -1,16 +1,19 @@
 <loading *ngIf="service.isLoading">{{ service.isLoading }}</loading>
 <app-menu></app-menu>
-<span class="mt-32 container-header"><h1>Coin's chart</h1></span>
+<span class="container-header"><h1>Coin Chart</h1></span>
 <div class="main-container">
-    <div class="coin-main-container">
-        <div (click)="selectedCoin(results.id)" class="coin-container" *ngFor="let results of result | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
-            <img class="ml-16" src="{{ results.image }}">
-            <span class="single-info"><span class="name-color">Name:</span> {{ results.name }}</span>
-            <span class="single-info"><span class="name-color">Price:</span> {{ results.current_price}} €</span>
+    <div class="main">
+        <div class="container">
+            <canvas class="container-info" #myChart id="myChart">{{ chart }}</canvas>
         </div>
-    </div>
-    <div class="container">
-        <canvas class="container-info" #myChart id="myChart">{{ chart }}</canvas>
+        <div class="coin-main-container">
+            <div (click)="isactive = results" (click)="selectedCoin(results.id)" [class.active]="results === isactive" class="coin-container" *ngFor="let results of result | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
+                <img class="ml-16" src="{{ results.image }}">
+                <span class="single-info"><span class="name-color">Name:</span> {{ results.name }}</span>
+                <span class="single-info"><span class="name-color">Name:</span> {{ results.price_change_percentage_24h.toFixed(2) }}%</span>
+                <span class="mr-16 single-info"><span class="name-color">Price:</span> {{ results.current_price.toFixed(2) }} €</span>
+            </div>
+        </div>
     </div>
 </div>
 <pagination-template #pagination="paginationApi" (pageChange)="onPageEvent($event)">
@@ -31,4 +34,5 @@
     </div>
 </pagination-template>
 <p>Last update: {{ date | date: 'dd.MM.yyyy' }}</p>
+
 <app-footer></app-footer>

@@ -15,6 +15,7 @@ export class MainComponent implements OnInit {
   coinName: any = 'Bitcoin';
   coindate: any = [];
   chart: any;
+  isactive = false;
   date = new Date();
   p = 1;
   pages = Array(Math.ceil(100 / 2)).fill(null).map((_, i) => ({ label: i, value: i }));
@@ -49,10 +50,14 @@ export class MainComponent implements OnInit {
       this.service.data$ = this.coinName;
       console.log('result', res);
     });
-    this.getTimeData();
+    this.getDailyData();
   }
 
-  async getTimeData() {
+  /**
+   *
+   * this function give the first data to the chart if is load
+   */
+  async getDailyData() {
     let currentDate: any = [];
     let timestamp;
     await this.service.getPriceDaily().then((price) => {
@@ -67,17 +72,25 @@ export class MainComponent implements OnInit {
       }
       this.renderPrice();
     });
+
   }
 
+  /**
+   *
+   * this function update the Chart with the new query
+   */
   async changeChart() {
-    let currentDate: any = [];
-    let timestamp;
     await this.service.getDailyCoins().then((newPrice) => {
       this.ctxResult = newPrice['prices'].map((coin: any) => coin);
       this.coinPrice = this.ctxResult.map((currentCoin: any) => currentCoin['1']);
     });
   }
 
+  /**
+   *
+   * @returns give the color back
+   * this function is for the background color by the Chart
+   */
   canvasColor() {
     const ctx = this.canvas.nativeElement.getContext('2d');
     let gradientFill = ctx.createLinearGradient(0, 20, 300, 800);
@@ -91,6 +104,11 @@ export class MainComponent implements OnInit {
     return gradientFill
   }
 
+  /**
+   *
+   * @param id give the id to the service and put it in the url
+   *
+   */
   selectedCoin(id) {
     this.service.data$ = this.coinName;
     for (let i = 0; i < this.result.length; i++) {
