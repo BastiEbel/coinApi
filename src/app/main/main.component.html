@@ -10,7 +10,7 @@
             <div (click)="isactive = results" (click)="selectedCoin(results.id)" [class.active]="results === isactive" class="coin-container" *ngFor="let results of result | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
                 <img class="ml-16" src="{{ results.image }}">
                 <span class="single-info"><span class="name-color">Name:</span> {{ results.name }}</span>
-                <span class="single-info"><span class="name-color">Name:</span> {{ results.price_change_percentage_24h.toFixed(2) }}%</span>
+                <span class="single-info" [ngClass]="results.price_change_percentage_24h >= 0 ? 'plus-number' : 'minus-number'"><span class="name-color">Name:</span> {{ results.price_change_percentage_24h.toFixed(2) }}%</span>
                 <span class="mr-16 single-info"><span class="name-color">Price:</span> {{ results.current_price.toFixed(2) }} €</span>
             </div>
         </div>
@@ -21,8 +21,8 @@
         <a *ngIf="!pagination.isFirstPage()" (click)="pagination.previous()">
             < </a>
     </div>
-    <div *ngFor="let page of pagination.pages" [class.current]="pagination.getCurrent() === page.value">
-        <a (click)="pagination.setCurrent(page.value)" *ngIf="pagination.getCurrent() !== page.value">
+    <div (click)="pagination.setCurrent(page.value)" *ngFor="let page of pagination.pages" [class.current]="pagination.getCurrent() === page.value">
+        <a *ngIf="pagination.getCurrent() !== page.value">
             <span>{{ page.label }}</span>
         </a>
         <div *ngIf="pagination.getCurrent() === page.value">
