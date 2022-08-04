@@ -4,17 +4,17 @@
 </h1>
 <div mat-dialog-content>
     <div class="content"><b>Name:</b> {{ data.results.name }}</div>
-    <div class="content fill-section"><b>All time high:</b> {{ data.results.ath }} €</div>
-    <div class="content"><b>Losses in %:</b> {{ data.results.ath_change_percentage }} %</div>
-    <div class="content fill-section"><b>Atlantis Loans course:</b> {{ data.results.atl }}</div>
-    <div class="content"><b>AtL course rate change in %:</b> {{ data.results.atl_change_percentage }}%</div>
-    <div class="content fill-section"><b>Circulation Coins:</b> {{ data.results.circulating_supply }}</div>
-    <div class="content"><b>Current Coin price:</b> {{ data.results.current_price }} €</div>
-    <div class="content fill-section"><b>Highest price last 24h:</b> {{ data.results.high_24h }} €</div>
-    <div class="content"><b>Lowest price last 24h:</b> {{ data.results.low_24h }} €</div>
-    <div class="content fill-section"><b>Price change in 24h:</b> {{ data.results.price_change_24h }} €</div>
-    <div class="content"><b>Price change in % last 24h:</b> {{ data.results.price_change_percentage_24h }} %</div>
-    <div class="content fill-section"><b>Total supply:</b> {{ data.results.total_supply }}</div>
+    <div class="content fill-section"><b>All time high:</b> {{ data.results.ath.toFixed(2) }} €</div>
+    <div class="content" [ngClass]="data.results.ath_change_percentage >= 0 ? 'plus-number' : 'minus-number'"><b>Losses in %:</b> {{ data.results.ath_change_percentage.toFixed(2) }} %</div>
+    <div class="content fill-section"><b>Atlantis Loans course:</b> {{ data.results.atl.toFixed(2) }}</div>
+    <div class="content"><b>AtL course rate change in %:</b> {{ data.results.atl_change_percentage.toFixed(2) }}%</div>
+    <div class="content fill-section"><b>Circulation Coins:</b> {{ data.results.circulating_supply.toFixed(2) }}</div>
+    <div class="content"><b>Current Coin price:</b> {{ data.results.current_price.toFixed(2) }} €</div>
+    <div class="content fill-section"><b>Highest price last 24h:</b> {{ data.results.high_24h.toFixed(2) }} €</div>
+    <div class="content"><b>Lowest price last 24h:</b> {{ data.results.low_24h.toFixed(2) }} €</div>
+    <div class="content fill-section"><b>Price change in 24h:</b> {{ data.results.price_change_24h.toFixed(2) }} €</div>
+    <div class="content" [ngClass]="data.results.price_change_percentage_24h >= 0 ? 'plus-number' : 'minus-number'"><b>Price change in % last 24h:</b> {{ data.results.price_change_percentage_24h.toFixed(2) }} %</div>
+    <div class="content fill-section"><b>Total supply:</b> {{ data.results.total_supply.toFixed(2) }}</div>
     <div class="content"><b>Total volume:</b> {{ data.results.total_volume }}</div>
 </div>
 <div mat-dialog-actions>
