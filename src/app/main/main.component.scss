@@ -331,11 +331,12 @@ pagination-template>div {
         height: auto;
         flex-direction: column;
     }
+    canvas {
+        max-width: 500px !important;
+        height: 350px !important;
+    }
     p {
         margin-bottom: 32px;
-    }
-    .container {
-        width: 100%;
     }
 }
 
@@ -371,9 +372,6 @@ pagination-template>div {
     p {
         margin-bottom: 32px;
     }
-    .container {
-        width: 100%;
-    }
 }
 
 
@@ -406,23 +404,8 @@ pagination-template>div {
         height: auto;
         flex-direction: column;
     }
-    .button-container {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .button-info {
-        margin-left: 16px;
-        width: 160px;
-        height: 60px;
-        font-size: medium;
-    }
     p {
         margin-bottom: 32px;
-    }
-    .container {
-        width: 100%;
     }
 }
 
@@ -459,9 +442,6 @@ pagination-template>div {
     p {
         margin-bottom: 32px;
     }
-    .container {
-        width: 100%;
-    }
 }
 
 
@@ -490,23 +470,12 @@ pagination-template>div {
         height: auto;
         flex-direction: column;
     }
-    .button-container {
-        display: flex;
-        width: 90%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .button-info {
-        margin-left: 16px;
-        width: 160px;
-        height: 60px;
-        font-size: medium;
+    canvas {
+        max-width: 600px !important;
+        height: 400px !important;
     }
     p {
         margin-bottom: 32px;
-    }
-    .container {
-        width: 100%;
     }
 }
 
@@ -578,7 +547,10 @@ pagination-template>div {
 
 @media screen and (width: 1180px) and (height: 820px) {
     .main-container {
-        height: calc(100vh - 200px);
+        height: auto;
+    }
+    h1 {
+        font-size: 96px;
     }
 }
 
@@ -599,12 +571,6 @@ pagination-template>div {
     }
     p {
         margin-top: 48px;
-    }
-}
-
-@media screen and (width: 1024px) and (height: 768px) {
-    .main-container {
-        height: calc(100vh - 185px);
     }
 }
 
