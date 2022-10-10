@@ -12,7 +12,9 @@ a {
     color: white;
     font-size: x-large;
     text-decoration: none;
+    z-index: 2;
     &:hover {
+        cursor: pointer;
         color: rgb(255, 112, 112);
         text-shadow: 5px 4px 11px rgb(255, 112, 112);
     }
@@ -24,10 +26,9 @@ a {
     }
 }
 
-
 /* IPhone SE */
 
-@media screen and ( width: 375px) and ( height: 667px) {
+@media screen and (width: 375px) and (height: 667px) {
     a {
         font-size: large;
     }
@@ -35,11 +36,10 @@ a {
         height: 80px;
     }
 }
-
 
 /*iPhone XR*/
 
-@media screen and ( width: 414px) and ( height: 896px) {
+@media screen and (width: 414px) and (height: 896px) {
     a {
         font-size: large;
     }
@@ -47,11 +47,10 @@ a {
         height: 80px;
     }
 }
-
 
 /*iPhone 12 Pro*/
 
-@media screen and ( width: 390px) and ( height: 844px) {
+@media screen and (width: 390px) and (height: 844px) {
     a {
         font-size: large;
     }
@@ -59,11 +58,10 @@ a {
         height: 80px;
     }
 }
-
 
 /*Pixel 5*/
 
-@media screen and ( width: 393px) and ( height: 851px) {
+@media screen and (width: 393px) and (height: 851px) {
     a {
         font-size: large;
     }
@@ -72,10 +70,9 @@ a {
     }
 }
 
-
 /*Samsung S8*/
 
-@media screen and ( width: 360px) and ( height: 740px) {
+@media screen and (width: 360px) and (height: 740px) {
     a {
         font-size: large;
     }
@@ -84,10 +81,9 @@ a {
     }
 }
 
-
 /* Samsung S20 */
 
-@media screen and ( width: 412px) and ( height: 915px) {
+@media screen and (width: 412px) and (height: 915px) {
     a {
         font-size: large;
     }
@@ -96,10 +92,9 @@ a {
     }
 }
 
-
 /* Galaxy Fold*/
 
-@media screen and ( width: 280px) and ( height: 653px) {
+@media screen and (width: 280px) and (height: 653px) {
     a {
         font-size: large;
     }
@@ -107,11 +102,10 @@ a {
         height: 50px;
     }
 }
-
 
 /* Surface Duo*/
 
-@media screen and ( width: 540px) and ( height: 720px) {
+@media screen and (width: 540px) and (height: 720px) {
     a {
         font-size: large;
     }
@@ -120,10 +114,9 @@ a {
     }
 }
 
-
 /* Galaxy A51/71 */
 
-@media screen and ( width: 412px) and ( height: 914px) {
+@media screen and (width: 412px) and (height: 914px) {
     a {
         font-size: large;
     }

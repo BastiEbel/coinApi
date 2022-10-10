@@ -1,9 +1,13 @@
+@font-face {
+    font-family: "Benne";
+    src: url("/assets/fonts/Benne-Regular.ttf") format("ttf");
+}
 body,
 html {
     background-color: rgb(6, 6, 46);
     margin: 0px;
     color: whitesmoke;
-    font-family: 'Benne', serif;
+    font-family: "Benne", serif;
 }
 
 .mr-10 {

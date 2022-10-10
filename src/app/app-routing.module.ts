@@ -6,14 +6,15 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
-  {path: 'home',component: MainComponent},
-  {path: 'home/detail', component: DetailViewComponent},
-  {path: 'home/imprint', component: ImprintComponent},
-  {path: 'home/data-protection', component: DataProtectionComponent}
+  { path: '', component: MainComponent },
+  { path: 'home', component: MainComponent },
+  { path: 'home/detail', component: DetailViewComponent },
+  { path: 'home/imprint', component: ImprintComponent },
+  { path: 'home/data-protection', component: DataProtectionComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

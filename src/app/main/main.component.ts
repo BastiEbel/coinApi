@@ -1,4 +1,10 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { UrlCoinService } from '../services/url-coin.service';
 import zoomPlugin from 'chartjs-plugin-zoom';
@@ -6,7 +12,7 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
   result: any = [];
@@ -18,7 +24,9 @@ export class MainComponent implements OnInit {
   isactive = false;
   date = new Date();
   p = 1;
-  pages = Array(Math.ceil(100 / 2)).fill(null).map((_, i) => ({ label: i, value: i }));
+  pages = Array(Math.ceil(100 / 2))
+    .fill(null)
+    .map((_, i) => ({ label: i, value: i }));
 
   @ViewChild('myChart') canvas: ElementRef;
 
@@ -48,7 +56,6 @@ export class MainComponent implements OnInit {
     await this.service.getFullList().then((res) => {
       this.result = res;
       this.service.data$ = this.coinName;
-      console.log('result', res);
     });
     this.getDailyData();
   }
@@ -61,18 +68,23 @@ export class MainComponent implements OnInit {
     let currentDate: any = [];
     let timestamp;
     await this.service.getPriceDaily().then((price) => {
-      console.log(price);
       this.ctxResult = price['prices'].map((coin: any) => coin);
-      this.coinPrice = this.ctxResult.map((currentCoin: any) => currentCoin['1']);
+      this.coinPrice = this.ctxResult.map(
+        (currentCoin: any) => currentCoin['1']
+      );
       for (let i = 0; i < this.ctxResult.length; i++) {
         timestamp = this.ctxResult[i]['0'];
-        let timeFormat: any = { formatMatcher: 'basic', hour: 'numeric', minute: 'numeric', hourCycle: 'h24' };
+        let timeFormat: any = {
+          formatMatcher: 'basic',
+          hour: 'numeric',
+          minute: 'numeric',
+          hourCycle: 'h24',
+        };
         currentDate = new Date(timestamp).toLocaleTimeString('de', timeFormat);
         this.coindate.push(currentDate);
       }
       this.renderPrice();
     });
-
   }
 
   /**
@@ -82,7 +94,9 @@ export class MainComponent implements OnInit {
   async changeChart() {
     await this.service.getDailyCoins().then((newPrice) => {
       this.ctxResult = newPrice['prices'].map((coin: any) => coin);
-      this.coinPrice = this.ctxResult.map((currentCoin: any) => currentCoin['1']);
+      this.coinPrice = this.ctxResult.map(
+        (currentCoin: any) => currentCoin['1']
+      );
     });
   }
 
@@ -101,7 +115,7 @@ export class MainComponent implements OnInit {
     ctx.backgroundColor = gradientFill;
     ctx.strokeStyle = gradientFill;
 
-    return gradientFill
+    return gradientFill;
   }
 
   /**
@@ -129,42 +143,44 @@ export class MainComponent implements OnInit {
       type: 'line',
       data: {
         labels: this.coindate,
-        datasets: [{
-          label: `24h View ${this.coinName}`,
-          data: this.coinPrice,
-          borderWidth: 2,
-          fill: true,
-          pointRadius: 2,
-          pointStyle: 'point',
-          backgroundColor: this.canvasColor(),
-          pointBackgroundColor: 'transparent',
-          pointBorderWidth: 1,
-          borderColor: '#f5f5f5',
-        }]
+        datasets: [
+          {
+            label: `24h View ${this.coinName}`,
+            data: this.coinPrice,
+            borderWidth: 2,
+            fill: true,
+            pointRadius: 2,
+            pointStyle: 'point',
+            backgroundColor: this.canvasColor(),
+            pointBackgroundColor: 'transparent',
+            pointBorderWidth: 1,
+            borderColor: '#f5f5f5',
+          },
+        ],
       },
       options: {
         responsive: true,
         scales: {
           y: {
             ticks: {
-              color: '#f5f5f5'
-            }
+              color: '#f5f5f5',
+            },
           },
           x: {
             beginAtZero: true,
             ticks: {
-              color: '#f5f5f5'
-            }
-          }
+              color: '#f5f5f5',
+            },
+          },
         },
         plugins: {
           legend: {
             labels: {
-              color: "#f5f5f5"
-            }
-          }
-        }
-      }
+              color: '#f5f5f5',
+            },
+          },
+        },
+      },
     });
   }
 
