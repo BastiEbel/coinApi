@@ -1,13 +1,8 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { UrlCoinService } from '../services/url-coin.service';
 import zoomPlugin from 'chartjs-plugin-zoom';
+import { RenderService } from '../services/render.service';
 
 @Component({
   selector: 'app-main',
@@ -15,29 +10,31 @@ import zoomPlugin from 'chartjs-plugin-zoom';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  result: any = [];
-  ctxResult: any = [];
-  coinPrice: object = {};
   coinName: any = 'Bitcoin';
-  coindate: any = [];
   chart: any;
   isactive = false;
-  date = new Date();
+
   p = 1;
+
   pages = Array(Math.ceil(100 / 2))
     .fill(null)
     .map((_, i) => ({ label: i, value: i }));
 
   @ViewChild('myChart') canvas: ElementRef;
 
-  constructor(public service: UrlCoinService) {
+  constructor(
+    public service: UrlCoinService,
+    public renderService: RenderService
+  ) {
     Chart.register(...registerables);
     Chart.register(zoomPlugin);
   }
 
   ngOnInit(): void {
-    this.getData();
+    this.renderData();
   }
+
+  ngAfterViewInit() {}
 
   /**
    *
@@ -48,15 +45,8 @@ export class MainComponent implements OnInit {
     this.p = event;
   }
 
-  /**
-   * this function gets the data from the service
-   *
-   */
-  async getData() {
-    await this.service.getFullList().then((res) => {
-      this.result = res;
-      this.service.data$ = this.coinName;
-    });
+  renderData() {
+    this.renderService.getData();
     this.getDailyData();
   }
 
@@ -65,39 +55,30 @@ export class MainComponent implements OnInit {
    * this function give the first data to the chart if is load
    */
   async getDailyData() {
-    let currentDate: any = [];
-    let timestamp;
     await this.service.getPriceDaily().then((price) => {
-      this.ctxResult = price['prices'].map((coin: any) => coin);
-      this.coinPrice = this.ctxResult.map(
+      this.renderService.ctxResult = price['prices'].map((coin: any) => coin);
+      this.renderService.coinPrice = this.renderService.ctxResult.map(
         (currentCoin: any) => currentCoin['1']
       );
-      for (let i = 0; i < this.ctxResult.length; i++) {
-        timestamp = this.ctxResult[i]['0'];
-        let timeFormat: any = {
-          formatMatcher: 'basic',
-          hour: 'numeric',
-          minute: 'numeric',
-          hourCycle: 'h24',
-        };
-        currentDate = new Date(timestamp).toLocaleTimeString('de', timeFormat);
-        this.coindate.push(currentDate);
-      }
-      this.renderPrice();
     });
+    this.renderService.getDailyTime();
+    this.renderChart();
   }
 
   /**
    *
-   * this function update the Chart with the new query
+   * @param id give the id to the service and put it in the url
+   *
    */
-  async changeChart() {
-    await this.service.getDailyCoins().then((newPrice) => {
-      this.ctxResult = newPrice['prices'].map((coin: any) => coin);
-      this.coinPrice = this.ctxResult.map(
-        (currentCoin: any) => currentCoin['1']
-      );
-    });
+  selectedCoin(id) {
+    this.service.data$ = this.coinName;
+    for (let i = 0; i < this.renderService.result.length; i++) {
+      if (id == this.renderService.result[i]['id']) {
+        this.service.data$ = id;
+        this.coinName = this.renderService.result[i]['name'];
+      }
+    }
+    this.renderCurrentPrice();
   }
 
   /**
@@ -119,34 +100,18 @@ export class MainComponent implements OnInit {
   }
 
   /**
-   *
-   * @param id give the id to the service and put it in the url
-   *
-   */
-  selectedCoin(id) {
-    this.service.data$ = this.coinName;
-    for (let i = 0; i < this.result.length; i++) {
-      if (id == this.result[i]['id']) {
-        this.service.data$ = id;
-        this.coinName = this.result[i]['name'];
-      }
-    }
-    this.renderCurrentPrice();
-  }
-
-  /**
-   * this function renders the current price in the chart
+   * this function renders the current price in the  big chart
    *
    */
-  renderPrice() {
+  renderChart() {
     this.chart = new Chart('myChart', {
       type: 'line',
       data: {
-        labels: this.coindate,
+        labels: this.renderService.coindate,
         datasets: [
           {
             label: `24h View ${this.coinName}`,
-            data: this.coinPrice,
+            data: this.renderService.coinPrice,
             borderWidth: 2,
             fill: true,
             pointRadius: 2,
@@ -183,15 +148,14 @@ export class MainComponent implements OnInit {
       },
     });
   }
-
   /**
    * this function updates the chart
    *
    */
-  async renderCurrentPrice() {
+  renderCurrentPrice() {
     this.chart.destroy();
-    await this.changeChart();
-    this.renderPrice();
+    this.renderService.changeChart();
+    this.renderChart();
     this.chart.render();
   }
 }

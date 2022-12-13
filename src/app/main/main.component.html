@@ -1,38 +1,72 @@
 <loading *ngIf="service.isLoading">{{ service.isLoading }}</loading>
 <app-menu></app-menu>
-<span class="container-header"><h1>Coin Chart</h1></span>
 <div class="main-container">
-    <div class="main">
-        <div class="container">
-            <canvas class="container-info" #myChart id="myChart">{{ chart }}</canvas>
+  <div class="main">
+    <div class="container">
+      <canvas class="container-info" #myChart id="myChart">{{ chart }}</canvas>
+    </div>
+    <div class="coin-main-container">
+      <div
+        (click)="isactive = results"
+        (click)="selectedCoin(results.id)"
+        [class.active]="results === isactive"
+        class="coin-container"
+        *ngFor="
+          let results of renderService.result
+            | paginate : { itemsPerPage: 4, currentPage: p };
+          let i = index
+        "
+      >
+        <div class="headline ml-32 mr-32">
+          <img src="{{ results.image }}" />
+          <span class="name-color"> {{ results.name }}</span>
         </div>
-        <div class="coin-main-container">
-            <div (click)="isactive = results" (click)="selectedCoin(results.id)" [class.active]="results === isactive" class="coin-container" *ngFor="let results of result | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
-                <img class="ml-16" src="{{ results.image }}">
-                <span class="single-info"><span class="name-color">Name:</span> {{ results.name }}</span>
-                <span class="single-info" [ngClass]="results.price_change_percentage_24h >= 0 ? 'plus-number' : 'minus-number'"><span class="name-color">Name:</span> {{ results.price_change_percentage_24h.toFixed(2) }}%</span>
-                <span class="mr-16 single-info"><span class="name-color">Price:</span> {{ results.current_price.toFixed(2) }} €</span>
-            </div>
-        </div>
-    </div>
-</div>
-<pagination-template #pagination="paginationApi" (pageChange)="onPageEvent($event)">
-    <div class="pagination-previous border-none" [class.disabled]="pagination.isFirstPage()">
-        <a *ngIf="!pagination.isFirstPage()" (click)="pagination.previous()">
-            < </a>
-    </div>
-    <div (click)="pagination.setCurrent(page.value)" *ngFor="let page of pagination.pages" [class.current]="pagination.getCurrent() === page.value">
-        <a *ngIf="pagination.getCurrent() !== page.value">
-            <span>{{ page.label }}</span>
-        </a>
-        <div *ngIf="pagination.getCurrent() === page.value">
-            <span>{{ page.label }}</span>
-        </div>
-    </div>
-    <div class="pagination-next border-none" [class.disabled]="pagination.isLastPage()">
-        <a *ngIf="!pagination.isLastPage()" (click)="pagination.next()"> > </a>
-    </div>
-</pagination-template>
-<p>Last update: {{ date | date: 'dd.MM.yyyy' }}</p>
 
-<app-footer></app-footer>
+        <span
+          class="single-info ml-32 mr-32"
+          [ngClass]="
+            results.price_change_percentage_24h >= 0
+              ? 'plus-number'
+              : 'minus-number'
+          "
+          ><span class="name-color">Price changes</span>
+          {{ results.price_change_percentage_24h.toFixed(2) }}%</span
+        >
+        <span class="ml-32 mr-32 single-info"
+          ><span class="name-color">Price</span>
+          {{ results.current_price.toFixed(2) }} €</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<pagination-template
+  #pagination="paginationApi"
+  (pageChange)="onPageEvent($event)"
+>
+  <div
+    class="pagination-previous border-none"
+    [class.disabled]="pagination.isFirstPage()"
+  >
+    <a *ngIf="!pagination.isFirstPage()" (click)="pagination.previous()"> < </a>
+  </div>
+  <div
+    (click)="pagination.setCurrent(page.value)"
+    *ngFor="let page of pagination.pages"
+    [class.current]="pagination.getCurrent() === page.value"
+  >
+    <a *ngIf="pagination.getCurrent() !== page.value">
+      <span>{{ page.label }}</span>
+    </a>
+    <div *ngIf="pagination.getCurrent() === page.value">
+      <span>{{ page.label }}</span>
+    </div>
+  </div>
+  <div
+    class="pagination-next border-none"
+    [class.disabled]="pagination.isLastPage()"
+  >
+    <a *ngIf="!pagination.isLastPage()" (click)="pagination.next()"> > </a>
+  </div>
+</pagination-template>
+<p>Last update: {{ renderService.date | date : "dd.MM.yyyy" }}</p>

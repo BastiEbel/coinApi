@@ -3,11 +3,21 @@
     padding-right: 6%;
     padding-left: 6%;
     border-bottom: 1px solid white;
-    background-color: rgba(36, 36, 92, 0.5);
+    background-color: rgb(0, 0, 0);
     box-shadow: 7px 0px 17px 0px rgba(255, 255, 255, 0.6);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    img {
+        height: 40px;
+        width: 40px;
+        margin-right: 20px;
+    }
 }
 
 .navigation {
@@ -41,70 +51,63 @@
     }
 }
 
-
 /* IPhone SE */
 
-@media screen and ( width: 375px) and ( height: 667px) {
+@media screen and (width: 375px) and (height: 667px) {
     .button-info {
         width: 100px;
         font-size: large;
     }
 }
-
 
 /*iPhone XR*/
 
-@media screen and ( width: 414px) and ( height: 896px) {
+@media screen and (width: 414px) and (height: 896px) {
     .button-info {
         width: 100px;
         font-size: large;
     }
 }
-
 
 /*iPhone 12 Pro*/
 
-@media screen and ( width: 390px) and ( height: 844px) {
+@media screen and (width: 390px) and (height: 844px) {
     .button-info {
         width: 100px;
         font-size: large;
     }
 }
-
 
 /*Pixel 5*/
 
-@media screen and ( width: 393px) and ( height: 851px) {
+@media screen and (width: 393px) and (height: 851px) {
     .button-info {
         width: 100px;
         font-size: large;
     }
 }
-
 
 /*Samsung S8*/
 
-@media screen and ( width: 360px) and ( height: 740px) {
+@media screen and (width: 360px) and (height: 740px) {
     .button-info {
         width: 100px;
         font-size: large;
     }
 }
-
 
 /* Samsung S20 */
 
-@media screen and ( width: 412px) and ( height: 915px) {
+@media screen and (width: 412px) and (height: 915px) {
     .button-info {
         width: 100px;
         font-size: large;
     }
 }
 
-
 /* Surface Duo */
 
-@media screen and ( width: 540px) and ( height: 720px) {
+@media screen and (width: 540px) and (height: 720px) {
     .button-info {
         width: 90px;
         font-size: medium;
@@ -117,11 +120,10 @@
         height: 32px;
     }
 }
-
 
 /* Galaxy Fold */
 
-@media screen and ( width: 280px) and ( height: 653px) {
+@media screen and (width: 280px) and (height: 653px) {
     .button-info {
         width: 90px;
         font-size: medium;
@@ -135,10 +137,9 @@
     }
 }
 
-
 /*Galaxy A51/71*/
 
-@media screen and ( width: 412px) and ( height: 914px) {
+@media screen and (width: 412px) and (height: 914px) {
     .button-info {
         width: 100px;
         font-size: medium;
