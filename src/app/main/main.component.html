@@ -3,44 +3,49 @@
 <div class="main-container">
   <div class="main">
     <div class="container">
-      <canvas class="container-info" #myChart id="myChart">{{ chart }}</canvas>
+      <div class="container-info">
+        <canvas class="chart-info" #myChart id="myChart">{{ chart }}</canvas>
+      </div>
     </div>
     <div class="coin-main-container">
-      <div
-        (click)="isactive = results"
-        (click)="selectedCoin(results.id)"
-        [class.active]="results === isactive"
-        class="coin-container"
-        *ngFor="
-          let results of renderService.result
-            | paginate : { itemsPerPage: 4, currentPage: p };
-          let i = index
-        "
-      >
-        <div class="headline ml-32 mr-32">
-          <img src="{{ results.image }}" />
-          <span class="name-color"> {{ results.name }}</span>
-        </div>
-
-        <span
-          class="single-info ml-32 mr-32"
-          [ngClass]="
-            results.price_change_percentage_24h >= 0
-              ? 'plus-number'
-              : 'minus-number'
+      <drag-scroll #nav [scroll-x-wheel-enabled]="true">
+        <div
+          drag-scroll-item
+          (click)="isactive = results"
+          (click)="selectedCoin(results.id)"
+          [class.active]="results === isactive"
+          class="coin-container"
+          *ngFor="
+            let results of renderService.result
+              | paginate : { itemsPerPage: 6, currentPage: p };
+            let i = index
           "
-          ><span class="name-color">Price changes</span>
-          {{ results.price_change_percentage_24h.toFixed(2) }}%</span
         >
-        <span class="ml-32 mr-32 single-info"
-          ><span class="name-color">Price</span>
-          {{ results.current_price.toFixed(2) }} €</span
-        >
-      </div>
+          <div class="headline ml-32 mr-32">
+            <img src="{{ results.image }}" />
+            <span class="name-color"> {{ results.name }}</span>
+          </div>
+
+          <span
+            class="single-info ml-32 mr-32"
+            [ngClass]="
+              results.price_change_percentage_24h >= 0
+                ? 'plus-number'
+                : 'minus-number'
+            "
+            ><span class="name-color">Price changes</span>
+            {{ results.price_change_percentage_24h.toFixed(2) }}%</span
+          >
+          <span class="ml-32 mr-32 single-info"
+            ><span class="name-color">Price</span>
+            {{ results.current_price.toFixed(2) }} €</span
+          >
+        </div>
+      </drag-scroll>
     </div>
   </div>
 </div>
-<pagination-template
+<!-- <pagination-template
   #pagination="paginationApi"
   (pageChange)="onPageEvent($event)"
 >
@@ -68,5 +73,5 @@
   >
     <a *ngIf="!pagination.isLastPage()" (click)="pagination.next()"> > </a>
   </div>
-</pagination-template>
+</pagination-template> -->
 <p>Last update: {{ renderService.date | date : "dd.MM.yyyy" }}</p>

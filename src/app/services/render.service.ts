@@ -18,8 +18,6 @@ export class RenderService {
   async getData() {
     await this.service.getFullList().then((res) => {
       this.result = res;
-      //this.service.data$ = this.coinName;
-      console.log(this.result);
     });
   }
 

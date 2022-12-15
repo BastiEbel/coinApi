@@ -12,7 +12,7 @@ import { RenderService } from '../services/render.service';
 export class MainComponent implements OnInit {
   coinName: any = 'Bitcoin';
   chart: any;
-  isactive = false;
+  isactive: boolean = false;
 
   p = 1;
 
@@ -34,7 +34,13 @@ export class MainComponent implements OnInit {
     this.renderData();
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    if (this.coinName == 'Bitcoin') {
+      this.isactive = true;
+    } else {
+      this.isactive = false;
+    }
+  }
 
   /**
    *

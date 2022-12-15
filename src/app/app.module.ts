@@ -14,11 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SingleViewComponent } from './single-view/single-view.component';
 import { LoadingComponent } from './services/loading';
 
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { DragScrollModule } from 'ngx-drag-scroll';
 import { NgxPaginationModule } from 'ngx-pagination';
-
 
 @NgModule({
   declarations: [
@@ -30,7 +29,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     DataProtectionComponent,
     FooterComponent,
     SingleViewComponent,
-    LoadingComponent
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,9 +38,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BrowserAnimationsModule,
     MatDialogModule,
     NgxPaginationModule,
-    MatProgressSpinnerModule
+    DragScrollModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
