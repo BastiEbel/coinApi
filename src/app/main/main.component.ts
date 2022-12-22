@@ -1,8 +1,17 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { UrlCoinService } from '../services/url-coin.service';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import { RenderService } from '../services/render.service';
+import { DragScrollComponent } from 'ngx-drag-scroll';
+import { ViewportScroller } from '@angular/common';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -13,14 +22,48 @@ export class MainComponent implements OnInit {
   coinName: any = 'Bitcoin';
   chart: any;
   isactive: boolean = false;
-
-  p = 1;
-
-  pages = Array(Math.ceil(100 / 2))
-    .fill(null)
-    .map((_, i) => ({ label: i, value: i }));
-
+  arrowLeft: boolean = false;
+  arrowRight: boolean = false;
   @ViewChild('myChart') canvas: ElementRef;
+  @ViewChild('nav', { read: DragScrollComponent }) ds: DragScrollComponent;
+
+  moveLeft() {
+    this.ds.moveLeft();
+    setTimeout(() => {
+      if (this.ds.currIndex != 0) {
+        this.arrowLeft = false;
+      } else {
+        this.arrowLeft = true;
+      }
+      if (this.ds.currIndex != 47) {
+        this.arrowRight = false;
+      } else {
+        this.arrowRight = true;
+      }
+    }, 0.25);
+  }
+
+  moveRight() {
+    this.ds.moveRight();
+    setTimeout(() => {
+      console.log(this.ds.currIndex);
+
+      if (this.ds.currIndex != 0) {
+        this.arrowLeft = false;
+      } else {
+        this.arrowLeft = true;
+      }
+      if (this.ds.currIndex < 49) {
+        this.arrowRight = false;
+      } else {
+        this.arrowRight = true;
+      }
+    }, 0.25);
+  }
+
+  moveTo(index) {
+    this.ds.moveTo(index);
+  }
 
   constructor(
     public service: UrlCoinService,
@@ -33,22 +76,12 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.renderData();
   }
-
+  ngOnChanges() {}
   ngAfterViewInit() {
-    if (this.coinName == 'Bitcoin') {
-      this.isactive = true;
-    } else {
-      this.isactive = false;
-    }
-  }
-
-  /**
-   *
-   * @param event it`s important to switch the page
-   *
-   */
-  onPageEvent(event: any) {
-    this.p = event;
+    setTimeout(() => {
+      this.ds.moveTo(0);
+      this.arrowLeft = true;
+    }, 0);
   }
 
   renderData() {

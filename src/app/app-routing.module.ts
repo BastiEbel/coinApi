@@ -8,7 +8,7 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'home', component: MainComponent },
-  { path: 'home/detail', component: DetailViewComponent },
+  { path: 'detail', component: DetailViewComponent },
   { path: 'home/imprint', component: ImprintComponent },
   { path: 'home/data-protection', component: DataProtectionComponent },
 ];
