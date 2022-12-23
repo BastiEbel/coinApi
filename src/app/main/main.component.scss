@@ -11,10 +11,10 @@ p {
 .main-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* 
     margin-top: 16px;
     margin-bottom: 16px;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 300px); */
     overflow: hidden;
     white-space: nowrap;
 }
@@ -31,32 +31,60 @@ p {
 }
 
 .container {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
-
+.container-exchange {
+    width: 25%;
+    height: 50vh;
+    border-radius: 15px;
+    background-color: rgb(25, 25, 25);
+    margin: 32px 32px 0px 32px;
+}
 canvas {
-    max-width: 45vw !important;
-    height: 35vh !important;
+    width: 100% !important;
+    height: 43vh !important;
+    margin-bottom: 16px;
 }
 
 .container-info {
-    height: 40vh;
+    height: 50vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: rgb(15, 15, 15);
-}
-.chart-info {
-    font-size: x-large;
-    border-radius: 6px;
+    margin-top: 32px;
+    margin-right: 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(25, 25, 25);
+    .chart-info {
+        font-size: x-large;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .container-btn {
+        width: 100%;
+        margin: 16px 0px 0px 0px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        button {
+            background-color: rgb(25, 25, 25);
+            margin-left: 16px;
+            color: #f7f4f4;
+            width: 80px;
+            height: 30px;
+            border-radius: 15px;
+            border: 1px solid white;
+        }
+    }
 }
+
 .info {
     border-color: #f7f4f4;
     max-width: 200px !important;
@@ -98,9 +126,7 @@ img {
 .coin-main-container {
     height: 210px;
     margin-top: 16px;
-    margin-left: 24px;
-    margin-right: 24px;
-    width: 95%;
+    width: 98%;
     display: flex;
     justify-content: space-between;
     overflow: hidden !important;
@@ -117,16 +143,16 @@ drag-scroll::-webkit-scrollbar {
     padding: 16px 0px 16px 0px;
     margin-right: 12px;
     margin-left: 12px;
-    margin-top: 20px;
-    background-color: rgb(15, 15, 15);
-    border-radius: 6px;
+    margin-top: 12px;
+    background-color: rgb(25, 25, 25);
+    border-radius: 15px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     transition: 0.225s;
     &:hover {
         cursor: pointer;
-        background-color: rgb(30, 30, 30);
+        background-color: rgb(40, 40, 40);
         transform: scale(1.125);
         z-index: 2;
     }
@@ -139,7 +165,7 @@ drag-scroll::-webkit-scrollbar {
     right: 15px;
     height: 240px;
     width: 80px;
-    bottom: 220px;
+    bottom: 75px;
     background: linear-gradient(to right, transparent, black);
     z-index: 10;
     .img-right {
@@ -169,7 +195,7 @@ drag-scroll::-webkit-scrollbar {
     left: 15px;
     height: 240px;
     width: 80px;
-    bottom: 220px;
+    bottom: 75px;
     background: linear-gradient(to left, transparent, black);
     z-index: 10;
 
@@ -180,7 +206,7 @@ drag-scroll::-webkit-scrollbar {
 }
 
 .active {
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(40, 40, 40);
 }
 
 .minus-number {

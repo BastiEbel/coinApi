@@ -16,8 +16,9 @@ export class RenderService {
    *
    */
   async getData() {
-    await this.service.getFullList().then((res) => {
+    await this.service.getFullList().subscribe((res) => {
       this.result = res;
+      this.service.isLoading = false;
     });
   }
 
@@ -26,7 +27,7 @@ export class RenderService {
    * this function update the Chart with the new query
    */
   async changeChart() {
-    await this.service.getDailyCoins().then((newPrice) => {
+    await this.service.getDailyCoins().subscribe((newPrice) => {
       this.ctxResult = newPrice['prices'].map((coin: any) => coin);
       this.coinPrice = this.ctxResult.map(
         (currentCoin: any) => currentCoin['1']

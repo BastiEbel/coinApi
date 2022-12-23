@@ -27,6 +27,23 @@ export class MainComponent implements OnInit {
   @ViewChild('myChart') canvas: ElementRef;
   @ViewChild('nav', { read: DragScrollComponent }) ds: DragScrollComponent;
 
+  constructor(
+    public service: UrlCoinService,
+    public renderService: RenderService
+  ) {
+    Chart.register(...registerables);
+  }
+
+  ngOnInit(): void {
+    this.renderService.getData();
+    this.getDailyData();
+  }
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.ds.moveTo(0);
+      this.arrowLeft = true;
+    }, 0);
+  }
   moveLeft() {
     this.ds.moveLeft();
     setTimeout(() => {
@@ -65,43 +82,19 @@ export class MainComponent implements OnInit {
     this.ds.moveTo(index);
   }
 
-  constructor(
-    public service: UrlCoinService,
-    public renderService: RenderService
-  ) {
-    Chart.register(...registerables);
-    Chart.register(zoomPlugin);
-  }
-
-  ngOnInit(): void {
-    this.renderData();
-  }
-  ngOnChanges() {}
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.ds.moveTo(0);
-      this.arrowLeft = true;
-    }, 0);
-  }
-
-  renderData() {
-    this.renderService.getData();
-    this.getDailyData();
-  }
-
   /**
    *
    * this function give the first data to the chart if is load
    */
   async getDailyData() {
-    await this.service.getPriceDaily().then((price) => {
+    await this.service.getDailyCoins().subscribe((price) => {
       this.renderService.ctxResult = price['prices'].map((coin: any) => coin);
       this.renderService.coinPrice = this.renderService.ctxResult.map(
         (currentCoin: any) => currentCoin['1']
       );
+      this.renderService.getDailyTime();
+      this.renderChart();
     });
-    this.renderService.getDailyTime();
-    this.renderChart();
   }
 
   /**
@@ -110,10 +103,10 @@ export class MainComponent implements OnInit {
    *
    */
   selectedCoin(id) {
-    this.service.data$ = this.coinName;
+    this.service.dailyCoin = this.coinName;
     for (let i = 0; i < this.renderService.result.length; i++) {
       if (id == this.renderService.result[i]['id']) {
-        this.service.data$ = id;
+        this.service.dailyCoin = id;
         this.coinName = this.renderService.result[i]['name'];
       }
     }
@@ -127,10 +120,9 @@ export class MainComponent implements OnInit {
    */
   canvasColor() {
     const ctx = this.canvas.nativeElement.getContext('2d');
-    let gradientFill = ctx.createLinearGradient(0, 20, 300, 800);
-    gradientFill.addColorStop(0.1, '#13e2a4');
-    gradientFill.addColorStop(0.8, '#e902b3');
-    gradientFill.addColorStop(1, '#e902b3');
+    let gradientFill = ctx.createLinearGradient(0, 20, 100, 800);
+    gradientFill.addColorStop(0.2, 'transparent');
+    gradientFill.addColorStop(1, '#13e2a4');
     ctx.borderColor = 'green';
     ctx.backgroundColor = gradientFill;
     ctx.strokeStyle = gradientFill;
@@ -164,6 +156,7 @@ export class MainComponent implements OnInit {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           y: {
             ticks: {

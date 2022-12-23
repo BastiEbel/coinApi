@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlCoinService } from '../services/url-coin.service';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { SingleViewComponent } from '../single-view/single-view.component';
 
 @Component({
   selector: 'app-detail-view',
   templateUrl: './detail-view.component.html',
-  styleUrls: ['./detail-view.component.scss']
+  styleUrls: ['./detail-view.component.scss'],
 })
 export class DetailViewComponent implements OnInit {
-
-  result:any = [];
+  result: any = [];
   p = 1;
-  pages = Array(Math.ceil(100 / 2)).fill(null).map((_, i) => ({label: i, value: i}));
+  pages = Array(Math.ceil(100 / 2))
+    .fill(null)
+    .map((_, i) => ({ label: i, value: i }));
 
-  constructor(public service: UrlCoinService, public dialog: MatDialog) { }
+  constructor(public service: UrlCoinService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getDetail();
@@ -34,11 +35,11 @@ export class DetailViewComponent implements OnInit {
    * @param results give the info about data for the dialog box
    *
    */
-  openDialog(results: any) :void {
+  openDialog(results: any): void {
     this.dialog.open(SingleViewComponent, {
       maxWidth: '100vw',
       maxHeight: '100vh',
-      data: { results }
+      data: { results },
     });
   }
 
@@ -46,8 +47,8 @@ export class DetailViewComponent implements OnInit {
    *
    * get infos for the Detail view
    */
-  getDetail(){
-    this.service.getFullList().then((res) => {
+  getDetail() {
+    this.service.getFullList().subscribe((res) => {
       this.result = res;
     });
   }
