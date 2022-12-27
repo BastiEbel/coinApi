@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { UrlCoinService } from './url-coin.service';
+import { BehaviorSubject, firstValueFrom, lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RenderService {
+  isactive: boolean = false;
+  arrowLeft: boolean = false;
+  arrowRight: boolean = false;
   result: any = [];
-  ctxResult: any = [];
+
   coindate: any = [];
   date = new Date();
-  coinPrice: object = {};
+
   constructor(private service: UrlCoinService) {}
   /**
    * this function gets the data from the service
@@ -22,24 +26,32 @@ export class RenderService {
     });
   }
 
-  /**
-   *
-   * this function update the Chart with the new query
-   */
-  async changeChart() {
-    await this.service.getDailyCoins().subscribe((newPrice) => {
-      this.ctxResult = newPrice['prices'].map((coin: any) => coin);
-      this.coinPrice = this.ctxResult.map(
-        (currentCoin: any) => currentCoin['1']
-      );
+  /* async changeDailyCoin() {
+    try {
+      this.coinPrice = [];
+      let priceData = await firstValueFrom(this.service.getDailyCoins());
+      this.dailyTime(priceData);
+      priceData['prices'].map((price) => {
+        this.coinPrice.push(price[1]);
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  } */
+
+  dailyTime(priceData) {
+    let getTimeData = [];
+    priceData['prices'].map((getTime) => {
+      getTimeData.push(getTime);
     });
+    this.getDailyTime(getTimeData);
   }
 
-  getDailyTime() {
+  getDailyTime(getTimeData) {
     let currentDate: any = [];
     let timestamp;
-    for (let i = 0; i < this.ctxResult.length; i++) {
-      timestamp = this.ctxResult[i]['0'];
+    for (let i = 0; i < getTimeData.length; i++) {
+      timestamp = getTimeData[i]['0'];
       let timeFormat: any = {
         formatMatcher: 'basic',
         hour: 'numeric',

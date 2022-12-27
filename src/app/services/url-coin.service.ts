@@ -22,17 +22,11 @@ export class UrlCoinService {
     return this.http.get(this.url);
   }
 
-  /* getPriceDaily() {
-    return this.http
-      .get(
-        `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=eur&days=1&interval=minute`
-      )
-      .toPromise()
-      .then((dailyData) => {
-        this.isLoading = false;
-        return dailyData;
-      });
-  } */
+  getPriceDaily() {
+    return this.http.get(
+      `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=eur&days=1&interval=minute`
+    );
+  }
 
   getDailyCoins() {
     return this.http.get(

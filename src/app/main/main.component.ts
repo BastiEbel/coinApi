@@ -1,61 +1,61 @@
 import {
+  AfterViewInit,
+  ChangeDetectorRef,
   Component,
   ElementRef,
-  HostListener,
   OnInit,
   ViewChild,
 } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { UrlCoinService } from '../services/url-coin.service';
-import zoomPlugin from 'chartjs-plugin-zoom';
 import { RenderService } from '../services/render.service';
 import { DragScrollComponent } from 'ngx-drag-scroll';
-import { ViewportScroller } from '@angular/common';
-import { fromEvent } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, AfterViewInit {
   coinName: any = 'Bitcoin';
-  chart: any;
-  isactive: boolean = false;
-  arrowLeft: boolean = false;
-  arrowRight: boolean = false;
+  myChart: any;
+  coinPrice: any = [];
+
   @ViewChild('myChart') canvas: ElementRef;
   @ViewChild('nav', { read: DragScrollComponent }) ds: DragScrollComponent;
 
   constructor(
     public service: UrlCoinService,
-    public renderService: RenderService
+    public renderService: RenderService,
+    private cdref: ChangeDetectorRef
   ) {
     Chart.register(...registerables);
   }
 
-  ngOnInit(): void {
-    this.renderService.getData();
-    this.getDailyData();
-  }
+  ngOnInit(): void {}
+
   ngAfterViewInit() {
+    this.renderService.getData();
+    this.updateChart();
+    this.cdref.detectChanges();
     setTimeout(() => {
       this.ds.moveTo(0);
-      this.arrowLeft = true;
+      this.renderService.arrowLeft = true;
     }, 0);
   }
   moveLeft() {
     this.ds.moveLeft();
     setTimeout(() => {
       if (this.ds.currIndex != 0) {
-        this.arrowLeft = false;
+        this.renderService.arrowLeft = false;
       } else {
-        this.arrowLeft = true;
+        this.renderService.arrowLeft = true;
       }
       if (this.ds.currIndex != 47) {
-        this.arrowRight = false;
+        this.renderService.arrowRight = false;
       } else {
-        this.arrowRight = true;
+        this.renderService.arrowRight = true;
       }
     }, 0.25);
   }
@@ -63,17 +63,15 @@ export class MainComponent implements OnInit {
   moveRight() {
     this.ds.moveRight();
     setTimeout(() => {
-      console.log(this.ds.currIndex);
-
       if (this.ds.currIndex != 0) {
-        this.arrowLeft = false;
+        this.renderService.arrowLeft = false;
       } else {
-        this.arrowLeft = true;
+        this.renderService.arrowLeft = true;
       }
       if (this.ds.currIndex < 49) {
-        this.arrowRight = false;
+        this.renderService.arrowRight = false;
       } else {
-        this.arrowRight = true;
+        this.renderService.arrowRight = true;
       }
     }, 0.25);
   }
@@ -82,19 +80,30 @@ export class MainComponent implements OnInit {
     this.ds.moveTo(index);
   }
 
+  async updateChart() {
+    try {
+      await this.getDailyData();
+      this.drawChart();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   /**
    *
    * this function give the first data to the chart if is load
    */
   async getDailyData() {
-    await this.service.getDailyCoins().subscribe((price) => {
-      this.renderService.ctxResult = price['prices'].map((coin: any) => coin);
-      this.renderService.coinPrice = this.renderService.ctxResult.map(
-        (currentCoin: any) => currentCoin['1']
-      );
-      this.renderService.getDailyTime();
-      this.renderChart();
-    });
+    try {
+      this.coinPrice = [];
+      let data = await firstValueFrom(this.service.getDailyCoins());
+      this.renderService.dailyTime(data);
+      data['prices'].map((price) => {
+        this.coinPrice.push(price['1']);
+      });
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   /**
@@ -103,14 +112,19 @@ export class MainComponent implements OnInit {
    *
    */
   selectedCoin(id) {
-    this.service.dailyCoin = this.coinName;
     for (let i = 0; i < this.renderService.result.length; i++) {
       if (id == this.renderService.result[i]['id']) {
         this.service.dailyCoin = id;
         this.coinName = this.renderService.result[i]['name'];
       }
     }
-    this.renderCurrentPrice();
+    debugger;
+    if (Object.keys(this.myChart).length === 0) {
+      this.updateChart();
+    } else {
+      Chart.getChart(this.myChart).destroy();
+      this.updateChart();
+    }
   }
 
   /**
@@ -134,15 +148,15 @@ export class MainComponent implements OnInit {
    * this function renders the current price in the  big chart
    *
    */
-  renderChart() {
-    this.chart = new Chart('myChart', {
+  drawChart() {
+    this.myChart = new Chart('myChart', {
       type: 'line',
       data: {
         labels: this.renderService.coindate,
         datasets: [
           {
             label: `24h View ${this.coinName}`,
-            data: this.renderService.coinPrice,
+            data: this.coinPrice,
             borderWidth: 2,
             fill: true,
             pointRadius: 2,
@@ -172,6 +186,7 @@ export class MainComponent implements OnInit {
         },
         plugins: {
           legend: {
+            display: true,
             labels: {
               color: '#f5f5f5',
             },
@@ -179,15 +194,5 @@ export class MainComponent implements OnInit {
         },
       },
     });
-  }
-  /**
-   * this function updates the chart
-   *
-   */
-  renderCurrentPrice() {
-    this.chart.destroy();
-    this.renderService.changeChart();
-    this.renderChart();
-    this.chart.render();
   }
 }

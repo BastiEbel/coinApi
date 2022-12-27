@@ -10,12 +10,16 @@
           <button>14 days</button>
           <button>30 days</button>
         </div>
-        <canvas class="chart-info" #myChart id="myChart">{{ chart }}</canvas>
+        <canvas class="chart-info" #myChart id="myChart"></canvas>
       </div>
     </div>
 
     <div class="coin-main-container">
-      <div [class.d-none]="arrowLeft" (click)="moveLeft()" class="scroll-left">
+      <div
+        [class.d-none]="renderService.arrowLeft"
+        (click)="moveLeft()"
+        class="scroll-left"
+      >
         <div class="left-container">
           <img
             class="img-left"
@@ -32,9 +36,9 @@
         <div #scroll class="over-coin-container">
           <div
             drag-scroll-item
-            (click)="isactive = results"
+            (click)="renderService.isactive = results"
             (click)="selectedCoin(results.id)"
-            [class.active]="results === isactive"
+            [class.active]="results === renderService.isactive"
             class="coin-container"
             *ngFor="let results of renderService.result; let i = index"
           >
@@ -61,7 +65,7 @@
         </div>
       </drag-scroll>
       <div
-        [class.d-none]="arrowRight"
+        [class.d-none]="renderService.arrowRight"
         (click)="moveRight()"
         class="scroll-right"
       >
