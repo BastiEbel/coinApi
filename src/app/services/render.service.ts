@@ -10,7 +10,7 @@ export class RenderService {
   arrowLeft: boolean = false;
   arrowRight: boolean = false;
   result: any = [];
-
+  coinPrice: any = [];
   coindate: any = [];
   date = new Date();
 
@@ -26,9 +26,8 @@ export class RenderService {
     });
   }
 
-  /* async changeDailyCoin() {
+  async dailyCoinPrice() {
     try {
-      this.coinPrice = [];
       let priceData = await firstValueFrom(this.service.getDailyCoins());
       this.dailyTime(priceData);
       priceData['prices'].map((price) => {
@@ -37,7 +36,7 @@ export class RenderService {
     } catch (err) {
       console.error(err);
     }
-  } */
+  }
 
   dailyTime(priceData) {
     let getTimeData = [];
@@ -61,5 +60,6 @@ export class RenderService {
       currentDate = new Date(timestamp).toLocaleTimeString('de', timeFormat);
       this.coindate.push(currentDate);
     }
+    return this.coindate;
   }
 }

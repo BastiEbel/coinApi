@@ -20,7 +20,6 @@ import { firstValueFrom } from 'rxjs';
 export class MainComponent implements OnInit, AfterViewInit {
   coinName: any = 'Bitcoin';
   myChart: any;
-  coinPrice: any = [];
 
   @ViewChild('myChart') canvas: ElementRef;
   @ViewChild('nav', { read: DragScrollComponent }) ds: DragScrollComponent;
@@ -82,25 +81,10 @@ export class MainComponent implements OnInit, AfterViewInit {
 
   async updateChart() {
     try {
-      await this.getDailyData();
+      this.renderService.coinPrice = [];
+      this.renderService.coindate = [];
+      await this.renderService.dailyCoinPrice();
       this.drawChart();
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  /**
-   *
-   * this function give the first data to the chart if is load
-   */
-  async getDailyData() {
-    try {
-      this.coinPrice = [];
-      let data = await firstValueFrom(this.service.getDailyCoins());
-      this.renderService.dailyTime(data);
-      data['prices'].map((price) => {
-        this.coinPrice.push(price['1']);
-      });
     } catch (err) {
       console.error(err);
     }
@@ -111,20 +95,15 @@ export class MainComponent implements OnInit, AfterViewInit {
    * @param id give the id to the service and put it in the url
    *
    */
-  selectedCoin(id) {
+  async selectedCoin(id) {
     for (let i = 0; i < this.renderService.result.length; i++) {
       if (id == this.renderService.result[i]['id']) {
         this.service.dailyCoin = id;
         this.coinName = this.renderService.result[i]['name'];
       }
     }
-    debugger;
-    if (Object.keys(this.myChart).length === 0) {
-      this.updateChart();
-    } else {
-      Chart.getChart(this.myChart).destroy();
-      this.updateChart();
-    }
+    this.myChart.destroy();
+    this.updateChart();
   }
 
   /**
@@ -156,7 +135,7 @@ export class MainComponent implements OnInit, AfterViewInit {
         datasets: [
           {
             label: `24h View ${this.coinName}`,
-            data: this.coinPrice,
+            data: this.renderService.coinPrice,
             borderWidth: 2,
             fill: true,
             pointRadius: 2,
@@ -178,7 +157,7 @@ export class MainComponent implements OnInit, AfterViewInit {
             },
           },
           x: {
-            beginAtZero: true,
+            //beginAtZero: false,
             ticks: {
               color: '#f5f5f5',
             },
