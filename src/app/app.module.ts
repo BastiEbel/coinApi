@@ -8,7 +8,6 @@ import { MainComponent } from './main/main.component';
 import { DetailViewComponent } from './detail-view/detail-view.component';
 import { MenuComponent } from './menu/menu.component';
 import { ImprintComponent } from './imprint/imprint.component';
-import { DataProtectionComponent } from './data-protection/data-protection.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SingleViewComponent } from './single-view/single-view.component';
@@ -18,6 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CalcComponent } from './calc/calc.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     DetailViewComponent,
     MenuComponent,
     ImprintComponent,
-    DataProtectionComponent,
     FooterComponent,
     SingleViewComponent,
     LoadingComponent,
+    CalcComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,12 +12,14 @@ export class RenderService {
   coinOfMonth: boolean = false;
   arrowLeft: boolean = false;
   arrowRight: boolean = false;
+  coinName: any = 'Bitcoin';
   result: any = [];
   coinPrice: any = [];
   coindate: any = [];
   date = new Date();
 
   constructor(private service: UrlCoinService) {}
+
   /**
    * this function gets the data for the coins
    *

@@ -1,0 +1,56 @@
+canvas {
+    width: 100% !important;
+    height: 42vh !important;
+    margin-bottom: 16px;
+}
+
+.container-info {
+    height: 50vh;
+    width: 100%;
+    margin-top: 32px;
+    margin-right: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(25, 25, 25);
+    .chart-info {
+        font-size: x-large;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .container-btn {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+h3 {
+    font-size: 22px;
+    margin-left: 32px;
+    width: 240px;
+}
+
+.btn {
+    background-color: rgb(25, 25, 25);
+    margin-left: 16px;
+    color: rgba(255, 255, 255, 0.527);
+    padding: 8px;
+    //width: 80px;
+    //height: 30px;
+    border-radius: 15px;
+    border: 1px solid rgb(25, 25, 25);
+    &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+    }
+}
+.isSelected {
+    background-color: black;
+    color: white;
+}

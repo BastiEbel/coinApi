@@ -1,0 +1,27 @@
+<div class="container-info">
+  <div class="container-btn">
+    <h3>24h View {{ renderService.coinName }}</h3>
+    <button
+      [class.isSelected]="renderService.coinOfDay"
+      (click)="dailyChart()"
+      class="btn"
+    >
+      1 day
+    </button>
+    <button
+      [class.isSelected]="renderService.coinOfWeek"
+      (click)="weeklyChart()"
+      class="btn"
+    >
+      14 days
+    </button>
+    <button
+      [class.isSelected]="renderService.coinOfMonth"
+      (click)="monthChart()"
+      class="btn"
+    >
+      30 days
+    </button>
+  </div>
+  <canvas class="chart-info" #myChart id="myChart"></canvas>
+</div>
