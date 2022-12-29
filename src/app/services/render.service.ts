@@ -9,6 +9,7 @@ export class RenderService {
   isactive: boolean = false;
   coinOfDay: boolean = false;
   coinOfWeek: boolean = false;
+  coinOfMonth: boolean = false;
   arrowLeft: boolean = false;
   arrowRight: boolean = false;
   result: any = [];
@@ -28,6 +29,10 @@ export class RenderService {
     });
   }
 
+  /**
+   * function for the daily chart query
+   *
+   */
   async dailyCoinPrice() {
     try {
       let priceData = await firstValueFrom(this.service.getDailyCoins());
@@ -40,6 +45,10 @@ export class RenderService {
     }
   }
 
+  /**
+   * function map to json for the timestamp
+   *
+   */
   dailyTime(priceData) {
     let getTimeData = [];
     priceData['prices'].map((getTime) => {
@@ -49,9 +58,15 @@ export class RenderService {
       this.getDailyTime(getTimeData);
     } else if (this.coinOfWeek) {
       this.getWeeklyTime(getTimeData);
+    } else if (this.coinOfMonth) {
+      this.getWeeklyTime(getTimeData);
     }
   }
 
+  /**
+   * function map to json for the timestamp
+   *
+   */
   getDailyTime(getTimeData) {
     let currentDate: any = [];
     let timestamp;
@@ -68,6 +83,10 @@ export class RenderService {
     }
   }
 
+  /**
+   * function for the two weeks chart query
+   *
+   */
   async weeklyCoinPrice() {
     try {
       let weeklyPriceData = await firstValueFrom(
@@ -81,6 +100,10 @@ export class RenderService {
       console.error(err);
     }
   }
+  /**
+   * function map to json for the timestamp
+   *
+   */
   getWeeklyTime(getTimeData) {
     let currentDate: any = [];
     let timestamp;
@@ -93,6 +116,24 @@ export class RenderService {
       };
       currentDate = new Date(timestamp).toLocaleDateString('de', timeFormat);
       this.coindate.push(currentDate);
+    }
+  }
+
+  /**
+   * function for the tirty days chart query
+   *
+   */
+  async monthCoinPrice() {
+    try {
+      let monthPriceData = await firstValueFrom(
+        this.service.getThirtyDaysCoins()
+      );
+      this.dailyTime(monthPriceData);
+      monthPriceData['prices'].map((monthPrice) => {
+        this.coinPrice.push(monthPrice[1]);
+      });
+    } catch (err) {
+      console.error(err);
     }
   }
 }

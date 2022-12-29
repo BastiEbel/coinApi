@@ -21,7 +21,13 @@
           >
             14 days
           </button>
-          <button class="btn">30 days</button>
+          <button
+            [class.isSelected]="renderService.coinOfMonth"
+            (click)="monthChart()"
+            class="btn"
+          >
+            30 days
+          </button>
         </div>
         <canvas class="chart-info" #myChart id="myChart"></canvas>
       </div>

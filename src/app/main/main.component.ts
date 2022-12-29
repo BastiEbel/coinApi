@@ -98,6 +98,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     try {
       this.renderService.coinOfDay = true;
       this.renderService.coinOfWeek = false;
+      this.renderService.coinOfMonth = false;
       this.clearChart();
       await this.renderService.dailyCoinPrice();
       this.drawChart();
@@ -106,12 +107,34 @@ export class MainComponent implements OnInit, AfterViewInit {
     }
   }
 
+  /**
+   * This function is for rendering weekly prices
+   *
+   */
   async weeklyChart() {
     try {
       this.renderService.coinOfDay = false;
       this.renderService.coinOfWeek = true;
+      this.renderService.coinOfMonth = false;
       this.clearChart();
       await this.renderService.weeklyCoinPrice();
+      this.drawChart();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  /**
+   * This function is for rendering month prices
+   *
+   */
+  async monthChart() {
+    try {
+      this.renderService.coinOfDay = false;
+      this.renderService.coinOfWeek = false;
+      this.renderService.coinOfMonth = true;
+      this.clearChart();
+      await this.renderService.monthCoinPrice();
       this.drawChart();
     } catch (err) {
       console.error(err);
@@ -142,6 +165,8 @@ export class MainComponent implements OnInit, AfterViewInit {
       this.dailyChart();
     } else if (this.renderService.coinOfWeek) {
       this.weeklyChart();
+    } else if (this.renderService.coinOfMonth) {
+      this.monthChart();
     }
   }
 
