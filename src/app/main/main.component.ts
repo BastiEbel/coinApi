@@ -36,13 +36,17 @@ export class MainComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.renderService.getData();
-    this.updateChart();
+    this.dailyChart();
     this.cdref.detectChanges();
     setTimeout(() => {
       this.ds.moveTo(0);
       this.renderService.arrowLeft = true;
     }, 0);
   }
+  /**
+   * function to scroll left about click
+   *
+   */
   moveLeft() {
     this.ds.moveLeft();
     setTimeout(() => {
@@ -58,7 +62,10 @@ export class MainComponent implements OnInit, AfterViewInit {
       }
     }, 0.25);
   }
-
+  /**
+   * function to scroll right about click
+   *
+   */
   moveRight() {
     this.ds.moveRight();
     setTimeout(() => {
@@ -67,26 +74,55 @@ export class MainComponent implements OnInit, AfterViewInit {
       } else {
         this.renderService.arrowLeft = true;
       }
-      if (this.ds.currIndex < 49) {
+      if (this.ds.currIndex < 48) {
         this.renderService.arrowRight = false;
       } else {
         this.renderService.arrowRight = true;
       }
-    }, 0.25);
+    }, 0.5);
   }
 
+  /**
+   * function scrolls to the correct position at first load
+   *
+   */
   moveTo(index) {
     this.ds.moveTo(index);
   }
 
-  async updateChart() {
+  /**
+   * This function is for rendering daily prices
+   *
+   */
+  async dailyChart() {
     try {
-      this.renderService.coinPrice = [];
-      this.renderService.coindate = [];
+      this.renderService.coinOfDay = true;
+      this.renderService.coinOfWeek = false;
+      this.clearChart();
       await this.renderService.dailyCoinPrice();
       this.drawChart();
     } catch (err) {
       console.error(err);
+    }
+  }
+
+  async weeklyChart() {
+    try {
+      this.renderService.coinOfDay = false;
+      this.renderService.coinOfWeek = true;
+      this.clearChart();
+      await this.renderService.weeklyCoinPrice();
+      this.drawChart();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  clearChart() {
+    this.renderService.coinPrice = [];
+    this.renderService.coindate = [];
+    if (this.myChart) {
+      this.myChart.destroy();
     }
   }
 
@@ -102,8 +138,11 @@ export class MainComponent implements OnInit, AfterViewInit {
         this.coinName = this.renderService.result[i]['name'];
       }
     }
-    this.myChart.destroy();
-    this.updateChart();
+    if (this.renderService.coinOfDay) {
+      this.dailyChart();
+    } else if (this.renderService.coinOfWeek) {
+      this.weeklyChart();
+    }
   }
 
   /**
@@ -124,7 +163,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   /**
-   * this function renders the current price in the  big chart
+   * this function renders the Chart
    *
    */
   drawChart() {
@@ -165,7 +204,7 @@ export class MainComponent implements OnInit, AfterViewInit {
         },
         plugins: {
           legend: {
-            display: true,
+            display: false,
             labels: {
               color: '#f5f5f5',
             },

@@ -6,9 +6,22 @@
       <div class="container-exchange"></div>
       <div class="container-info">
         <div class="container-btn">
-          <button>1 day</button>
-          <button>14 days</button>
-          <button>30 days</button>
+          <h3>24h View {{ coinName }}</h3>
+          <button
+            [class.isSelected]="renderService.coinOfDay"
+            (click)="dailyChart()"
+            class="btn"
+          >
+            1 day
+          </button>
+          <button
+            [class.isSelected]="renderService.coinOfWeek"
+            (click)="weeklyChart()"
+            class="btn"
+          >
+            14 days
+          </button>
+          <button class="btn">30 days</button>
         </div>
         <canvas class="chart-info" #myChart id="myChart"></canvas>
       </div>
@@ -30,7 +43,7 @@
       </div>
       <drag-scroll
         style="align-items: center"
-        [scroll-x-wheel-enabled]="false"
+        [scroll-x-wheel-enabled]="true"
         #nav
       >
         <div #scroll class="over-coin-container">

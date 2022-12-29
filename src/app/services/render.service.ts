@@ -7,6 +7,8 @@ import { BehaviorSubject, firstValueFrom, lastValueFrom } from 'rxjs';
 })
 export class RenderService {
   isactive: boolean = false;
+  coinOfDay: boolean = false;
+  coinOfWeek: boolean = false;
   arrowLeft: boolean = false;
   arrowRight: boolean = false;
   result: any = [];
@@ -16,7 +18,7 @@ export class RenderService {
 
   constructor(private service: UrlCoinService) {}
   /**
-   * this function gets the data from the service
+   * this function gets the data for the coins
    *
    */
   async getData() {
@@ -43,7 +45,11 @@ export class RenderService {
     priceData['prices'].map((getTime) => {
       getTimeData.push(getTime);
     });
-    this.getDailyTime(getTimeData);
+    if (this.coinOfDay) {
+      this.getDailyTime(getTimeData);
+    } else if (this.coinOfWeek) {
+      this.getWeeklyTime(getTimeData);
+    }
   }
 
   getDailyTime(getTimeData) {
@@ -60,6 +66,33 @@ export class RenderService {
       currentDate = new Date(timestamp).toLocaleTimeString('de', timeFormat);
       this.coindate.push(currentDate);
     }
-    return this.coindate;
+  }
+
+  async weeklyCoinPrice() {
+    try {
+      let weeklyPriceData = await firstValueFrom(
+        this.service.getTwoWeekCoins()
+      );
+      this.dailyTime(weeklyPriceData);
+      weeklyPriceData['prices'].map((weeklyPrice) => {
+        this.coinPrice.push(weeklyPrice[1]);
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  getWeeklyTime(getTimeData) {
+    let currentDate: any = [];
+    let timestamp;
+    for (let i = 0; i < getTimeData.length; i++) {
+      timestamp = getTimeData[i]['0'];
+      let timeFormat: any = {
+        formatMatcher: 'basic',
+        day: 'numeric',
+        month: 'numeric',
+      };
+      currentDate = new Date(timestamp).toLocaleDateString('de', timeFormat);
+      this.coindate.push(currentDate);
+    }
   }
 }

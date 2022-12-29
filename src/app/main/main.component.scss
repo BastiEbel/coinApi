@@ -45,7 +45,7 @@ p {
 }
 canvas {
     width: 100% !important;
-    height: 43vh !important;
+    height: 42vh !important;
     margin-bottom: 16px;
 }
 
@@ -69,20 +69,35 @@ canvas {
     }
     .container-btn {
         width: 100%;
-        margin: 16px 0px 0px 0px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        button {
-            background-color: rgb(25, 25, 25);
-            margin-left: 16px;
-            color: #f7f4f4;
-            width: 80px;
-            height: 30px;
-            border-radius: 15px;
-            border: 1px solid white;
-        }
     }
+}
+h3 {
+    font-size: 22px;
+    margin-left: 32px;
+    margin-right: 96px;
+}
+
+.btn {
+    background-color: rgb(25, 25, 25);
+    margin-left: 16px;
+    color: rgba(255, 255, 255, 0.527);
+    padding: 8px;
+    //width: 80px;
+    //height: 30px;
+    border-radius: 15px;
+    border: 1px solid rgb(25, 25, 25);
+    &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+    }
+}
+.isSelected {
+    background-color: black;
+    color: white;
 }
 
 .info {
@@ -206,7 +221,7 @@ drag-scroll::-webkit-scrollbar {
 }
 
 .active {
-    background-color: rgb(40, 40, 40);
+    background-color: rgb(50, 50, 50);
 }
 
 .minus-number {
