@@ -93,15 +93,12 @@ export class ScrollComponent implements OnInit, AfterViewInit {
       if (id == this.renderService.result[i]['id']) {
         this.service.dailyCoin = id;
         this.renderService.coinName = this.renderService.result[i]['name'];
+        this.renderService.shortName = this.renderService.result[i]['symbol'];
+        this.renderService.currentPrice =
+          this.renderService.result[i]['current_price'];
+        this.renderService.coinImg = this.renderService.result[i]['image'];
       }
     }
     this.selectedCoins.emit();
-    /* if (this.renderService.coinOfDay) {
-      this.chartComponent.dailyChart();
-    } else if (this.renderService.coinOfWeek) {
-      this.chartComponent.weeklyChart();
-    } else if (this.renderService.coinOfMonth) {
-      this.chartComponent.monthChart();
-    } */
   }
 }

@@ -1,1 +1,33 @@
-<div></div>
+<div class="head-container">
+  <p>Exchange</p>
+  <img
+    [src]="imgSrc"
+    (mouseover)="imgSrc = '/assets/icons/circle-hover.png'"
+    (mouseout)="imgSrc = '/assets/icons/circle.png'"
+    alt=""
+  />
+</div>
+<div class="price-container">
+  <p><b>1</b></p>
+  <p class="name-color">{{ renderService.shortName }}</p>
+  <img src="/assets/icons/arrow_forward.png" alt="" />
+  <p>
+    <b>{{ renderService.currentPrice }}</b>
+  </p>
+  <p class="name-color">€</p>
+</div>
+<div class="container-calc">
+  <p>Get</p>
+  <div class="input-container">
+    <input type="text" value="1" />
+    <div class="container-coin-img">
+      <img class="coin-img" src="{{ renderService.coinImg }}" alt="" />
+    </div>
+  </div>
+  <p>Pay</p>
+  <div class="input-container">
+    <input readonly type="text" value="{{ renderService.currentPrice }}" />
+    <p>€</p>
+  </div>
+  <button class="btn-exchange">Exchange</button>
+</div>

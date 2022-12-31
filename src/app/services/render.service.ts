@@ -12,7 +12,10 @@ export class RenderService {
   coinOfMonth: boolean = false;
   arrowLeft: boolean = false;
   arrowRight: boolean = false;
-  coinName: any = 'Bitcoin';
+  coinName: string = 'Bitcoin';
+  shortName: string = 'btc';
+  currentPrice: any;
+  coinImg: any;
   result: any = [];
   coinPrice: any = [];
   coindate: any = [];
@@ -27,6 +30,9 @@ export class RenderService {
   async getData() {
     await this.service.getFullList().subscribe((res) => {
       this.result = res;
+      console.log(this.result);
+      this.currentPrice = this.result[0]['current_price'];
+      this.coinImg = this.result[0]['image'];
       this.service.isLoading = false;
     });
   }

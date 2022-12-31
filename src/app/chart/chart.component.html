@@ -1,24 +1,24 @@
-<div class="container-info">
+<div class="container-info bg-container">
   <div class="container-btn">
     <h3>24h View {{ renderService.coinName }}</h3>
     <button
       [class.isSelected]="renderService.coinOfDay"
       (click)="dailyChart()"
-      class="btn"
+      class="btn bg-container"
     >
       1 day
     </button>
     <button
       [class.isSelected]="renderService.coinOfWeek"
       (click)="weeklyChart()"
-      class="btn"
+      class="btn bg-container"
     >
       14 days
     </button>
     <button
       [class.isSelected]="renderService.coinOfMonth"
       (click)="monthChart()"
-      class="btn"
+      class="btn bg-container"
     >
       30 days
     </button>

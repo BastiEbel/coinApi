@@ -31,12 +31,6 @@ drag-scroll {
     margin-bottom: 16px;
 }
 
-.name-color {
-    font-size: large;
-    display: flex;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.527);
-}
 .coin-container {
     height: 140px;
     width: 300px;
@@ -44,7 +38,6 @@ drag-scroll {
     margin-right: 12px;
     margin-left: 12px;
     margin-top: 12px;
-    background-color: rgb(25, 25, 25);
     border-radius: 15px;
     display: flex;
     justify-content: space-between;

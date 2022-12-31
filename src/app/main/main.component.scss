@@ -21,8 +21,7 @@
     width: 25%;
     height: 50vh;
     border-radius: 15px;
-    background-color: rgb(25, 25, 25);
-    margin: 32px 32px 0px 32px;
+    margin: 32px 24px 0px 24px;
 }
 
 img {
@@ -38,16 +37,6 @@ img {
     display: flex;
     justify-content: space-between;
     overflow: hidden !important;
-}
-
-.minus-number {
-    color: red;
-    font-size: large;
-}
-
-.plus-number {
-    color: rgb(0, 212, 0);
-    font-size: large;
 }
 
 .border-none {

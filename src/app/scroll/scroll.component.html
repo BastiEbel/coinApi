@@ -14,7 +14,7 @@
       (click)="renderService.isactive = results"
       (click)="selectedCoin(results.id)"
       [class.active]="results === renderService.isactive"
-      class="coin-container"
+      class="coin-container bg-container"
       *ngFor="let results of renderService.result; let i = index"
     >
       <div class="headline ml-32 mr-32">
