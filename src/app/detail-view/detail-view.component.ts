@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UrlCoinService } from '../services/url-coin.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SingleViewComponent } from '../single-view/single-view.component';
+import { RenderService } from '../services/render.service';
 
 @Component({
   selector: 'app-detail-view',
@@ -15,7 +16,11 @@ export class DetailViewComponent implements OnInit {
     .fill(null)
     .map((_, i) => ({ label: i, value: i }));
 
-  constructor(public service: UrlCoinService, public dialog: MatDialog) {}
+  constructor(
+    public service: UrlCoinService,
+    public renderService: RenderService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.getDetail();
@@ -47,9 +52,7 @@ export class DetailViewComponent implements OnInit {
    *
    * get infos for the Detail view
    */
-  getDetail() {
-    this.service.getFullList().subscribe((res) => {
-      this.result = res;
-    });
+  async getDetail() {
+    await this.renderService.getData();
   }
 }

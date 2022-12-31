@@ -100,7 +100,7 @@ export class ChartComponent implements OnInit, AfterViewInit {
   canvasColor() {
     const ctx = this.canvas.nativeElement.getContext('2d');
     let gradientFill = ctx.createLinearGradient(0, 20, 100, 800);
-    gradientFill.addColorStop(0.2, 'transparent');
+    gradientFill.addColorStop(0.225, 'transparent');
     gradientFill.addColorStop(1, '#13e2a4');
     ctx.borderColor = 'green';
     ctx.backgroundColor = gradientFill;

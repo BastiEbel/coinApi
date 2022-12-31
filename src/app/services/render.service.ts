@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UrlCoinService } from './url-coin.service';
-import { BehaviorSubject, firstValueFrom, lastValueFrom } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -58,9 +58,7 @@ export class RenderService {
     });
     if (this.coinOfDay) {
       this.getDailyTime(getTimeData);
-    } else if (this.coinOfWeek) {
-      this.getWeeklyTime(getTimeData);
-    } else if (this.coinOfMonth) {
+    } else {
       this.getWeeklyTime(getTimeData);
     }
   }

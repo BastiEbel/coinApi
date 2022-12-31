@@ -1,0 +1,50 @@
+<div
+  [class.d-none]="renderService.arrowLeft"
+  (click)="moveLeft()"
+  class="scroll-left"
+>
+  <div class="left-container">
+    <img class="img-left" src="/assets/icons/arrow-25-64 links.png" alt="" />
+  </div>
+</div>
+<drag-scroll style="align-items: center" [scroll-x-wheel-enabled]="true" #nav>
+  <div #scroll class="over-coin-container">
+    <div
+      drag-scroll-item
+      (click)="renderService.isactive = results"
+      (click)="selectedCoin(results.id)"
+      [class.active]="results === renderService.isactive"
+      class="coin-container"
+      *ngFor="let results of renderService.result; let i = index"
+    >
+      <div class="headline ml-32 mr-32">
+        <img src="{{ results.image }}" />
+        <span class="name-color"> {{ results.name }}</span>
+      </div>
+
+      <span
+        class="single-info ml-32 mr-32"
+        [ngClass]="
+          results.price_change_percentage_24h >= 0
+            ? 'plus-number'
+            : 'minus-number'
+        "
+        ><span class="name-color">Price changes</span>
+        {{ results.price_change_percentage_24h.toFixed(2) }}%</span
+      >
+      <span class="ml-32 mr-32 single-info"
+        ><span class="name-color">Price</span>
+        {{ results.current_price.toFixed(2) }} €</span
+      >
+    </div>
+  </div>
+</drag-scroll>
+<div
+  [class.d-none]="renderService.arrowRight"
+  (click)="moveRight()"
+  class="scroll-right"
+>
+  <div class="left-container">
+    <img class="img-right" src="/assets/icons/arrow-25-64.png" alt="" />
+  </div>
+</div>

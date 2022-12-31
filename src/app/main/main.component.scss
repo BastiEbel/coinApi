@@ -1,20 +1,7 @@
-p {
-    width: 88%;
-    text-align: center;
-    font-size: x-large;
-    margin-right: 6%;
-    margin-left: 6%;
-    margin-top: 24px;
-    margin-bottom: 24px;
-}
-
 .main-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* 
-    margin-top: 16px;
-    margin-bottom: 16px;
-    height: calc(100vh - 300px); */
+    justify-content: center;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -22,12 +9,6 @@ p {
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-.headline {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
 }
 
 .container {
@@ -43,94 +24,6 @@ p {
     background-color: rgb(25, 25, 25);
     margin: 32px 32px 0px 32px;
 }
-/* canvas {
-    width: 100% !important;
-    height: 42vh !important;
-    margin-bottom: 16px;
-}
-
-.container-info {
-    height: 50vh;
-    width: 100%;
-    margin-top: 32px;
-    margin-right: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 10px;
-    background-color: rgb(25, 25, 25);
-    .chart-info {
-        font-size: x-large;
-        border-radius: 6px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .container-btn {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-}
-h3 {
-    font-size: 22px;
-    margin-left: 32px;
-    margin-right: 96px;
-}
-
-.btn {
-    background-color: rgb(25, 25, 25);
-    margin-left: 16px;
-    color: rgba(255, 255, 255, 0.527);
-    padding: 8px;
-    //width: 80px;
-    //height: 30px;
-    border-radius: 15px;
-    border: 1px solid rgb(25, 25, 25);
-    &:hover {
-        cursor: pointer;
-        background-color: black;
-        color: white;
-    }
-}
-.isSelected {
-    background-color: black;
-    color: white;
-} */
-
-.info {
-    border-color: #f7f4f4;
-    max-width: 200px !important;
-}
-
-drag-scroll {
-    overflow: hidden !important;
-    white-space: nowrap;
-    width: 100vw;
-    height: 225px;
-}
-
-.single-info {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    font-size: xx-large;
-    flex-direction: row-reverse;
-    margin-bottom: 16px;
-}
-
-.name-color {
-    font-size: large;
-    display: flex;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.527);
-}
-
-.current {
-    background-color: rgb(120, 120, 120);
-}
 
 img {
     width: 40px;
@@ -145,83 +38,6 @@ img {
     display: flex;
     justify-content: space-between;
     overflow: hidden !important;
-}
-drag-scroll::-webkit-scrollbar {
-    display: none;
-}
-.over-coin-container {
-    width: 100%;
-}
-.coin-container {
-    height: 140px;
-    width: 300px;
-    padding: 16px 0px 16px 0px;
-    margin-right: 12px;
-    margin-left: 12px;
-    margin-top: 12px;
-    background-color: rgb(25, 25, 25);
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    transition: 0.225s;
-    &:hover {
-        cursor: pointer;
-        background-color: rgb(40, 40, 40);
-        transform: scale(1.125);
-        z-index: 2;
-    }
-}
-.scroll-right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 15px;
-    height: 240px;
-    width: 80px;
-    bottom: 75px;
-    background: linear-gradient(to right, transparent, black);
-    z-index: 10;
-    .img-right {
-        height: 20px;
-        width: 20px;
-    }
-}
-.left-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 40px;
-    border: 1px solid white;
-    border-radius: 50%;
-    transition: 0.225s;
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.2);
-    }
-}
-.scroll-left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 15px;
-    height: 240px;
-    width: 80px;
-    bottom: 75px;
-    background: linear-gradient(to left, transparent, black);
-    z-index: 10;
-
-    .img-left {
-        height: 25px;
-        width: 25px;
-    }
-}
-
-.active {
-    background-color: rgb(50, 50, 50);
 }
 
 .minus-number {

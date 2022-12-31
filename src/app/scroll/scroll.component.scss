@@ -1,0 +1,112 @@
+drag-scroll::-webkit-scrollbar {
+    display: none;
+}
+.over-coin-container {
+    width: 100%;
+}
+.headline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+drag-scroll {
+    overflow: hidden !important;
+    white-space: nowrap;
+    width: 100vw;
+    height: 225px;
+}
+
+.single-info {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: xx-large;
+    flex-direction: row-reverse;
+    margin-bottom: 16px;
+}
+
+.name-color {
+    font-size: large;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.527);
+}
+.coin-container {
+    height: 140px;
+    width: 300px;
+    padding: 16px 0px 16px 0px;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-top: 12px;
+    background-color: rgb(25, 25, 25);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: 0.225s;
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(40, 40, 40);
+        transform: scale(1.125);
+        z-index: 2;
+    }
+}
+.scroll-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 15px;
+    height: 240px;
+    width: 80px;
+    bottom: 75px;
+    background: linear-gradient(to right, transparent, black);
+    z-index: 10;
+    .img-right {
+        height: 20px;
+        width: 20px;
+    }
+}
+.left-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: 0.225s;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+}
+.scroll-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 15px;
+    height: 240px;
+    width: 80px;
+    bottom: 75px;
+    background: linear-gradient(to left, transparent, black);
+    z-index: 10;
+
+    .img-left {
+        height: 25px;
+        width: 25px;
+    }
+}
+.active {
+    background-color: rgb(50, 50, 50);
+}
+.d-none {
+    display: none;
+}
