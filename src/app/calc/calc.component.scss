@@ -10,15 +10,31 @@
         font-size: 22px;
     }
     img {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         &:hover {
             cursor: pointer;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background-color: black;
             border-radius: 50%;
         }
+    }
+}
+
+.rotate-click {
+    animation: rotater 500ms ease-in-out;
+}
+
+@keyframes rotater {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        transform: rotate(-180deg);
     }
 }
 .price-container {
@@ -51,11 +67,13 @@
         height: 50px;
         border-radius: 32px;
         background-color: rgb(55, 55, 55);
-        p {
+        .currency {
             width: 25%;
             display: flex;
             justify-content: center;
             font-size: 22px;
+            margin-top: unset;
+            margin-bottom: unset;
         }
         .container-coin-img {
             width: 25%;

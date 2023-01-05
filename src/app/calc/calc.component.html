@@ -1,6 +1,8 @@
 <div class="head-container">
   <p>Exchange</p>
   <img
+    [class.rotate-click]="activeAnimate"
+    (click)="changeValue()"
     [src]="imgSrc"
     (mouseover)="imgSrc = '/assets/icons/circle-hover.png'"
     (mouseout)="imgSrc = '/assets/icons/circle.png'"
@@ -8,26 +10,40 @@
   />
 </div>
 <div class="price-container">
-  <p><b>1</b></p>
+  <p>
+    <b>{{ calcService.amountField }}</b>
+  </p>
   <p class="name-color">{{ renderService.shortName }}</p>
   <img src="/assets/icons/arrow_forward.png" alt="" />
   <p>
-    <b>{{ renderService.currentPrice }}</b>
+    <b>{{ calcService.sum }}</b>
   </p>
   <p class="name-color">€</p>
 </div>
 <div class="container-calc">
   <p>Get</p>
   <div class="input-container">
-    <input type="text" value="1" />
+    <input
+      [readonly]="!calcService.isReadonly"
+      name="amount"
+      type="number"
+      (input)="sendNewAmount($event)"
+      value="{{ calcService.amountField }}"
+    />
     <div class="container-coin-img">
       <img class="coin-img" src="{{ renderService.coinImg }}" alt="" />
     </div>
   </div>
   <p>Pay</p>
   <div class="input-container">
-    <input readonly type="text" value="{{ renderService.currentPrice }}" />
-    <p>€</p>
+    <input
+      [readonly]="calcService.isReadonly"
+      name="payField"
+      type="number"
+      (input)="calcNewQuantity($event)"
+      value="{{ calcService.sum }}"
+    />
+    <p class="currency">€</p>
   </div>
-  <button class="btn-exchange">Exchange</button>
+  <button (click)="exchange()" class="btn-exchange">Exchange</button>
 </div>

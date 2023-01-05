@@ -10,6 +10,7 @@ import {
 import { UrlCoinService } from '../services/url-coin.service';
 import { RenderService } from '../services/render.service';
 import { DragScrollComponent } from 'ngx-drag-scroll';
+import { CalcComponent } from '../calc/calc.component';
 
 @Component({
   selector: 'app-scroll',

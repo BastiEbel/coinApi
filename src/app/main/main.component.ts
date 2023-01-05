@@ -3,6 +3,7 @@ import { UrlCoinService } from '../services/url-coin.service';
 import { RenderService } from '../services/render.service';
 import { DragScrollComponent } from 'ngx-drag-scroll';
 import { ChartComponent } from '../chart/chart.component';
+import { CalcService } from '../services/calc.service';
 
 @Component({
   selector: 'app-main',
@@ -15,7 +16,8 @@ export class MainComponent implements OnInit {
 
   constructor(
     public service: UrlCoinService,
-    public renderService: RenderService
+    private renderService: RenderService,
+    private calcService: CalcService
   ) {}
 
   ngOnInit(): void {}
@@ -32,6 +34,11 @@ export class MainComponent implements OnInit {
       this.chartComponent.weeklyChart();
     } else if (this.renderService.coinOfMonth) {
       this.chartComponent.monthChart();
+    }
+    if (this.calcService.isReadonly) {
+      this.calcService.calcNewOne();
+    } else {
+      this.calcService.switchCalculate();
     }
   }
 }
