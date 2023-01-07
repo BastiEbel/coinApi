@@ -1,10 +1,11 @@
-<div
-  [class.d-none]="renderService.arrowLeft"
-  (click)="moveLeft()"
-  class="scroll-left"
->
+<div [class.d-none]="renderService.arrowLeft" class="scroll-left">
   <div class="left-container">
-    <img class="img-left" src="/assets/icons/arrow-25-64 links.png" alt="" />
+    <img
+      (click)="moveLeft()"
+      class="img-left"
+      src="/assets/icons/arrow-25-64 links.png"
+      alt=""
+    />
   </div>
 </div>
 <drag-scroll style="align-items: center" [scroll-x-wheel-enabled]="true" #nav>
@@ -39,12 +40,13 @@
     </div>
   </div>
 </drag-scroll>
-<div
-  [class.d-none]="renderService.arrowRight"
-  (click)="moveRight()"
-  class="scroll-right"
->
+<div [class.d-none]="renderService.arrowRight" class="scroll-right">
   <div class="left-container">
-    <img class="img-right" src="/assets/icons/arrow-25-64.png" alt="" />
+    <img
+      (click)="moveRight()"
+      class="img-right"
+      src="/assets/icons/arrow-25-64.png"
+      alt=""
+    />
   </div>
 </div>

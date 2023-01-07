@@ -46,7 +46,7 @@ drag-scroll {
     &:hover {
         cursor: pointer;
         background-color: rgb(40, 40, 40);
-        transform: scale(1.125);
+        transform: scale(1.075);
         z-index: 2;
     }
 }
@@ -56,9 +56,9 @@ drag-scroll {
     justify-content: center;
     position: absolute;
     right: 15px;
-    height: 240px;
+    height: 220px;
     width: 80px;
-    bottom: 75px;
+    bottom: 0px;
     background: linear-gradient(to right, transparent, black);
     z-index: 10;
     .img-right {
@@ -86,9 +86,9 @@ drag-scroll {
     justify-content: center;
     position: absolute;
     left: 15px;
-    height: 240px;
+    height: 220px;
     width: 80px;
-    bottom: 75px;
+    bottom: 0px;
     background: linear-gradient(to left, transparent, black);
     z-index: 10;
 

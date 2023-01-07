@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 16px 24px 24px 24px;
+    margin: 16px 24px 0px 24px;
     height: 40px;
     p {
         margin-block-start: unset;
@@ -38,7 +38,7 @@
     }
 }
 .price-container {
-    margin: 16px 24px 24px 24px;
+    margin: 0px 24px 16px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,7 +51,7 @@
     }
 }
 .container-calc {
-    margin: 16px 24px 24px 24px;
+    margin: 0px 24px 0px 24px;
     p {
         color: rgb(159, 159, 159);
         font-size: 18px;
@@ -63,7 +63,6 @@
     .input-container {
         display: flex;
         align-items: center;
-
         height: 50px;
         border-radius: 32px;
         background-color: rgb(55, 55, 55);

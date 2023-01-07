@@ -20,6 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { BalanceComponent } from './balance/balance.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CalcComponent,
     ScrollComponent,
     ChartComponent,
+    BalanceComponent,
   ],
   imports: [
     BrowserModule,
