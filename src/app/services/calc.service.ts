@@ -23,17 +23,15 @@ export class CalcService {
       this.sum =
         this.amountField * this.renderService.currentCoin['current_price'];
     } else {
-      let decimal;
-      decimal = this.sum / this.renderService.currentCoin['current_price'];
+      let decimal = this.sum / this.renderService.currentCoin['current_price'];
       this.amountField = decimal.toFixed(5);
     }
   }
 
   switchCalculate() {
     setTimeout(() => {
-      let decimal;
       this.sum = this.amountField;
-      decimal = this.sum / this.renderService.currentCoin['current_price'];
+      let decimal = this.sum / this.renderService.currentCoin['current_price'];
       this.amountField = decimal.toFixed(5);
     }, 500);
 

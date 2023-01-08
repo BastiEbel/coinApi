@@ -1,0 +1,82 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.balance-container {
+    width: 45%;
+    height: 18vh;
+    .header-balance {
+        margin-top: 12px;
+        margin-left: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+            font-size: 22px;
+            margin-block-start: unset;
+            margin-block-end: unset;
+        }
+    }
+    .current-price {
+        margin-top: 16px;
+        margin-left: 32px;
+        font-size: 30px;
+        font-weight: bolder;
+    }
+    .diffrent-prices {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 32px;
+        .higher-price {
+            margin-right: 32px;
+        }
+        p {
+            color: rgb(159, 159, 159);
+            display: flex;
+            align-items: center;
+            margin-block-start: unset;
+            margin-block-end: unset;
+            margin-top: 16px;
+            margin-bottom: 12px;
+            .up {
+                margin-right: 8px;
+                border-radius: 50%;
+                background-color: rgb(40, 40, 40);
+                height: 24px;
+                width: 24px;
+                transform: rotate(90deg);
+            }
+            .down {
+                margin-right: 8px;
+                border-radius: 50%;
+                background-color: rgb(40, 40, 40);
+                height: 24px;
+                width: 24px;
+                transform: rotate(-90deg);
+            }
+        }
+
+        span {
+            font-size: 22px;
+            font-weight: bolder;
+        }
+
+        .separation-small {
+            border: 1px solid rgb(50, 50, 50);
+            height: 50px;
+        }
+    }
+}
+.separation {
+    border: 1px solid rgb(50, 50, 50);
+    height: 15vh;
+}
+.container-Chart {
+    width: 45%;
+    height: 18vh;
+}

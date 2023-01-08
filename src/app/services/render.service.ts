@@ -27,6 +27,8 @@ export class RenderService {
     let res = await firstValueFrom(this.service.getFullList());
     this.result = res;
     this.currentCoin = this.result[0];
+    console.log(this.currentCoin);
+
     this.service.isLoading = false;
   }
 

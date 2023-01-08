@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RenderService } from '../services/render.service';
 
 @Component({
@@ -7,9 +7,28 @@ import { RenderService } from '../services/render.service';
   styleUrls: ['./balance.component.scss'],
 })
 export class BalanceComponent implements OnInit {
-  constructor(public renderService: RenderService) {}
+  public percentage: number;
+  constructor(
+    public renderService: RenderService,
+    private changeDetector: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {}
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.getData();
+    }, 250);
+  }
+
+  ngAfterContentChecked(): void {
+    this.changeDetector.detectChanges();
+  }
+
+  async getData() {
+    let decimal = await this.renderService.currentCoin[
+      'price_change_percentage_24h'
+    ];
+    this.percentage = decimal.toFixed(2);
+  }
 }

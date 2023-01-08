@@ -1,4 +1,36 @@
-<div>
-  <p>Balance</p>
-  <span>{{ renderService.currentCoin["price_change_percentage_24h"] }}</span>
+<div class="container">
+  <div class="balance-container">
+    <div class="header-balance">
+      <h3>Balance</h3>
+      <span
+        [ngClass]="
+          renderService.currentCoin.price_change_percentage_24h >= 0
+            ? 'plus-number'
+            : 'minus-number'
+        "
+        >{{ percentage }} %</span
+      >
+    </div>
+    <div class="current-price">
+      {{ renderService.currentCoin.current_price }} €
+    </div>
+    <div class="diffrent-prices">
+      <div class="lower-price">
+        <p>
+          <img class="down" src="/assets/icons/down.png" alt="" />24h lowest
+          price
+        </p>
+        <span>{{ renderService.currentCoin.low_24h }} €</span>
+      </div>
+      <div class="separation-small"></div>
+      <div class="higher-price">
+        <p>
+          <img class="up" src="/assets/icons/up.png" alt="" /> 24h highest price
+        </p>
+        <span>{{ renderService.currentCoin.high_24h }} €</span>
+      </div>
+    </div>
+  </div>
+  <div class="separation"></div>
+  <div class="container-Chart"></div>
 </div>
