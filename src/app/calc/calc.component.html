@@ -13,7 +13,7 @@
   <p>
     <b>{{ calcService.amountField }}</b>
   </p>
-  <p class="name-color">{{ renderService.shortName }}</p>
+  <p class="name-color">{{ renderService.currentCoin["symbol"] }}</p>
   <img src="/assets/icons/arrow_forward.png" alt="" />
   <p>
     <b>{{ calcService.sum }}</b>
@@ -31,7 +31,11 @@
       value="{{ calcService.amountField }}"
     />
     <div class="container-coin-img">
-      <img class="coin-img" src="{{ renderService.coinImg }}" alt="" />
+      <img
+        class="coin-img"
+        src="{{ renderService.currentCoin['image'] }}"
+        alt=""
+      />
     </div>
   </div>
   <p>Pay</p>

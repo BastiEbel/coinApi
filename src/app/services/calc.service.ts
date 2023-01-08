@@ -13,17 +13,18 @@ export class CalcService {
   calcNewOne() {
     setTimeout(() => {
       this.amountField = 1;
-      this.sum = this.renderService.currentPrice;
+      this.sum = this.renderService.currentCoin['current_price'];
     }, 500);
     return (this.isReadonly = true);
   }
 
   calculate() {
     if (this.isReadonly) {
-      this.sum = this.amountField * this.renderService.currentPrice;
+      this.sum =
+        this.amountField * this.renderService.currentCoin['current_price'];
     } else {
       let decimal;
-      decimal = this.sum / this.renderService.currentPrice;
+      decimal = this.sum / this.renderService.currentCoin['current_price'];
       this.amountField = decimal.toFixed(5);
     }
   }
@@ -32,7 +33,7 @@ export class CalcService {
     setTimeout(() => {
       let decimal;
       this.sum = this.amountField;
-      decimal = this.sum / this.renderService.currentPrice;
+      decimal = this.sum / this.renderService.currentCoin['current_price'];
       this.amountField = decimal.toFixed(5);
     }, 500);
 

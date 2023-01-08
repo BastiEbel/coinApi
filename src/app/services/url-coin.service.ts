@@ -7,8 +7,6 @@ import { HttpClient } from '@angular/common/http';
 export class UrlCoinService {
   isLoading = true;
   dailyCoin: string = 'bitcoin';
-  url =
-    'https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&page=1&per_page=49&order=market_cap_desc';
 
   constructor(public http: HttpClient) {}
 
@@ -18,7 +16,9 @@ export class UrlCoinService {
    */
   getFullList() {
     this.isLoading = true;
-    return this.http.get(this.url);
+    return this.http.get(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&page=1&per_page=49&order=market_cap_desc'
+    );
   }
 
   getTwoWeekCoins() {

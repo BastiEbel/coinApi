@@ -22,6 +22,9 @@ export class ScrollComponent implements OnInit, AfterViewInit {
     new EventEmitter();
   @ViewChild('nav', { read: DragScrollComponent }) ds: DragScrollComponent;
 
+  arrowLeft: boolean = false;
+  arrowRight: boolean = false;
+
   constructor(
     public service: UrlCoinService,
     public renderService: RenderService,
@@ -34,7 +37,7 @@ export class ScrollComponent implements OnInit, AfterViewInit {
     this.cdref.detectChanges();
     setTimeout(() => {
       this.ds.moveTo(0);
-      this.renderService.arrowLeft = true;
+      this.arrowLeft = true;
     }, 0);
   }
   /**
@@ -45,14 +48,14 @@ export class ScrollComponent implements OnInit, AfterViewInit {
     this.ds.moveLeft();
     setTimeout(() => {
       if (this.ds.currIndex != 0) {
-        this.renderService.arrowLeft = false;
+        this.arrowLeft = false;
       } else {
-        this.renderService.arrowLeft = true;
+        this.arrowLeft = true;
       }
       if (this.ds.currIndex != 47) {
-        this.renderService.arrowRight = false;
+        this.arrowRight = false;
       } else {
-        this.renderService.arrowRight = true;
+        this.arrowRight = true;
       }
     }, 0.25);
   }
@@ -64,14 +67,14 @@ export class ScrollComponent implements OnInit, AfterViewInit {
     this.ds.moveRight();
     setTimeout(() => {
       if (this.ds.currIndex != 0) {
-        this.renderService.arrowLeft = false;
+        this.arrowLeft = false;
       } else {
-        this.renderService.arrowLeft = true;
+        this.arrowLeft = true;
       }
       if (this.ds.currIndex < 48) {
-        this.renderService.arrowRight = false;
+        this.arrowRight = false;
       } else {
-        this.renderService.arrowRight = true;
+        this.arrowRight = true;
       }
     }, 0.5);
   }
@@ -90,14 +93,12 @@ export class ScrollComponent implements OnInit, AfterViewInit {
    *
    */
   async selectedCoin(id) {
+    this.renderService.currentCoin = [];
     for (let i = 0; i < this.renderService.result.length; i++) {
       if (id == this.renderService.result[i]['id']) {
         this.service.dailyCoin = id;
         this.renderService.coinName = this.renderService.result[i]['name'];
-        this.renderService.shortName = this.renderService.result[i]['symbol'];
-        this.renderService.currentPrice =
-          this.renderService.result[i]['current_price'];
-        this.renderService.coinImg = this.renderService.result[i]['image'];
+        this.renderService.currentCoin = this.renderService.result[i];
       }
     }
     this.selectedCoins.emit();
