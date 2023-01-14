@@ -57,7 +57,7 @@ export class ScrollComponent implements OnInit, AfterViewInit {
       } else {
         this.arrowRight = true;
       }
-    }, 0.25);
+    }, 500);
   }
   /**
    * function to scroll right about click
@@ -76,7 +76,7 @@ export class ScrollComponent implements OnInit, AfterViewInit {
       } else {
         this.arrowRight = true;
       }
-    }, 0.5);
+    }, 500);
   }
 
   /**

@@ -4,6 +4,7 @@ import { RenderService } from '../services/render.service';
 import { DragScrollComponent } from 'ngx-drag-scroll';
 import { ChartComponent } from '../chart/chart.component';
 import { CalcService } from '../services/calc.service';
+import { BalanceComponent } from '../balance/balance.component';
 
 @Component({
   selector: 'app-main',
@@ -12,6 +13,7 @@ import { CalcService } from '../services/calc.service';
 })
 export class MainComponent implements OnInit {
   @ViewChild(ChartComponent) chartComponent;
+  @ViewChild(BalanceComponent) balanceComponent;
   @ViewChild('nav', { read: DragScrollComponent }) ds: DragScrollComponent;
 
   constructor(
@@ -40,5 +42,6 @@ export class MainComponent implements OnInit {
     } else {
       this.calcService.switchCalculate();
     }
+    this.balanceComponent.shortPercentage();
   }
 }

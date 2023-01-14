@@ -143,7 +143,6 @@ export class ChartComponent implements OnInit, AfterViewInit {
             },
           },
           x: {
-            //beginAtZero: false,
             ticks: {
               color: '#f5f5f5',
             },

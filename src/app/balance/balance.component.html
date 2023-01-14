@@ -12,7 +12,10 @@
       >
     </div>
     <div class="current-price">
-      {{ renderService.currentCoin.current_price }} €
+      <p>{{ renderService.currentCoin.current_price }} €</p>
+      <p style="color: rgb(159, 159, 159)">
+        {{ renderService.currentCoin.name }}
+      </p>
     </div>
     <div class="diffrent-prices">
       <div class="lower-price">
@@ -32,5 +35,44 @@
     </div>
   </div>
   <div class="separation"></div>
-  <div class="container-Chart"></div>
+  <div class="container-Chart">
+    <p>Highest percentage changes</p>
+    <div class="chart-overall">
+      <canvas id="doughnutCanvas"></canvas>
+      <div class="container-legends">
+        <div
+          *ngFor="
+            let items of percentageSort.item | slice : 0 : 3;
+            let i = index
+          "
+          class="legends-chart"
+        >
+          <div class="name-container">
+            <div
+              [ngClass]="
+                i == 0
+                  ? 'color-blue'
+                  : '' || i == 1
+                  ? 'color-pink'
+                  : '' || i == 2
+                  ? 'color-green'
+                  : ''
+              "
+            ></div>
+            <img src="{{ items['image'] }}" alt="" />
+            <span class="acronym">{{ items["symbol"] }}</span>
+          </div>
+          <span
+            [ngClass]="
+              items['price_change_percentage_24h'] >= 0
+                ? 'plus-number'
+                : 'minus-number'
+            "
+            class="percentage"
+            >{{ items["price_change_percentage_24h"].toFixed(2) }} %</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
