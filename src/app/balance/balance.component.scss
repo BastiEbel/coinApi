@@ -90,6 +90,25 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    .header-chart {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 32px;
+        select {
+            height: 35px;
+            width: 170px;
+            background-color: black;
+            color: white;
+            padding: 0px 8px 0px 8px;
+            border-radius: 10px;
+            border-color: rgb(25, 25, 25);
+            &:focus {
+                outline: unset;
+            }
+        }
+    }
     p {
         margin-block-end: unset;
         margin-block-start: unset;
@@ -111,7 +130,7 @@
             margin-right: 8px;
         }
         .container-legends {
-            width: 50%;
+            width: 55%;
             display: flex;
             flex-direction: column;
             align-items: center;

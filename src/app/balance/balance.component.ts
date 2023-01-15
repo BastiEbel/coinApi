@@ -39,17 +39,31 @@ export class BalanceComponent implements OnInit {
     this.renderDoughnut();
   }
 
+  onChange($event) {
+    let isSelected =
+      $event.target.options[$event.target.options.selectedIndex].value;
+    if (isSelected === 'highesPercentage') {
+      this.percentageSort.getHighestPercentageValue();
+      this.doughnutChart.destroy();
+      this.renderDoughnut();
+    } else if (isSelected === 'highestCoin') {
+      this.percentageSort.getHighestCoinValue();
+      this.doughnutChart.destroy();
+      this.renderDoughnut();
+    } else {
+      this.percentageSort.getLowestCoinValue();
+      this.doughnutChart.destroy();
+      this.renderDoughnut();
+    }
+  }
+
   renderDoughnut() {
     this.doughnutChart = new Chart('doughnutCanvas', {
       type: 'doughnut',
       data: {
         datasets: [
           {
-            data: [
-              this.percentageSort.item[0].price_change_percentage_24h,
-              this.percentageSort.item[1].price_change_percentage_24h,
-              this.percentageSort.item[2].price_change_percentage_24h,
-            ],
+            data: this.percentageSort.currentData,
             backgroundColor: [
               'rgb(0, 136, 255)',
               'rgb(255, 51, 255)',

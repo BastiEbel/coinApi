@@ -36,7 +36,13 @@
   </div>
   <div class="separation"></div>
   <div class="container-Chart">
-    <p>Highest percentage changes</p>
+    <div class="header-chart">
+      <select (change)="onChange($event)">
+        <option value="lowestCoin">Lowest price</option>
+        <option value="highestCoin">Highest price</option>
+        <option value="highesPercentage" selected>Highest changes in %</option>
+      </select>
+    </div>
     <div class="chart-overall">
       <canvas id="doughnutCanvas"></canvas>
       <div class="container-legends">
@@ -63,6 +69,7 @@
             <span class="acronym">{{ items["symbol"] }}</span>
           </div>
           <span
+            [class.d-none]="!percentageSort.percentageValue"
             [ngClass]="
               items['price_change_percentage_24h'] >= 0
                 ? 'plus-number'
@@ -70,6 +77,18 @@
             "
             class="percentage"
             >{{ items["price_change_percentage_24h"].toFixed(2) }} %</span
+          >
+          <span
+            [class.d-none]="!percentageSort.highestCoin"
+            style="color: white"
+            class="percentage"
+            >{{ items["current_price"] }} €</span
+          >
+          <span
+            [class.d-none]="!percentageSort.lowestCoin"
+            style="color: white"
+            class="percentage"
+            >{{ items["low_24h"].toFixed(5) }} €</span
           >
         </div>
       </div>
