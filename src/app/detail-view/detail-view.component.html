@@ -1,1 +1,19 @@
-<p>detail-view works</p>
+<div class="detail-container">
+  <div *ngFor="let detail of renderService.result" class="detail-view">
+    <div class="coin-name">
+      <img src="{{ detail.image }}" alt="" />
+      <p>{{ detail.name }}</p>
+    </div>
+    <div class="coin-price">
+      <span>{{ detail.current_price.toFixed(2) }} €</span>
+      <span
+        [ngClass]="
+          detail.price_change_percentage_24h >= 0
+            ? 'plus-number'
+            : 'minus-number'
+        "
+        >{{ detail.price_change_percentage_24h.toFixed(2) }} %</span
+      >
+    </div>
+  </div>
+</div>

@@ -5,7 +5,7 @@
     align-items: center;
 }
 .balance-container {
-    width: 45%;
+    width: 40%;
     height: 18vh;
     .header-balance {
         margin-top: 12px;
@@ -41,6 +41,7 @@
         margin-left: 32px;
         .higher-price {
             margin-right: 32px;
+            text-align: end;
         }
         p {
             color: rgb(159, 159, 159);
@@ -126,15 +127,16 @@
 
         canvas {
             width: auto !important;
-            height: 12vh !important;
+            height: 15vh !important;
             margin-right: 8px;
         }
         .container-legends {
-            width: 55%;
+            width: 40%;
+            margin-right: 16px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-evenly;
 
             .legends-chart {
                 width: 100%;

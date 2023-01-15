@@ -1,96 +1,54 @@
-h1 {
-    width: 88%;
-    height: 100px;
-    margin-top: 28px;
-    margin-left: 6%;
-    margin-right: 6%;
+.detail-container {
+    margin-top: 12px;
+    height: 164px;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    font-size: 40px;
-    text-shadow: 7px 9px 6px rgba(140, 219, 255, 0.616);
-}
-
-img {
-    width: 30px;
-    height: 30px;
-    background-color: rgba(88, 88, 112, 0.678);
-    border-radius: 50%;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
     flex-direction: column;
-}
+    overflow: auto;
 
-.container-field {
-    height: 80px;
-    width: 88%;
-    margin-left: 6%;
-    margin-right: 6%;
-    border: 1px solid white;
-    border-radius: 6px;
-    box-shadow: 4px 4px 10px 0px rgba(255, 255, 255, 0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &:hover {
-        cursor: pointer;
-        box-shadow: 5px 9px 14px 2px rgba(255, 112, 112, 0.5);
-        background-color: rgba(0, 250, 250, 0.274);
+    .detail-view {
+        margin-bottom: 12px;
+        width: 92%;
+        height: 50px;
+        background-color: black;
+        color: white;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(50, 50, 50);
+            transform: scale(1.05);
+        }
+        .coin-name {
+            margin-left: 16px;
+            width: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bolder;
+            p {
+                margin-left: 16px;
+            }
+        }
+
+        .coin-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 250px;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        img {
+            height: 40px;
+            width: 40px;
+        }
     }
-}
-
-.single-info {
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.last-24 {
-    width: 22%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.name-color {
-    margin-bottom: 8px;
-    font-size: large;
-    color: rgb(255, 112, 112)
-}
-
-pagination-template {
-    display: flex;
-    justify-content: center;
-}
-
-pagination-template>div {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: 1px solid white;
-    &:hover {
-        transform: scale(1.05);
-        cursor: pointer;
-    }
-}
-
-.minus-number {
-    color: red;
-}
-
-.plus-number {
-    color: rgb(0, 212, 0);
-}
-
-.border-none {
-    border: none !important;
-}
-
-.current {
-    background-color: rgba(0, 250, 250, 0.274);
 }
 
 @media (max-width: 1000px) {
@@ -156,10 +114,9 @@ pagination-template>div {
     }
 }
 
-
 /* IPhone SE */
 
-@media screen and ( width: 375px) and ( height: 667px) {
+@media screen and (width: 375px) and (height: 667px) {
     h1 {
         font-size: xx-large;
     }
@@ -191,7 +148,7 @@ pagination-template>div {
     }
 }
 
-@media screen and ( width: 667px) and ( height: 375px) {
+@media screen and (width: 667px) and (height: 375px) {
     .container-field {
         width: 92%;
         margin-left: 4%;
@@ -208,10 +165,9 @@ pagination-template>div {
     }
 }
 
-
 /*iPhone XR*/
 
-@media screen and ( width: 414px) and ( height: 896px) {
+@media screen and (width: 414px) and (height: 896px) {
     h1 {
         font-size: xx-large;
     }
@@ -243,7 +199,7 @@ pagination-template>div {
     }
 }
 
-@media screen and ( width: 896px) and ( height: 414px) {
+@media screen and (width: 896px) and (height: 414px) {
     .name-color {
         font-size: small;
     }
@@ -255,10 +211,9 @@ pagination-template>div {
     }
 }
 
-
 /*iPhone 12 Pro*/
 
-@media screen and ( width: 390px) and ( height: 844px) {
+@media screen and (width: 390px) and (height: 844px) {
     h1 {
         font-size: x-large;
         margin-top: 16px;
@@ -296,7 +251,7 @@ pagination-template>div {
     }
 }
 
-@media screen and ( width: 844px) and ( height: 390px) {
+@media screen and (width: 844px) and (height: 390px) {
     .name-color {
         font-size: small;
     }
@@ -308,10 +263,9 @@ pagination-template>div {
     }
 }
 
-
 /*Pixel 5*/
 
-@media screen and ( width: 393px) and ( height: 851px) {
+@media screen and (width: 393px) and (height: 851px) {
     h1 {
         font-size: x-large;
         margin-top: 16px;
@@ -342,7 +296,7 @@ pagination-template>div {
     }
 }
 
-@media screen and ( width: 851px) and ( height: 393px) {
+@media screen and (width: 851px) and (height: 393px) {
     .name-color {
         font-size: small;
     }
@@ -354,10 +308,9 @@ pagination-template>div {
     }
 }
 
-
 /*Samsung S8*/
 
-@media screen and ( width: 360px) and ( height: 740px) {
+@media screen and (width: 360px) and (height: 740px) {
     h1 {
         font-size: x-large;
         margin-top: 16px;
@@ -389,7 +342,7 @@ pagination-template>div {
     }
 }
 
-@media screen and ( width: 740px) and ( height: 360px) {
+@media screen and (width: 740px) and (height: 360px) {
     img {
         margin-left: 16px;
     }
@@ -405,10 +358,9 @@ pagination-template>div {
     }
 }
 
-
 /* Samsung S20 */
 
-@media screen and ( width: 412px) and ( height: 915px) {
+@media screen and (width: 412px) and (height: 915px) {
     h1 {
         font-size: x-large;
         margin-top: 14px;
@@ -446,7 +398,7 @@ pagination-template>div {
     }
 }
 
-@media screen and ( width: 915px) and ( height: 412px) {
+@media screen and (width: 915px) and (height: 412px) {
     .name-color {
         font-size: small;
     }
@@ -458,10 +410,9 @@ pagination-template>div {
     }
 }
 
-
 /* iPad Air */
 
-@media screen and ( width: 820px) and ( height: 1180px) {
+@media screen and (width: 820px) and (height: 1180px) {
     .container {
         height: calc(100vh - 356px);
     }
@@ -477,10 +428,9 @@ pagination-template>div {
     }
 }
 
-
 /* Surface Pro 7 */
 
-@media screen and ( width: 912px) and ( height: 1368px) {
+@media screen and (width: 912px) and (height: 1368px) {
     h1 {
         margin-top: 32px;
         font-size: xx-large;
@@ -495,10 +445,9 @@ pagination-template>div {
     }
 }
 
-
 /* Surface Duo */
 
-@media screen and ( width: 540px) and ( height: 720px) {
+@media screen and (width: 540px) and (height: 720px) {
     h1 {
         font-size: x-large;
         height: 40px;
@@ -533,7 +482,7 @@ pagination-template>div {
     }
 }
 
-@media screen and ( width: 720px) and ( height: 540px) {
+@media screen and (width: 720px) and (height: 540px) {
     img {
         margin-left: 16px;
     }
@@ -549,10 +498,9 @@ pagination-template>div {
     }
 }
 
-
 /* Galaxy Fold */
 
-@media screen and ( width: 280px) and ( height: 653px) {
+@media screen and (width: 280px) and (height: 653px) {
     h1 {
         margin-top: 16px;
         font-size: x-large;
@@ -580,12 +528,12 @@ pagination-template>div {
         margin-bottom: 4px;
         font-size: small;
     }
-    pagination-template>div {
+    pagination-template > div {
         margin: 0px;
     }
 }
 
-@media screen and ( width: 653px) and ( height: 280px) {
+@media screen and (width: 653px) and (height: 280px) {
     .container-field {
         width: 92%;
         margin-left: 4%;
@@ -606,10 +554,9 @@ pagination-template>div {
     }
 }
 
-
 /* Galaxy A51/71 */
 
-@media screen and ( width: 412px) and ( height: 914px) {
+@media screen and (width: 412px) and (height: 914px) {
     h1 {
         height: 80px;
         font-size: 32px;
@@ -645,7 +592,7 @@ pagination-template>div {
     }
 }
 
-@media screen and ( width: 914px) and ( height: 412px) {
+@media screen and (width: 914px) and (height: 412px) {
     img {
         margin-left: 16px;
     }
