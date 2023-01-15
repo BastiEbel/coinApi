@@ -13,12 +13,17 @@ h1 {
 .mat-dialog-content {
     width: 450px;
     font-size: larger;
+    background-color: rgb(25, 25, 25);
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 12px 20px 20px 20px;
+    border-radius: 15px;
 }
 
 .content {
     padding-left: 8px;
     padding-right: 8px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     width: 96%;
     height: 40px;
     display: flex;
@@ -30,7 +35,8 @@ h1 {
     width: 100px;
     height: 30px;
     font-size: larger;
-    color: black;
+    background-color: black;
+    color: white;
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -38,12 +44,12 @@ h1 {
     border-radius: 6px;
     &:hover {
         cursor: pointer;
-        background-color: rgba(211, 211, 211, 0.61);
+        background-color: rgba(50, 50, 50);
     }
 }
 
 b {
-    color: black;
+    color: rgb(159, 159, 159);
 }
 
 .minus-number {
@@ -80,10 +86,9 @@ b {
     }
 }
 
-
 /* IPhone SE */
 
-@media screen and ( width: 375px) and ( height: 667px) {
+@media screen and (width: 375px) and (height: 667px) {
     .mat-dialog-content {
         max-width: 326px !important;
         max-height: 75vh !important;
@@ -94,7 +99,7 @@ b {
     }
 }
 
-@media screen and ( width: 667px) and ( height: 375px) {
+@media screen and (width: 667px) and (height: 375px) {
     .mat-dialog-content {
         width: 92vw !important;
         height: 55vh;
@@ -104,10 +109,9 @@ b {
     }
 }
 
-
 /*iPhone XR*/
 
-@media screen and ( width: 414px) and ( height: 896px) {
+@media screen and (width: 414px) and (height: 896px) {
     .mat-dialog-content {
         width: 366px !important;
         height: 81vh !important;
@@ -119,7 +123,7 @@ b {
     }
 }
 
-@media screen and ( width: 896px) and ( height: 414px) {
+@media screen and (width: 896px) and (height: 414px) {
     .mat-dialog-content {
         width: 94vw !important;
         height: 62vh;
@@ -129,10 +133,9 @@ b {
     }
 }
 
-
 /*iPhone 12 Pro*/
 
-@media screen and ( width: 390px) and ( height: 844px) {
+@media screen and (width: 390px) and (height: 844px) {
     .mat-dialog-content {
         width: 342px !important;
         height: 80vh !important;
@@ -141,7 +144,7 @@ b {
     }
 }
 
-@media screen and ( width: 844px) and ( height: 390px) {
+@media screen and (width: 844px) and (height: 390px) {
     .mat-dialog-content {
         width: 94vw !important;
         height: 60vh;
@@ -151,10 +154,9 @@ b {
     }
 }
 
-
 /*Pixel 5*/
 
-@media screen and ( width: 393px) and ( height: 851px) {
+@media screen and (width: 393px) and (height: 851px) {
     .mat-dialog-content {
         width: 345px !important;
         height: 80vh !important;
@@ -163,7 +165,7 @@ b {
     }
 }
 
-@media screen and ( width: 851px) and ( height: 393px) {
+@media screen and (width: 851px) and (height: 393px) {
     .mat-dialog-content {
         width: 94vw !important;
         height: 60vh;
@@ -173,10 +175,9 @@ b {
     }
 }
 
-
 /*Samsung S8*/
 
-@media screen and ( width: 360px) and ( height: 740px) {
+@media screen and (width: 360px) and (height: 740px) {
     .mat-dialog-content {
         width: 312px !important;
         height: 78vh !important;
@@ -185,7 +186,7 @@ b {
     }
 }
 
-@media screen and ( width: 740px) and ( height: 360px) {
+@media screen and (width: 740px) and (height: 360px) {
     .mat-dialog-content {
         width: 93vw !important;
         height: 58vh;
@@ -195,10 +196,9 @@ b {
     }
 }
 
-
 /* Samsung S20 */
 
-@media screen and ( width: 412px) and ( height: 915px) {
+@media screen and (width: 412px) and (height: 915px) {
     .mat-dialog-content {
         width: 364px !important;
         height: 82vh !important;
@@ -211,7 +211,7 @@ b {
     }
 }
 
-@media screen and ( width: 915px) and ( height: 412px) {
+@media screen and (width: 915px) and (height: 412px) {
     .mat-dialog-content {
         width: 94vw !important;
         height: 64vh;
@@ -221,19 +221,17 @@ b {
     }
 }
 
-
 /*iPad Mini*/
 
-@media screen and ( width: 1024px) and ( height: 768px) {
+@media screen and (width: 1024px) and (height: 768px) {
     .mat-dialog-content {
         max-height: unset;
     }
 }
 
-
 /* Surface Duo */
 
-@media screen and ( width: 540px) and ( height: 720px) {
+@media screen and (width: 540px) and (height: 720px) {
     .mat-dialog-content {
         width: 492px !important;
         height: 77vh !important;
@@ -242,7 +240,7 @@ b {
     }
 }
 
-@media screen and ( width: 720px) and ( height: 540px) {
+@media screen and (width: 720px) and (height: 540px) {
     .mat-dialog-content {
         width: 93vw !important;
         height: 73vh;
@@ -253,10 +251,9 @@ b {
     }
 }
 
-
 /* Galaxy Fold */
 
-@media screen and ( width: 280px) and ( height: 653px) {
+@media screen and (width: 280px) and (height: 653px) {
     .mat-dialog-content {
         width: 225px !important;
         height: 73vh !important;
@@ -268,7 +265,7 @@ b {
     }
 }
 
-@media screen and ( width: 653px) and ( height: 280px) {
+@media screen and (width: 653px) and (height: 280px) {
     .mat-dialog-content {
         width: 92vw !important;
         height: 48vh;
@@ -278,10 +275,9 @@ b {
     }
 }
 
-
 /* Galaxy A51/71 */
 
-@media screen and ( width: 412px) and ( height: 914px) {
+@media screen and (width: 412px) and (height: 914px) {
     .mat-dialog-content {
         width: 364px !important;
         height: 82vh !important;
@@ -290,7 +286,7 @@ b {
     }
 }
 
-@media screen and ( width: 914px) and ( height: 412px) {
+@media screen and (width: 914px) and (height: 412px) {
     .mat-dialog-content {
         width: 94vw !important;
         height: 64vh;
@@ -300,10 +296,9 @@ b {
     }
 }
 
-
 /* Nest Hub Max */
 
-@media screen and ( width: 1280px) and ( height: 800px) {
+@media screen and (width: 1280px) and (height: 800px) {
     .mat-dialog-content {
         width: 500px !important;
         height: 78vh !important;
@@ -312,10 +307,9 @@ b {
     }
 }
 
-
 /*Nest Hub*/
 
-@media screen and ( width: 1024px) and ( height: 600px) {
+@media screen and (width: 1024px) and (height: 600px) {
     .mat-dialog-content {
         width: 500px !important;
         height: 73vh !important;

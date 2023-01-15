@@ -10,29 +10,10 @@ import { RenderService } from '../services/render.service';
   styleUrls: ['./detail-view.component.scss'],
 })
 export class DetailViewComponent implements OnInit {
-  result: any = [];
-  p = 1;
-  pages = Array(Math.ceil(100 / 2))
-    .fill(null)
-    .map((_, i) => ({ label: i, value: i }));
-
-  constructor(
-    public service: UrlCoinService,
-    public renderService: RenderService,
-    public dialog: MatDialog
-  ) {}
+  constructor(public renderService: RenderService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getDetail();
-  }
-
-  /**
-   *
-   * @param event it`s important to switch the page
-   *
-   */
-  onPageEvent(event: any) {
-    this.p = event;
   }
 
   /**

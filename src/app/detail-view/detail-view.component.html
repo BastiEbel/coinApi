@@ -1,5 +1,9 @@
 <div class="detail-container">
-  <div *ngFor="let detail of renderService.result" class="detail-view">
+  <div
+    (click)="openDialog(detail)"
+    *ngFor="let detail of renderService.result"
+    class="detail-view"
+  >
     <div class="coin-name">
       <img src="{{ detail.image }}" alt="" />
       <p>{{ detail.name }}</p>
