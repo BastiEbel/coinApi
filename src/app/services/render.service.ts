@@ -11,6 +11,7 @@ export class RenderService {
   coinOfWeek: boolean = false;
   coinOfMonth: boolean = false;
   coinName: string = 'Bitcoin';
+  search: string;
   currentCoin: any = [];
   result: any = [];
   coinPrice: any = [];

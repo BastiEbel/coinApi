@@ -16,7 +16,10 @@
       (click)="selectedCoin(results.id)"
       [class.active]="results === renderService.isactive"
       class="coin-container bg-container"
-      *ngFor="let results of renderService.result; let i = index"
+      *ngFor="
+        let results of renderService.result | searchPipe : renderService.search;
+        let i = index
+      "
     >
       <div class="headline ml-32 mr-32">
         <img src="{{ results.image }}" />

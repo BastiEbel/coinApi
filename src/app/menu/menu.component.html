@@ -6,10 +6,12 @@
     <h1>Coin Chart</h1>
   </div>
   <div class="navigation bg-container">
-    <input type="text" placeholder="find Coin" class="bg-container" /><img
-      src="/assets/icons/lupe.png"
-    />
-    <!-- <a class="button-info" href="/home">Home</a>
-    <a class="button-info" href="/detail">Detail View</a> -->
+    <input
+      type="text"
+      placeholder="find Coin"
+      [(ngModel)]="renderService.search"
+      autocomplete="off"
+      class="bg-container"
+    /><img src="/assets/icons/lupe.png" />
   </div>
 </div>

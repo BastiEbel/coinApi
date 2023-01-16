@@ -19,8 +19,10 @@ import { ChartComponent } from './chart/chart.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragScrollModule } from 'ngx-drag-scroll';
+import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BalanceComponent } from './balance/balance.component';
+import { SearchPipePipe } from './services/search-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { BalanceComponent } from './balance/balance.component';
     ScrollComponent,
     ChartComponent,
     BalanceComponent,
+    SearchPipePipe,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { BalanceComponent } from './balance/balance.component';
     NgxPaginationModule,
     DragScrollModule,
     MatProgressSpinnerModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

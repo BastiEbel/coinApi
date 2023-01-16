@@ -11,7 +11,7 @@
     .container-top {
         margin-top: 24px;
         margin-bottom: 12px;
-        height: 18vh;
+        //height: 180px;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -19,14 +19,14 @@
 }
 
 .balance-container {
-    height: 18vh;
+    height: 180px;
     width: 64%;
     margin-left: 24px;
     margin-right: 12px;
     border-radius: 15px;
 }
 .detail-container {
-    height: 18vh;
+    height: 180px;
     width: 34%;
     margin-left: 12px;
     margin-right: 24px;
@@ -40,7 +40,7 @@
 }
 .container-exchange {
     width: 25%;
-    height: 45vh;
+    height: 435px;
     border-radius: 15px;
     margin: 16px 24px 0px 24px;
 }
