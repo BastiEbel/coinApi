@@ -17,10 +17,10 @@ import { ScrollComponent } from './scroll/scroll.component';
 import { ChartComponent } from './chart/chart.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { FormsModule } from '@angular/forms';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { BalanceComponent } from './balance/balance.component';
 import { SearchPipePipe } from './services/search-pipe.pipe';
 
@@ -46,7 +46,7 @@ import { SearchPipePipe } from './services/search-pipe.pipe';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    NgxPaginationModule,
+    MatSlideToggleModule,
     DragScrollModule,
     MatProgressSpinnerModule,
     FormsModule,

@@ -10,6 +10,7 @@ export class RenderService {
   coinOfDay: boolean = false;
   coinOfWeek: boolean = false;
   coinOfMonth: boolean = false;
+  isDisabled: boolean;
   coinName: string = 'Bitcoin';
   search: string;
   currentCoin: any = [];

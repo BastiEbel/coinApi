@@ -73,7 +73,15 @@ input::-webkit-inner-spin-button {
     background-color: black !important;
     color: white !important;
 }
+.mat-slide-toggle-bar {
+    background-color: rgb(40 40 40);
+}
 
+.mat-slide-toggle-content {
+    font-size: 22px;
+    font-family: "Benne", bolder;
+    margin-left: 16px;
+}
 .bg-container {
     background-color: rgb(25, 25, 25);
 }

@@ -4,7 +4,6 @@
     padding-left: 6%;
     border-bottom: 1px solid rgb(100, 100, 100);
     background-color: rgb(0, 0, 0);
-    //box-shadow: 7px 0px 17px 0px rgba(255, 255, 255, 0.6);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,24 +19,36 @@
     }
 }
 
-.navigation {
+.navi-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 30px;
-    width: 180px;
-    border-radius: 25px;
-    input {
-        height: 25px;
-        width: 100px;
-        border: unset;
-        color: white;
-        &:focus {
-            outline: unset;
-        }
+    .toggle-eur {
+        margin-right: 16px;
+        font-size: 22px;
+        font-weight: bolder;
     }
-    img {
-        height: 15px;
+    .navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 180px;
+        border-radius: 25px;
+        margin-right: 32px;
+        input {
+            height: 25px;
+            width: 100px;
+            border: unset;
+            color: white;
+            font-size: 18px;
+            font-family: "Benne";
+            &:focus {
+                outline: unset;
+            }
+        }
+        img {
+            height: 15px;
+        }
     }
 }
 

@@ -5,13 +5,26 @@
     />
     <h1>Coin Chart</h1>
   </div>
-  <div class="navigation bg-container">
-    <input
-      type="text"
-      placeholder="find Coin"
-      [(ngModel)]="renderService.search"
-      autocomplete="off"
-      class="bg-container"
-    /><img src="/assets/icons/lupe.png" />
+  <div class="navi-container">
+    <div class="navigation bg-container">
+      <input
+        type="text"
+        placeholder="find Coin"
+        [(ngModel)]="renderService.search"
+        autocomplete="off"
+        class="bg-container"
+      /><img src="/assets/icons/lupe.png" />
+    </div>
+    <span
+      (click)="tg.toggle()"
+      [class.mat-disabled]="tg.disabled"
+      class="toggle-eur mat-slide-toggle-left mat-slide-toggle"
+    >
+      EUR
+    </span>
+
+    <mat-slide-toggle #tg [disabled]="renderService.isDisabled"
+      >USD</mat-slide-toggle
+    >
   </div>
 </div>
