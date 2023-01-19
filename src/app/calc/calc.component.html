@@ -18,7 +18,7 @@
   <p>
     <b>{{ calcService.sum }}</b>
   </p>
-  <p class="name-color">€</p>
+  <p class="name-color">{{ renderService.currencyName }}</p>
 </div>
 <div class="container-calc">
   <p>Get</p>
@@ -47,7 +47,7 @@
       (input)="calcNewQuantity($event)"
       value="{{ calcService.sum }}"
     />
-    <p class="currency">€</p>
+    <p class="currency">{{ renderService.currencyName }}</p>
   </div>
   <button (click)="exchange()" class="btn-exchange">Exchange</button>
 </div>

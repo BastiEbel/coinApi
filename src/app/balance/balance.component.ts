@@ -34,6 +34,9 @@ export class BalanceComponent implements OnInit {
     this.percentage = decimal.toFixed(2);
   }
   async showData() {
+    if (this.doughnutChart) {
+      this.doughnutChart.destroy();
+    }
     await this.percentageSort.getSortData();
     this.shortPercentage();
     this.renderDoughnut();

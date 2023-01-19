@@ -6,7 +6,6 @@ import {
   Output,
   ViewChild,
   EventEmitter,
-  Input,
 } from '@angular/core';
 import { UrlCoinService } from '../services/url-coin.service';
 import { RenderService } from '../services/render.service';

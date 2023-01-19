@@ -44,4 +44,9 @@ export class MainComponent implements OnInit {
     }
     this.balanceComponent.shortPercentage();
   }
+
+  drawNewChart() {
+    this.chartComponent.dailyChart();
+    this.balanceComponent.showData();
+  }
 }

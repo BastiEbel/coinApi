@@ -76,6 +76,15 @@ input::-webkit-inner-spin-button {
 .mat-slide-toggle-bar {
     background-color: rgb(40 40 40);
 }
+.mat-slide-toggle.mat-checked {
+    .mat-slide-toggle-thumb {
+        background-color: rgb(70, 70, 255);
+    }
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: rgb(100, 100, 100);
+}
 
 .mat-slide-toggle-content {
     font-size: 22px;

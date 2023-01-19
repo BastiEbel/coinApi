@@ -23,7 +23,10 @@
       EUR
     </span>
 
-    <mat-slide-toggle #tg [disabled]="renderService.isDisabled"
+    <mat-slide-toggle
+      (change)="onChange($event.checked)"
+      #tg
+      [disabled]="renderService.isDisabled"
       >USD</mat-slide-toggle
     >
   </div>
