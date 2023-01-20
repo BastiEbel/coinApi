@@ -48,5 +48,6 @@ export class MainComponent implements OnInit {
   drawNewChart() {
     this.chartComponent.dailyChart();
     this.balanceComponent.showData();
+    this.balanceComponent.clear();
   }
 }

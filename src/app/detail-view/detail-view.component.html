@@ -9,7 +9,10 @@
       <p>{{ detail.name }}</p>
     </div>
     <div class="coin-price">
-      <span>{{ detail.current_price.toFixed(2) }} €</span>
+      <span
+        >{{ detail.current_price.toFixed(2) }}
+        {{ renderService.currencyName }}</span
+      >
       <span
         [ngClass]="
           detail.price_change_percentage_24h >= 0

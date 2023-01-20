@@ -11,6 +11,7 @@ import { RenderService } from '../services/render.service';
 export class BalanceComponent implements OnInit {
   percentage: number;
   doughnutChart: any;
+  public selectedItem;
 
   constructor(
     public renderService: RenderService,
@@ -39,6 +40,7 @@ export class BalanceComponent implements OnInit {
     }
     await this.percentageSort.getSortData();
     this.shortPercentage();
+    this.clear();
     this.renderDoughnut();
   }
 
@@ -58,6 +60,10 @@ export class BalanceComponent implements OnInit {
       this.doughnutChart.destroy();
       this.renderDoughnut();
     }
+  }
+
+  clear() {
+    this.selectedItem = 'highesPercentage';
   }
 
   renderDoughnut() {

@@ -49,7 +49,7 @@
       <canvas id="doughnutCanvas"></canvas>
       <div class="container-legends">
         <div class="header-chart">
-          <select (change)="onChange($event)">
+          <select [(ngModel)]="selectedItem" (change)="onChange($event)">
             <option value="lowestCoin">Lowest price</option>
             <option value="highestCoin">Highest price</option>
             <option value="highesPercentage" selected>Highest % changes</option>
