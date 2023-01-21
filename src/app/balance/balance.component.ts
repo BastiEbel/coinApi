@@ -35,10 +35,11 @@ export class BalanceComponent implements OnInit {
    * get 2 digits after the comma
    *
    */
-  shortPercentage() {
+  async shortPercentage() {
     try {
-      let decimal =
-        this.renderService.currentCoin['price_change_percentage_24h'];
+      let decimal = await this.renderService.currentCoin[
+        'price_change_percentage_24h'
+      ];
       this.percentage = decimal.toFixed(2);
     } catch (err) {
       console.error(err);
@@ -61,6 +62,13 @@ export class BalanceComponent implements OnInit {
     } catch (err) {
       console.error(err);
     }
+  }
+  /**
+   * clear select box
+   *
+   */
+  clear() {
+    this.selectedItem = 'highesPercentage';
   }
 
   /**
@@ -88,14 +96,6 @@ export class BalanceComponent implements OnInit {
     } catch (err) {
       console.error(err);
     }
-  }
-
-  /**
-   * clear select box
-   *
-   */
-  clear() {
-    this.selectedItem = 'highesPercentage';
   }
 
   /**
