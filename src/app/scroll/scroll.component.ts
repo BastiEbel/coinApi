@@ -44,38 +44,46 @@ export class ScrollComponent implements OnInit, AfterViewInit {
    *
    */
   moveLeft() {
-    this.ds.moveLeft();
-    setTimeout(() => {
-      if (this.ds.currIndex != 0) {
-        this.arrowLeft = false;
-      } else {
-        this.arrowLeft = true;
-      }
-      if (this.ds.currIndex != 47) {
-        this.arrowRight = false;
-      } else {
-        this.arrowRight = true;
-      }
-    }, 500);
+    try {
+      this.ds.moveLeft();
+      setTimeout(() => {
+        if (this.ds.currIndex != 0) {
+          this.arrowLeft = false;
+        } else {
+          this.arrowLeft = true;
+        }
+        if (this.ds.currIndex != 47) {
+          this.arrowRight = false;
+        } else {
+          this.arrowRight = true;
+        }
+      }, 500);
+    } catch (err) {
+      console.error(err);
+    }
   }
   /**
    * function to scroll right about click
    *
    */
   moveRight() {
-    this.ds.moveRight();
-    setTimeout(() => {
-      if (this.ds.currIndex != 0) {
-        this.arrowLeft = false;
-      } else {
-        this.arrowLeft = true;
-      }
-      if (this.ds.currIndex < 48) {
-        this.arrowRight = false;
-      } else {
-        this.arrowRight = true;
-      }
-    }, 500);
+    try {
+      this.ds.moveRight();
+      setTimeout(() => {
+        if (this.ds.currIndex != 0) {
+          this.arrowLeft = false;
+        } else {
+          this.arrowLeft = true;
+        }
+        if (this.ds.currIndex < 48) {
+          this.arrowRight = false;
+        } else {
+          this.arrowRight = true;
+        }
+      }, 500);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   /**
@@ -92,14 +100,18 @@ export class ScrollComponent implements OnInit, AfterViewInit {
    *
    */
   async selectedCoin(id) {
-    this.renderService.currentCoin = [];
-    for (let i = 0; i < this.renderService.result.length; i++) {
-      if (id == this.renderService.result[i]['id']) {
-        this.service.dailyCoin = id;
-        this.renderService.coinName = this.renderService.result[i]['name'];
-        this.renderService.currentCoin = this.renderService.result[i];
+    try {
+      this.renderService.currentCoin = [];
+      for (let i = 0; i < this.renderService.result.length; i++) {
+        if (id == this.renderService.result[i]['id']) {
+          this.service.dailyCoin = id;
+          this.renderService.coinName = this.renderService.result[i]['name'];
+          this.renderService.currentCoin = this.renderService.result[i];
+        }
       }
+      this.selectedCoins.emit();
+    } catch (err) {
+      console.error(err);
     }
-    this.selectedCoins.emit();
   }
 }

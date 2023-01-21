@@ -1,9 +1,6 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { BalanceComponent } from '../balance/balance.component';
-import { ChartComponent } from '../chart/chart.component';
+import { Component, OnInit } from '@angular/core';
 import { MainComponent } from '../main/main.component';
 import { CalcService } from '../services/calc.service';
-import { PercentageSortService } from '../services/percentage-sort.service';
 import { RenderService } from '../services/render.service';
 import { UrlCoinService } from '../services/url-coin.service';
 
@@ -21,6 +18,10 @@ export class MenuComponent implements OnInit {
   ) {}
   ngOnInit(): void {}
 
+  /**
+   * function for the slider
+   * @param disabled
+   */
   onChange(disabled: boolean) {
     if (disabled) {
       this.service.currency = 'usd';
@@ -33,6 +34,10 @@ export class MenuComponent implements OnInit {
     }
   }
 
+  /**
+   * update the function if value change
+   *
+   */
   updateInfos() {
     this.renderService.getData();
     this.renderService.dailyCoinPrice();

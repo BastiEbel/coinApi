@@ -30,42 +30,78 @@ export class BalanceComponent implements OnInit {
   ngAfterContentChecked(): void {
     this.changeDetector.detectChanges();
   }
+
+  /**
+   * get 2 digits after the comma
+   *
+   */
   shortPercentage() {
-    let decimal = this.renderService.currentCoin['price_change_percentage_24h'];
-    this.percentage = decimal.toFixed(2);
+    try {
+      let decimal =
+        this.renderService.currentCoin['price_change_percentage_24h'];
+      this.percentage = decimal.toFixed(2);
+    } catch (err) {
+      console.error(err);
+    }
   }
+
+  /**
+   * get Data for the pie chart
+   *
+   */
   async showData() {
-    if (this.doughnutChart) {
-      this.doughnutChart.destroy();
+    try {
+      if (this.doughnutChart) {
+        this.doughnutChart.destroy();
+      }
+      await this.percentageSort.getSortData();
+      this.shortPercentage();
+      this.clear();
+      this.renderDoughnut();
+    } catch (err) {
+      console.error(err);
     }
-    await this.percentageSort.getSortData();
-    this.shortPercentage();
-    this.clear();
-    this.renderDoughnut();
   }
 
+  /**
+   * function for the select box
+   * @param $event
+   *
+   */
   onChange($event) {
-    let isSelected =
-      $event.target.options[$event.target.options.selectedIndex].value;
-    if (isSelected === 'highesPercentage') {
-      this.percentageSort.getHighestPercentageValue();
-      this.doughnutChart.destroy();
-      this.renderDoughnut();
-    } else if (isSelected === 'highestCoin') {
-      this.percentageSort.getHighestCoinValue();
-      this.doughnutChart.destroy();
-      this.renderDoughnut();
-    } else {
-      this.percentageSort.getLowestCoinValue();
-      this.doughnutChart.destroy();
-      this.renderDoughnut();
+    try {
+      let isSelected =
+        $event.target.options[$event.target.options.selectedIndex].value;
+      if (isSelected === 'highesPercentage') {
+        this.percentageSort.getHighestPercentageValue();
+        this.doughnutChart.destroy();
+        this.renderDoughnut();
+      } else if (isSelected === 'highestCoin') {
+        this.percentageSort.getHighestCoinValue();
+        this.doughnutChart.destroy();
+        this.renderDoughnut();
+      } else {
+        this.percentageSort.getLowestCoinValue();
+        this.doughnutChart.destroy();
+        this.renderDoughnut();
+      }
+    } catch (err) {
+      console.error(err);
     }
   }
 
+  /**
+   * clear select box
+   *
+   */
   clear() {
     this.selectedItem = 'highesPercentage';
   }
 
+  /**
+   * render pie chart
+   *
+   */
   renderDoughnut() {
     this.doughnutChart = new Chart('doughnutCanvas', {
       type: 'doughnut',

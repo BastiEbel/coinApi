@@ -30,24 +30,31 @@ export class MainComponent implements OnInit {
    *
    */
   selectedCoin() {
-    if (this.renderService.coinOfDay) {
-      this.chartComponent.dailyChart();
-    } else if (this.renderService.coinOfWeek) {
-      this.chartComponent.weeklyChart();
-    } else if (this.renderService.coinOfMonth) {
-      this.chartComponent.monthChart();
+    try {
+      if (this.renderService.coinOfDay) {
+        this.chartComponent.dailyChart();
+      } else if (this.renderService.coinOfWeek) {
+        this.chartComponent.weeklyChart();
+      } else if (this.renderService.coinOfMonth) {
+        this.chartComponent.monthChart();
+      }
+      if (this.calcService.isReadonly) {
+        this.calcService.calcNewOne();
+      } else {
+        this.calcService.switchCalculate();
+      }
+      this.balanceComponent.shortPercentage();
+    } catch (err) {
+      console.error(err);
     }
-    if (this.calcService.isReadonly) {
-      this.calcService.calcNewOne();
-    } else {
-      this.calcService.switchCalculate();
-    }
-    this.balanceComponent.shortPercentage();
   }
 
   drawNewChart() {
-    this.chartComponent.dailyChart();
-    this.balanceComponent.showData();
-    this.balanceComponent.clear();
+    try {
+      this.chartComponent.dailyChart();
+      this.balanceComponent.showData();
+    } catch (err) {
+      console.error(err);
+    }
   }
 }

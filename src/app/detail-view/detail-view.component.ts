@@ -22,11 +22,15 @@ export class DetailViewComponent implements OnInit {
    *
    */
   openDialog(results: any): void {
-    this.dialog.open(SingleViewComponent, {
-      maxWidth: '100vw',
-      maxHeight: '100vh',
-      data: { results },
-    });
+    try {
+      this.dialog.open(SingleViewComponent, {
+        maxWidth: '100vw',
+        maxHeight: '100vh',
+        data: { results },
+      });
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   /**
@@ -34,6 +38,10 @@ export class DetailViewComponent implements OnInit {
    * get infos for the Detail view
    */
   async getDetail() {
-    await this.renderService.getData();
+    try {
+      await this.renderService.getData();
+    } catch (err) {
+      console.error(err);
+    }
   }
 }

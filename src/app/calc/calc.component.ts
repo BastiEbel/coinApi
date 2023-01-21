@@ -23,6 +23,11 @@ export class CalcComponent implements OnInit {
     }, 200);
   }
 
+  /**
+   * function sent value from input to variable
+   * @param event
+   * @returns
+   */
   sendNewAmount(event) {
     try {
       this.calcService.amountField = event.target.value;
@@ -33,26 +38,45 @@ export class CalcComponent implements OnInit {
   }
 
   calcNewQuantity(event) {
-    this.calcService.sum = event.target.value;
-    return this.calcService.sum;
+    try {
+      this.calcService.sum = event.target.value;
+    } catch (err) {
+      console.error(err);
+    }
   }
 
+  /**
+   * calculate the value
+   *
+   */
   exchange() {
-    this.calcService.calculate();
+    try {
+      this.calcService.calculate();
+    } catch (err) {
+      console.error(err);
+    }
   }
 
+  /**
+   * switch the value
+   *
+   */
   changeValue() {
-    this.activeAnimate = true;
-    if (!this.calcService.isReadonly) {
-      this.calcService.calcNewOne();
-      setTimeout(() => {
-        this.activeAnimate = false;
-      }, 1500);
-    } else {
-      this.calcService.switchCalculate();
-      setTimeout(() => {
-        this.activeAnimate = false;
-      }, 1500);
+    try {
+      this.activeAnimate = true;
+      if (!this.calcService.isReadonly) {
+        this.calcService.calcNewOne();
+        setTimeout(() => {
+          this.activeAnimate = false;
+        }, 1500);
+      } else {
+        this.calcService.switchCalculate();
+        setTimeout(() => {
+          this.activeAnimate = false;
+        }, 1500);
+      }
+    } catch (err) {
+      console.error(err);
     }
   }
 }
