@@ -13,7 +13,7 @@
     </div>
     <div class="current-price">
       <p>
-        {{ renderService.currentCoin.current_price }}
+        {{ shorCurrenttPrice }}
         {{ renderService.currencyName }}
       </p>
       <p style="color: rgb(159, 159, 159)">
@@ -26,20 +26,14 @@
           <img class="down" src="/assets/icons/down.png" alt="" />24h lowest
           price
         </p>
-        <span
-          >{{ renderService.currentCoin.low_24h }}
-          {{ renderService.currencyName }}</span
-        >
+        <span>{{ shortLowPrice }} {{ renderService.currencyName }}</span>
       </div>
       <div class="separation-small"></div>
       <div class="higher-price">
         <p>
           <img class="up" src="/assets/icons/up.png" alt="" /> 24h highest price
         </p>
-        <span
-          >{{ renderService.currentCoin.high_24h }}
-          {{ renderService.currencyName }}</span
-        >
+        <span>{{ shortHighPrice }} {{ renderService.currencyName }}</span>
       </div>
     </div>
   </div>

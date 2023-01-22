@@ -15,6 +15,7 @@
         background-color: black;
         color: white;
         border-radius: 8px;
+        font-size: 16px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -28,7 +29,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 18px;
+
             font-weight: bolder;
             p {
                 margin-left: 16px;
@@ -40,7 +41,6 @@
             align-items: center;
             justify-content: space-around;
             width: 250px;
-            font-size: 18px;
             font-weight: bolder;
         }
         img {
@@ -50,27 +50,33 @@
     }
 }
 
-@media (max-width: 1000px) {
-    .name-color {
-        font-size: medium;
+@media (max-width: 1500px) {
+    @media (max-width: 1500px) {
+        .minus-number {
+            font-size: 16px !important;
+        }
+        .plus-number {
+            font-size: 16px !important;
+        }
     }
-    .last-24 {
-        font-size: small;
-    }
-    .single-info {
-        font-size: small;
+    .detail-container {
+        .detail-view {
+            .coin-price {
+                width: 220px;
+            }
+            img {
+                height: 30px;
+                width: 30px;
+            }
+        }
     }
 }
 
-@media (max-width: 885px) {
-    .name-color {
-        font-size: small;
-    }
-    .last-24 {
-        font-size: x-small;
-    }
-    .single-info {
-        font-size: x-small;
+@media (max-width: 1400px) {
+    .detail-container {
+        .detail-view {
+            font-size: 14px;
+        }
     }
 }
 

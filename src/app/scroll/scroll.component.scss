@@ -58,7 +58,7 @@ drag-scroll {
     position: absolute;
     right: 15px;
     height: 220px;
-    width: 80px;
+    width: 90px;
     bottom: 0px;
     background: linear-gradient(to right, transparent, black);
     z-index: 10;
@@ -88,7 +88,7 @@ drag-scroll {
     position: absolute;
     left: 15px;
     height: 220px;
-    width: 80px;
+    width: 90px;
     bottom: 0px;
     background: linear-gradient(to left, transparent, black);
     z-index: 10;
@@ -103,4 +103,12 @@ drag-scroll {
 }
 .d-none {
     display: none;
+}
+@media (max-width: 1460px) {
+    .scroll-left {
+        left: 10px;
+    }
+    .scroll-right {
+        right: 10px;
+    }
 }

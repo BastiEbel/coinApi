@@ -6,22 +6,24 @@ import { RenderService } from './render.service';
 })
 export class CalcService {
   amountField: any = 1;
-  sum: number;
+  sum: any;
   isReadonly: boolean = true;
   constructor(private renderService: RenderService) {}
 
   calcNewOne() {
     setTimeout(() => {
       this.amountField = 1;
-      this.sum = this.renderService.currentCoin['current_price'];
+      let shortSum = this.renderService.currentCoin['current_price'];
+      this.sum = shortSum.toFixed(2);
     }, 500);
     return (this.isReadonly = true);
   }
 
   calculate() {
     if (this.isReadonly) {
-      this.sum =
+      let shortSum =
         this.amountField * this.renderService.currentCoin['current_price'];
+      this.sum = shortSum.toFixed(2);
     } else {
       let decimal = this.sum / this.renderService.currentCoin['current_price'];
       this.amountField = decimal.toFixed(5);
