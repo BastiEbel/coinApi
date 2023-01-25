@@ -5,6 +5,7 @@ import { DragScrollComponent } from 'ngx-drag-scroll';
 import { ChartComponent } from '../chart/chart.component';
 import { CalcService } from '../services/calc.service';
 import { BalanceComponent } from '../balance/balance.component';
+import { PercentageSortService } from '../services/percentage-sort.service';
 
 @Component({
   selector: 'app-main',
@@ -18,6 +19,7 @@ export class MainComponent implements OnInit {
 
   constructor(
     public service: UrlCoinService,
+    public percentageSort: PercentageSortService,
     private renderService: RenderService,
     private calcService: CalcService
   ) {}
@@ -43,7 +45,7 @@ export class MainComponent implements OnInit {
       } else {
         this.calcService.switchCalculate();
       }
-      this.balanceComponent.shortPercentage();
+      this.percentageSort.shortValue();
     } catch (err) {
       console.error(err);
     }

@@ -9,10 +9,6 @@ import { RenderService } from '../services/render.service';
   styleUrls: ['./balance.component.scss'],
 })
 export class BalanceComponent implements OnInit {
-  percentage: number;
-  shorCurrenttPrice: number;
-  shortHighPrice: number;
-  shortLowPrice: number;
   doughnutChart: any;
   public selectedItem;
 
@@ -35,35 +31,6 @@ export class BalanceComponent implements OnInit {
   }
 
   /**
-   * get 2 digits after the comma
-   *
-   */
-  async shortPercentage() {
-    try {
-      let decimal = await this.renderService.currentCoin[
-        'price_change_percentage_24h'
-      ];
-      this.percentage = decimal.toFixed(2);
-      this.shortPrices();
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  async shortPrices() {
-    try {
-      let current = await this.renderService.currentCoin['current_price'];
-      let low = await this.renderService.currentCoin['low_24h'];
-      let high = await this.renderService.currentCoin['high_24h'];
-      this.shorCurrenttPrice = current.toFixed(2);
-      this.shortLowPrice = low.toFixed(2);
-      this.shortHighPrice = high.toFixed(2);
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  /**
    * get Data for the pie chart
    *
    */
@@ -73,7 +40,7 @@ export class BalanceComponent implements OnInit {
         this.doughnutChart.destroy();
       }
       await this.percentageSort.getSortData();
-      this.shortPercentage();
+      this.percentageSort.shortValue();
 
       this.clear();
       this.renderDoughnut();

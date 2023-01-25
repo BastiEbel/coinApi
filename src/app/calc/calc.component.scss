@@ -118,3 +118,61 @@
         }
     }
 }
+@media (max-width: 1500px) {
+    .head-container {
+        p {
+            font-size: 20px;
+        }
+        img {
+            width: 30px;
+            height: 30px;
+            &:hover {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+    .price-container {
+        p {
+            font-size: 20px;
+        }
+        img {
+            height: 20px;
+            width: 20px;
+        }
+    }
+    .container-calc {
+        .input-container {
+            height: 40px;
+            .container-coin-img {
+                .coin-img {
+                    height: 25px;
+                    width: 25px;
+                }
+            }
+            input {
+                font-size: 18px;
+                height: 38px;
+            }
+            .currency {
+                font-size: 18px;
+            }
+        }
+        button {
+            height: 38px;
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .price-container {
+        p {
+            font-size: 18px;
+        }
+        img {
+            height: 15px;
+            width: 15px;
+        }
+    }
+}

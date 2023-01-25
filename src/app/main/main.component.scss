@@ -43,7 +43,10 @@
     border-radius: 15px;
     margin: 16px 24px 0px 24px;
 }
-
+.chart-style {
+    width: 100%;
+    margin-right: 24px;
+}
 img {
     width: 40px;
     height: 40px;
@@ -67,10 +70,22 @@ img {
     display: none;
 }
 
-/* @media (max-width: 1500px) {
-    
+@media (max-width: 1300px) {
+    .chart-style {
+        width: 90%;
+    }
 }
-
+@media (max-width: 1200px) {
+    .chart-style {
+        width: 80%;
+    }
+}
+@media (max-width: 1100px) {
+    .chart-style {
+        width: 70%;
+    }
+}
+/*
 @media (max-width: 1368px) {
     .main-container {
         height: calc(100vh - 300px);

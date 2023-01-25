@@ -8,12 +8,12 @@
             ? 'plus-number'
             : 'minus-number'
         "
-        >{{ percentage }} %</span
+        >{{ percentageSort.percentage }} %</span
       >
     </div>
     <div class="current-price">
       <p>
-        {{ shorCurrenttPrice }}
+        {{ percentageSort.shorCurrenttPrice }}
         {{ renderService.currencyName }}
       </p>
       <p style="color: rgb(159, 159, 159)">
@@ -26,14 +26,20 @@
           <img class="down" src="/assets/icons/down.png" alt="" />24h lowest
           price
         </p>
-        <span>{{ shortLowPrice }} {{ renderService.currencyName }}</span>
+        <span
+          >{{ percentageSort.shortLowPrice }}
+          {{ renderService.currencyName }}</span
+        >
       </div>
       <div class="separation-small"></div>
       <div class="higher-price">
         <p>
           <img class="up" src="/assets/icons/up.png" alt="" /> 24h highest price
         </p>
-        <span>{{ shortHighPrice }} {{ renderService.currencyName }}</span>
+        <span
+          >{{ percentageSort.shortHighPrice }}
+          {{ renderService.currencyName }}</span
+        >
       </div>
     </div>
   </div>

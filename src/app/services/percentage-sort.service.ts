@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { RenderService } from './render.service';
 import { UrlCoinService } from './url-coin.service';
 
 @Injectable({
@@ -9,16 +10,45 @@ export class PercentageSortService {
   percentageValue: boolean = true;
   highestCoin: boolean = false;
   lowestCoin: boolean = false;
+  percentage: number;
+  shorCurrenttPrice: number;
+  shortHighPrice: number;
+  shortLowPrice: number;
   item: any = [];
   data: any = [];
   currentData: any = [];
-  constructor(private service: UrlCoinService) {}
+  constructor(
+    private renderService: RenderService,
+    private service: UrlCoinService
+  ) {}
 
   async getSortData() {
     this.data = [];
     this.data = await firstValueFrom(this.service.getFullList());
     this.getHighestPercentageValue();
     this.service.isLoading = false;
+  }
+
+  /**
+   * get 2 digits after the comma
+   *
+   */
+  async shortValue() {
+    try {
+      let decimal = await this.renderService.currentCoin[
+        'price_change_percentage_24h'
+      ];
+
+      let current = await this.renderService.currentCoin['current_price'];
+      let low = await this.renderService.currentCoin['low_24h'];
+      let high = await this.renderService.currentCoin['high_24h'];
+      this.percentage = decimal.toFixed(2);
+      this.shorCurrenttPrice = current.toFixed(2);
+      this.shortLowPrice = low.toFixed(2);
+      this.shortHighPrice = high.toFixed(2);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   getHighestPercentageValue() {
