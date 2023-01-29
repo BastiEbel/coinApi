@@ -389,6 +389,12 @@
     }
 }
 @media (max-width: 1000px) {
+    .minus-number {
+        font-size: 20px;
+    }
+    .plus-number {
+        font-size: 20px;
+    }
     .container {
         flex-direction: column;
 
@@ -402,13 +408,6 @@
                     font-size: 22px;
                     margin-block-start: unset;
                     margin-block-end: unset;
-                }
-                .minus-number {
-                    font-size: 20px;
-                }
-
-                .plus-number {
-                    font-size: 20px;
                 }
             }
             .current-price {
@@ -473,4 +472,22 @@
     }
 }
 @media (max-width: 900px) {
+    .container {
+        .separation {
+            width: 448px;
+        }
+    }
+}
+@media (max-width: 800px) {
+    .container {
+        .balance-container {
+            width: 84%;
+        }
+        .container-Chart {
+            width: 84%;
+        }
+        .separation {
+            width: 620px;
+        }
+    }
 }

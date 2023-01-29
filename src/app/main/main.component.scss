@@ -41,7 +41,9 @@
     width: 20%;
     height: 435px;
     border-radius: 15px;
-    margin: 12px 24px 0px 24px;
+    margin-top: 12px;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 .chart-style {
     width: 80%;
@@ -90,6 +92,14 @@ img {
 }
 
 @media (max-width: 900px) {
+    .container-top {
+        .balance-container {
+            width: 55%;
+        }
+        .detail-container {
+            width: 37%;
+        }
+    }
     .container {
         flex-direction: column;
         .container-exchange {
@@ -102,6 +112,28 @@ img {
             width: 94%;
             margin-right: unset;
             margin-top: 20px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .container-top {
+        flex-direction: column-reverse;
+        .balance-container {
+            width: 94%;
+        }
+        .detail-container {
+            height: 180px;
+            width: 94%;
+            margin-right: unset;
+            margin-left: 24px;
+            margin-bottom: 24px;
+        }
+    }
+    .container {
+        .container-exchange {
+            margin-left: unset;
+            margin-right: unset;
         }
     }
 }

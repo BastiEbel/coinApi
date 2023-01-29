@@ -132,3 +132,13 @@ drag-scroll {
         bottom: -380px;
     }
 }
+
+@media (max-width: 800px) {
+    .scroll-right {
+        bottom: -605px;
+    }
+
+    .scroll-left {
+        bottom: -605px;
+    }
+}

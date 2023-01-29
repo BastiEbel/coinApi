@@ -122,6 +122,34 @@
     }
 }
 
+@media (max-width: 800px) {
+    .minus-number {
+        font-size: 18px;
+    }
+
+    .plus-number {
+        font-size: 18px;
+    }
+    .detail-container {
+        height: 165px;
+        width: 94%;
+        margin-right: unset;
+        margin-left: 24px;
+        margin-bottom: 24px;
+        .detail-view {
+            font-size: 18px;
+            width: 92%;
+            .coin-name {
+                margin-left: 32px;
+                img {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+    }
+}
+
 /* IPhone SE */
 
 @media screen and (width: 375px) and (height: 667px) {
