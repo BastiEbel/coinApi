@@ -123,3 +123,12 @@ drag-scroll {
         bottom: -180px;
     }
 }
+@media (max-width: 1000px) {
+    .scroll-right {
+        bottom: -380px;
+    }
+
+    .scroll-left {
+        bottom: -380px;
+    }
+}

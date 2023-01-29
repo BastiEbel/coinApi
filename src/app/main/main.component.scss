@@ -88,14 +88,24 @@ img {
         height: 360px;
     }
 }
-/*
-@media (max-width: 1150px) {
-    canvas {
-        max-width: 550px !important;
-        height: 270px !important;
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        .container-exchange {
+            display: flex;
+            flex-direction: column;
+            width: 94%;
+            height: 170px;
+        }
+        .chart-style {
+            width: 94%;
+            margin-right: unset;
+            margin-top: 20px;
+        }
     }
 }
-
+/*
 @media (max-width: 1024px) {
     .main-container {
         height: unset;
