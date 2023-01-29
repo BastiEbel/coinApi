@@ -3,9 +3,11 @@ drag-scroll::-webkit-scrollbar {
 }
 .over-coin-container {
     width: 100%;
+    margin-top: 4px;
+    margin-left: 12px;
 }
 .headline {
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
@@ -40,6 +42,8 @@ drag-scroll {
     margin-left: 12px;
     margin-top: 12px;
     border-radius: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -51,22 +55,7 @@ drag-scroll {
         z-index: 2;
     }
 }
-.scroll-right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 15px;
-    height: 220px;
-    width: 90px;
-    bottom: 0px;
-    background: linear-gradient(to right, transparent, black);
-    z-index: 10;
-    .img-right {
-        height: 20px;
-        width: 20px;
-    }
-}
+
 .left-container {
     display: flex;
     justify-content: center;
@@ -81,12 +70,29 @@ drag-scroll {
         transform: scale(1.2);
     }
 }
+.scroll-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0px;
+    height: 220px;
+    width: 90px;
+    bottom: 0px;
+    background: linear-gradient(to right, transparent, black);
+    z-index: 10;
+    .img-right {
+        height: 20px;
+        width: 20px;
+    }
+}
+
 .scroll-left {
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 15px;
+    left: 0px;
     height: 220px;
     width: 90px;
     bottom: 0px;
@@ -98,17 +104,22 @@ drag-scroll {
         width: 25px;
     }
 }
+
 .active {
     background-color: rgb(50, 50, 50);
 }
 .d-none {
     display: none;
 }
-@media (max-width: 1460px) {
-    .scroll-left {
-        left: 10px;
+@media (max-width: 1000px) {
+    drag-scroll {
+        width: calc(100vw - 5px);
     }
     .scroll-right {
-        right: 10px;
+        bottom: -180px;
+    }
+
+    .scroll-left {
+        bottom: -180px;
     }
 }

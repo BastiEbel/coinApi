@@ -2,17 +2,17 @@
 <app-menu></app-menu>
 <div class="main-container">
   <div class="main">
-    <div class="container-top">
-      <app-balance class="balance-container bg-container"></app-balance>
-      <app-detail-view class="detail-container bg-container"></app-detail-view>
-    </div>
-    <div class="container">
-      <app-calc class="container-exchange bg-container"></app-calc>
-      <app-chart class="chart-style"></app-chart>
-    </div>
-    <app-scroll
-      (selectedCoins)="selectedCoin()"
-      class="coin-main-container"
-    ></app-scroll>
+  <div class="container-top">
+  <app-balance class="balance-container bg-container"></app-balance>
+  <app-detail-view class="detail-container bg-container"></app-detail-view>
+  </div>
+  <div class="container">
+  <app-calc class="container-exchange bg-container"></app-calc>
+  <app-chart class="chart-style"></app-chart>
+  </div>
+  <app-scroll
+    (selectedCoins)="selectedCoin()"
+    class="coin-main-container"
+  ></app-scroll>
   </div>
 </div>

@@ -1,7 +1,8 @@
 .main-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .main {
@@ -10,7 +11,7 @@
     flex-direction: column;
     .container-top {
         margin-top: 24px;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -21,12 +22,11 @@
     height: 180px;
     width: 64%;
     margin-left: 24px;
-    margin-right: 12px;
     border-radius: 15px;
 }
 .detail-container {
     height: 180px;
-    width: 34%;
+    width: 32%;
     margin-left: 12px;
     margin-right: 24px;
     border-radius: 15px;
@@ -38,13 +38,13 @@
     justify-content: space-between;
 }
 .container-exchange {
-    width: 25%;
+    width: 20%;
     height: 435px;
     border-radius: 15px;
-    margin: 16px 24px 0px 24px;
+    margin: 12px 24px 0px 24px;
 }
 .chart-style {
-    width: 100%;
+    width: 80%;
     margin-right: 24px;
 }
 img {
@@ -56,7 +56,7 @@ img {
 .coin-main-container {
     height: 210px;
     margin-top: 16px;
-    width: 98%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     overflow: hidden !important;
@@ -70,42 +70,25 @@ img {
     display: none;
 }
 
-@media (max-width: 1300px) {
-    .chart-style {
-        width: 90%;
-    }
-}
-@media (max-width: 1200px) {
-    .chart-style {
-        width: 80%;
-    }
-}
 @media (max-width: 1100px) {
+    .container-exchange {
+        width: 24%;
+    }
     .chart-style {
         width: 70%;
     }
 }
-/*
-@media (max-width: 1368px) {
-    .main-container {
-        height: calc(100vh - 300px);
+
+@media (max-width: 1000px) {
+    .balance-container {
+        height: 360px;
+        width: 60%;
     }
-    canvas {
-        max-width: 650px !important;
-        height: 370px !important;
-    }
-    .coin-main-container {
-        width: 260px;
-        font-size: small;
-    }
-    .ml-16 {
-        margin-left: 8px;
-    }
-    .mr-16 {
-        margin-right: 8px;
+    .detail-container {
+        height: 360px;
     }
 }
-
+/*
 @media (max-width: 1150px) {
     canvas {
         max-width: 550px !important;

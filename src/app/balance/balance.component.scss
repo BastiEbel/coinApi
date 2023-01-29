@@ -3,185 +3,187 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.balance-container {
-    width: 45%;
-    margin-left: 64px;
-    margin-right: 32px;
-    height: 18vh;
-    .header-balance {
-        margin-top: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
 
-        h3 {
-            font-size: 22px;
-            margin-block-start: unset;
-            margin-block-end: unset;
-        }
-    }
-    .current-price {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 16px;
-        font-size: 30px;
-        font-weight: bolder;
-        p {
-            margin-block-end: unset;
-            margin-block-start: unset;
-        }
-    }
-    .diffrent-prices {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .higher-price {
-            text-align: end;
-        }
-        p {
-            color: rgb(159, 159, 159);
+    .balance-container {
+        width: 45%;
+        margin-left: 64px;
+        margin-right: 32px;
+        height: 18vh;
+        .header-balance {
+            margin-top: 12px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin-block-start: unset;
-            margin-block-end: unset;
+
+            h3 {
+                font-size: 22px;
+                margin-block-start: unset;
+                margin-block-end: unset;
+            }
+        }
+        .current-price {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             margin-top: 16px;
-            margin-bottom: 12px;
-            font-size: 18px;
-            .up {
-                margin-right: 8px;
-                border-radius: 50%;
-                background-color: rgb(40, 40, 40);
-                height: 24px;
-                width: 24px;
-                transform: rotate(90deg);
-            }
-            .down {
-                margin-right: 8px;
-                border-radius: 50%;
-                background-color: rgb(40, 40, 40);
-                height: 24px;
-                width: 24px;
-                transform: rotate(-90deg);
-            }
-        }
-
-        span {
-            font-size: 22px;
-            font-weight: bolder;
-        }
-
-        .separation-small {
-            border: 1px solid rgb(50, 50, 50);
-            height: 50px;
-        }
-    }
-}
-.separation {
-    border: 1px solid rgb(50, 50, 50);
-    margin-left: 32px;
-    margin-right: 32px;
-    height: 15vh;
-}
-.container-Chart {
-    width: 45%;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-right: 64px;
-    margin-left: 32px;
-    .header-chart {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
-        select {
-            height: 35px;
-            width: 210px;
-            background-color: black;
-            color: white;
-            font-size: 20px;
-            font-family: "OpenSans";
+            font-size: 30px;
             font-weight: bold;
-            padding: 0px 8px 0px 8px;
-            margin-bottom: 8px;
-            border-radius: 10px;
-            border-color: rgb(25, 25, 25);
-            &:focus {
-                outline: unset;
+            p {
+                margin-block-end: unset;
+                margin-block-start: unset;
             }
         }
-    }
-    p {
-        margin-block-end: unset;
-        margin-block-start: unset;
-        margin-top: 4px;
-        margin-bottom: 12px;
-        font-weight: bold;
-        font-size: 22px;
-        width: 100%;
-    }
-    .chart-overall {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        canvas {
-            width: auto !important;
-            height: 15vh !important;
-            margin-right: 16px;
-        }
-        .container-legends {
+        .diffrent-prices {
+            width: 100%;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: space-evenly;
-
-            .legends-chart {
-                width: 100%;
+            .higher-price {
+                text-align: end;
+            }
+            p {
+                color: rgb(159, 159, 159);
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                color: rgb(159, 159, 159);
+                margin-block-start: unset;
+                margin-block-end: unset;
+                margin-top: 16px;
+                margin-bottom: 12px;
+                font-size: 18px;
+                .up {
+                    margin-right: 8px;
+                    border-radius: 50%;
+                    background-color: rgb(40, 40, 40);
+                    height: 24px;
+                    width: 24px;
+                    transform: rotate(90deg);
+                }
+                .down {
+                    margin-right: 8px;
+                    border-radius: 50%;
+                    background-color: rgb(40, 40, 40);
+                    height: 24px;
+                    width: 24px;
+                    transform: rotate(-90deg);
+                }
+            }
+
+            span {
+                font-size: 22px;
+                font-weight: bold;
+            }
+
+            .separation-small {
+                border: 1px solid rgb(50, 50, 50);
+                height: 50px;
+            }
+        }
+    }
+    .separation {
+        border: 1px solid rgb(50, 50, 50);
+        margin-left: 32px;
+        margin-right: 32px;
+        height: 15vh;
+    }
+
+    .container-Chart {
+        width: 45%;
+        height: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 64px;
+        margin-left: 32px;
+        .header-chart {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            select {
+                height: 35px;
+                width: 210px;
+                background-color: black;
+                color: white;
                 font-size: 20px;
+                font-family: "OpenSans";
+                font-weight: bold;
+                padding: 0px 8px 0px 8px;
                 margin-bottom: 8px;
-                margin-top: 8px;
-                .name-container {
+                border-radius: 10px;
+                border-color: rgb(25, 25, 25);
+                &:focus {
+                    outline: unset;
+                }
+            }
+        }
+        p {
+            margin-block-end: unset;
+            margin-block-start: unset;
+            margin-top: 4px;
+            margin-bottom: 12px;
+            font-weight: bold;
+            font-size: 22px;
+            width: 100%;
+        }
+        .chart-overall {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            canvas {
+                width: auto !important;
+                height: 15vh !important;
+                margin-right: 16px;
+            }
+            .container-legends {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+
+                .legends-chart {
+                    width: 100%;
                     display: flex;
                     align-items: center;
-                    .color-blue {
-                        width: 20px;
-                        height: 10px;
-                        border-radius: 3px;
-                        background-color: rgb(0, 136, 255);
-                        margin-right: 16px;
-                    }
-                    .color-pink {
-                        width: 20px;
-                        height: 10px;
-                        border-radius: 3px;
-                        background-color: rgb(255, 51, 255);
-                        margin-right: 16px;
-                    }
-                    .color-green {
-                        width: 20px;
-                        height: 10px;
-                        border-radius: 3px;
-                        background-color: rgb(51, 255, 51);
-                        margin-right: 16px;
-                    }
-                    img {
-                        margin-right: 8px;
-                        width: 25px;
-                    }
-                    .acronym {
-                        margin-right: 32px;
+                    justify-content: space-between;
+                    color: rgb(159, 159, 159);
+                    font-size: 20px;
+                    margin-bottom: 8px;
+                    margin-top: 8px;
+                    .name-container {
+                        display: flex;
+                        align-items: center;
+                        .color-blue {
+                            width: 20px;
+                            height: 10px;
+                            border-radius: 3px;
+                            background-color: rgb(0, 136, 255);
+                            margin-right: 16px;
+                        }
+                        .color-pink {
+                            width: 20px;
+                            height: 10px;
+                            border-radius: 3px;
+                            background-color: rgb(255, 51, 255);
+                            margin-right: 16px;
+                        }
+                        .color-green {
+                            width: 20px;
+                            height: 10px;
+                            border-radius: 3px;
+                            background-color: rgb(51, 255, 51);
+                            margin-right: 16px;
+                        }
+                        img {
+                            margin-right: 8px;
+                            width: 25px;
+                        }
+                        .acronym {
+                            margin-right: 32px;
+                        }
                     }
                 }
             }
@@ -319,6 +321,21 @@
     }
 }
 @media (max-width: 1100px) {
+    .balance-container {
+        .header-balance {
+            h3 {
+                font-size: 18px;
+            }
+        }
+        .current-price {
+            font-size: 18px;
+        }
+        .diffrent-prices {
+            span {
+                font-size: 16px;
+            }
+        }
+    }
     .plus-number {
         font-size: 16px;
     }
@@ -334,12 +351,93 @@
             }
         }
         .chart-overall {
+            canvas {
+                height: 10vh !important;
+            }
             .container-legends {
                 .legends-chart {
                     font-size: 12px;
                     .name-container {
                         img {
                             width: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+
+        .balance-container {
+            width: 90%;
+            height: 18vh;
+            margin-left: unset;
+            margin-right: unset;
+            .header-balance {
+                h3 {
+                    font-size: 22px;
+                    margin-block-start: unset;
+                    margin-block-end: unset;
+                }
+                .minus-number {
+                    font-size: 20px;
+                }
+
+                .plus-number {
+                    font-size: 20px;
+                }
+            }
+            .current-price {
+                font-size: 28px;
+            }
+            .diffrent-prices {
+                p {
+                    font-size: 22px;
+                    .up {
+                        height: 24px;
+                        width: 24px;
+                    }
+                    .down {
+                        height: 24px;
+                        width: 24px;
+                    }
+                }
+                span {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                .separation-small {
+                    height: 70px;
+                }
+            }
+        }
+        .separation {
+            height: unset;
+            width: 500px;
+        }
+        .container-Chart {
+            width: 90%;
+            height: 180px;
+            margin-left: unset;
+            margin-right: unset;
+            .header-chart {
+                select {
+                    font-size: 18px;
+                }
+            }
+            .chart-overall {
+                .container-legends {
+                    .legends-chart {
+                        font-size: 20px;
+                        .minus-number {
+                            font-size: 20px;
+                        }
+
+                        .plus-number {
+                            font-size: 20px;
                         }
                     }
                 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { UrlCoinService } from '../services/url-coin.service';
 import { RenderService } from '../services/render.service';
 import { DragScrollComponent } from 'ngx-drag-scroll';
