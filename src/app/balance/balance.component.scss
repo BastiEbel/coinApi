@@ -191,39 +191,49 @@
     }
 }
 @media (max-width: 1680px) {
-    .container-Chart {
-        margin-right: 32px;
+    .container {
+        .container-Chart {
+            margin-right: 32px;
+        }
     }
 }
 @media (max-width: 1640px) {
-    .separation {
-        margin-right: 16px;
-        margin-left: 16px;
+    .container {
+        .separation {
+            margin-right: 16px;
+            margin-left: 16px;
+        }
     }
 }
 @media (max-width: 1600px) {
-    .separation {
-        margin-right: 0px;
-        margin-left: 0px;
+    .container {
+        .separation {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
     }
 }
 
 @media (max-width: 1550px) {
-    .balance-container {
-        margin-left: 32px;
+    .container {
+        .balance-container {
+            margin-left: 32px;
+        }
     }
 }
 @media (max-width: 1500px) {
-    .container-Chart {
-        .header-chart {
-            select {
-                font-size: 18px;
-            }
-        }
-        .chart-overall {
-            .container-legends {
-                .legends-chart {
+    .container {
+        .container-Chart {
+            .header-chart {
+                select {
                     font-size: 18px;
+                }
+            }
+            .chart-overall {
+                .container-legends {
+                    .legends-chart {
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -231,42 +241,46 @@
 }
 
 @media (max-width: 1450px) {
-    .balance-container {
-        margin-right: 16px;
-    }
-    .container-Chart {
-        margin-left: 16px;
+    .container {
+        .balance-container {
+            margin-right: 16px;
+        }
+        .container-Chart {
+            margin-left: 16px;
+        }
     }
 }
 @media (max-width: 1400px) {
-    .balance-container {
-        .current-price {
-            font-size: 24px;
-        }
-        .diffrent-prices {
-            p {
-                font-size: 14px;
-                .up {
-                    height: 20px;
-                    width: 20px;
+    .container {
+        .balance-container {
+            .current-price {
+                font-size: 24px;
+            }
+            .diffrent-prices {
+                p {
+                    font-size: 14px;
+                    .up {
+                        height: 20px;
+                        width: 20px;
+                    }
+                    .down {
+                        height: 20px;
+                        width: 20px;
+                    }
                 }
-                .down {
-                    height: 20px;
-                    width: 20px;
+                span {
+                    font-size: 18px;
                 }
             }
-            span {
-                font-size: 18px;
-            }
         }
-    }
-    .container-Chart {
-        .chart-overall {
-            .container-legends {
-                .legends-chart {
-                    .name-container {
-                        .acronym {
-                            margin-right: 16px;
+        .container-Chart {
+            .chart-overall {
+                .container-legends {
+                    .legends-chart {
+                        .name-container {
+                            .acronym {
+                                margin-right: 16px;
+                            }
                         }
                     }
                 }
@@ -275,29 +289,31 @@
     }
 }
 @media (max-width: 1300px) {
-    .balance-container {
-        margin-left: 16px;
-        .current-price {
-            font-size: 20px;
-        }
-    }
-    .container-Chart {
-        margin-right: 16px;
-        .header-chart {
-            select {
-                height: 30px;
-                width: 180px;
-                font-size: 16px;
+    .container {
+        .balance-container {
+            margin-left: 16px;
+            .current-price {
+                font-size: 20px;
             }
         }
-        .chart-overall {
-            canvas {
-                height: 12vh !important;
-                margin-right: 8px;
-            }
-            .container-legends {
-                .legends-chart {
+        .container-Chart {
+            margin-right: 16px;
+            .header-chart {
+                select {
+                    height: 30px;
+                    width: 180px;
                     font-size: 16px;
+                }
+            }
+            .chart-overall {
+                canvas {
+                    height: 12vh !important;
+                    margin-right: 8px;
+                }
+                .container-legends {
+                    .legends-chart {
+                        font-size: 16px;
+                    }
                 }
             }
         }
@@ -310,56 +326,61 @@
     .minus-number {
         font-size: 18px;
     }
-    .container-Chart {
-        .chart-overall {
-            .container-legends {
-                .legends-chart {
-                    font-size: 14px;
+    .container {
+        .container-Chart {
+            .chart-overall {
+                .container-legends {
+                    .legends-chart {
+                        font-size: 14px;
+                    }
                 }
             }
         }
     }
 }
 @media (max-width: 1100px) {
-    .balance-container {
-        .header-balance {
-            h3 {
-                font-size: 18px;
-            }
-        }
-        .current-price {
-            font-size: 18px;
-        }
-        .diffrent-prices {
-            span {
-                font-size: 16px;
-            }
-        }
-    }
     .plus-number {
         font-size: 16px;
     }
     .minus-number {
         font-size: 16px;
     }
-    .container-Chart {
-        .header-chart {
-            select {
-                height: 30px;
-                width: 160px;
-                font-size: 14px;
+    .container {
+        .balance-container {
+            .header-balance {
+                h3 {
+                    font-size: 18px;
+                }
+            }
+            .current-price {
+                font-size: 18px;
+            }
+            .diffrent-prices {
+                span {
+                    font-size: 16px;
+                }
             }
         }
-        .chart-overall {
-            canvas {
-                height: 10vh !important;
+
+        .container-Chart {
+            .header-chart {
+                select {
+                    height: 30px;
+                    width: 160px;
+                    font-size: 14px;
+                }
             }
-            .container-legends {
-                .legends-chart {
-                    font-size: 12px;
-                    .name-container {
-                        img {
-                            width: 22px;
+            .chart-overall {
+                canvas {
+                    height: 10vh !important;
+                }
+                .container-legends {
+                    .legends-chart {
+                        font-size: 12px;
+                        .name-container {
+                            img {
+                                width: 22px;
+                            }
                         }
                     }
                 }
@@ -425,10 +446,16 @@
             margin-right: unset;
             .header-chart {
                 select {
+                    height: 35px;
+                    width: 210px;
                     font-size: 18px;
                 }
             }
             .chart-overall {
+                canvas {
+                    width: auto !important;
+                    height: 15vh !important;
+                }
                 .container-legends {
                     .legends-chart {
                         font-size: 20px;
