@@ -20,8 +20,8 @@ img {
 drag-scroll {
     overflow: hidden !important;
     white-space: nowrap;
-    width: 100vw;
-    height: 225px;
+    width: calc(100vw - 5px);
+    height: 210px;
 }
 
 .single-info {
@@ -123,7 +123,7 @@ drag-scroll {
         bottom: -180px;
     }
 }
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
     .scroll-right {
         bottom: -380px;
     }
@@ -135,10 +135,54 @@ drag-scroll {
 
 @media (max-width: 800px) {
     .scroll-right {
-        bottom: -605px;
+        bottom: -585px;
     }
 
     .scroll-left {
-        bottom: -605px;
+        bottom: -585px;
+    }
+}
+@media (max-width: 700px) {
+    drag-scroll {
+        height: 180px;
+    }
+    .coin-container {
+        height: 100px;
+        width: 220px;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .name-color {
+        font-size: 16px;
+    }
+
+    .single-info {
+        font-size: 18px;
+    }
+    .left-container {
+        height: 30px;
+        width: 30px;
+    }
+    .scroll-right {
+        bottom: -548px;
+        height: 180px;
+    }
+
+    .scroll-left {
+        bottom: -548px;
+        height: 180px;
+    }
+}
+@media (max-width: 600px) {
+    .scroll-right {
+        bottom: -486px;
+    }
+
+    .scroll-left {
+        bottom: -486px;
     }
 }

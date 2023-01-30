@@ -12,6 +12,9 @@
 .header {
     display: flex;
     align-items: center;
+    h1 {
+        font-family: "OpenSans" !important;
+    }
     img {
         height: 40px;
         width: 40px;
@@ -25,7 +28,7 @@
     .toggle-eur {
         margin-right: 16px;
         font-size: 20px;
-        font-weight: bolder;
+        font-weight: bold;
     }
     .navigation {
         display: flex;
@@ -52,26 +55,39 @@
     }
 }
 
-.button-info {
-    width: 120px;
-    height: 40px;
-    font-size: x-large;
-    color: whitesmoke;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    &:hover {
-        border: 1px solid white;
-        background-color: rgb(30, 30, 30);
+@media (max-width: 700px) {
+    .header {
+        h1 {
+            font-size: 28px;
+        }
+        img {
+            height: 30px;
+            width: 30px;
+        }
     }
-}
-
-@media (max-width: 400px) {
-    .button-info {
-        width: 80px;
-        font-size: medium;
+    .navi-container {
+        display: flex;
+        align-items: center;
+        .toggle-eur {
+            margin-right: 16px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .navigation {
+            height: 25px;
+            width: 140px;
+            margin-right: 24px;
+            input {
+                height: 20px;
+                font-size: 16px;
+                &:focus {
+                    outline: unset;
+                }
+            }
+            img {
+                height: 12px;
+            }
+        }
     }
 }
 

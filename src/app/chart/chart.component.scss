@@ -55,3 +55,18 @@ h3 {
     background-color: black;
     color: white;
 }
+@media (max-width: 600px) {
+    canvas {
+        height: 30vh !important;
+    }
+    .container-info {
+        height: 370px;
+    }
+    h3 {
+        font-size: 18px;
+        margin-left: 32px;
+        width: 180px;
+        margin-block-end: unset;
+        margin-block-start: unset;
+    }
+}

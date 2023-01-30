@@ -7,7 +7,7 @@
     p {
         margin-block-start: unset;
         margin-block-end: unset;
-        font-weight: bolder;
+        font-weight: bold;
         font-size: 22px;
     }
     img {
@@ -111,7 +111,7 @@
         border: unset;
         color: white;
         font-family: "OpenSans";
-        font-weight: bolder;
+        font-weight: bold;
         &:hover {
             cursor: pointer;
             background-color: rgb(0, 0, 189);
@@ -227,6 +227,44 @@
         button {
             margin-top: unset;
             width: 150px;
+        }
+    }
+}
+@media (max-width: 800px) {
+    .container-calc {
+        .input-container {
+            width: 150px;
+            margin-right: 24px;
+        }
+        button {
+            margin-top: unset;
+            width: 100px;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .container-calc {
+        .input-container {
+            height: 30px;
+            width: 110px;
+            margin-right: 20px;
+            .container-coin-img {
+                .coin-img {
+                    height: 16px;
+                    width: 16px;
+                }
+            }
+            input {
+                font-size: 12px;
+                height: 28px;
+            }
+            .currency {
+                font-size: 12px;
+            }
+        }
+        button {
+            height: 30px;
+            font-size: 12px;
         }
     }
 }
