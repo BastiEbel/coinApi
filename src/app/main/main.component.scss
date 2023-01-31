@@ -1,8 +1,7 @@
 .main-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .main {
@@ -14,40 +13,40 @@
         margin-bottom: 16px;
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
 }
 
 .balance-container {
     height: 180px;
     width: 64%;
-    margin-left: 24px;
+    margin-right: 12px;
     border-radius: 15px;
 }
 .detail-container {
     height: 180px;
     width: 32%;
     margin-left: 12px;
-    margin-right: 24px;
+    //margin-right: 24px;
     border-radius: 15px;
 }
 .container {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 .container-exchange {
     width: 20%;
     height: 435px;
     border-radius: 15px;
     margin-top: 12px;
-    margin-left: 24px;
-    margin-right: 24px;
+    //margin-left: 24px;
+    margin-right: 12px;
 }
 .chart-style {
-    width: 80%;
-    margin-right: 24px;
+    width: 76%;
+    margin-left: 12px;
 }
 img {
     width: 40px;
@@ -73,6 +72,11 @@ img {
 }
 
 @media (max-width: 1100px) {
+    .container-top {
+        .balance-container {
+            width: 62%;
+        }
+    }
     .container-exchange {
         width: 24%;
     }
@@ -107,26 +111,33 @@ img {
             flex-direction: column;
             width: 94%;
             height: 170px;
+            margin-right: unset;
         }
         .chart-style {
             width: 94%;
             margin-right: unset;
             margin-top: 20px;
+            margin-left: unset;
         }
     }
 }
 
 @media (max-width: 800px) {
+    .main-container {
+        justify-content: center;
+    }
     .container-top {
         flex-direction: column-reverse;
+        align-items: center;
         .balance-container {
             width: 94%;
+            margin-right: unset;
         }
         .detail-container {
             height: 180px;
             width: 94%;
             margin-right: unset;
-            margin-left: 24px;
+            margin-left: unset;
             margin-bottom: 24px;
         }
     }
@@ -134,6 +145,20 @@ img {
         .container-exchange {
             margin-left: unset;
             margin-right: unset;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .container-top {
+        align-items: center;
+        .balance-container {
+            margin-left: unset;
+        }
+    }
+    .container {
+        .container-exchange {
+            height: unset;
         }
     }
 }

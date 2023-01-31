@@ -186,3 +186,12 @@ drag-scroll {
         bottom: -486px;
     }
 }
+@media (max-width: 500px) {
+    .scroll-right {
+        bottom: -690px;
+    }
+
+    .scroll-left {
+        bottom: -690px;
+    }
+}

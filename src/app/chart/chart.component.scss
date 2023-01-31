@@ -70,3 +70,11 @@ h3 {
         margin-block-start: unset;
     }
 }
+@media (max-width: 500px) {
+    canvas {
+        height: 250px !important;
+    }
+    .container-info {
+        height: 315px;
+    }
+}

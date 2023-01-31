@@ -197,7 +197,7 @@
         }
     }
     .price-container {
-        margin: 0px 24px 0px 24px;
+        //margin: 0px 24px 0px 24px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -265,6 +265,76 @@
         button {
             height: 30px;
             font-size: 12px;
+        }
+    }
+}
+@media (max-width: 500px) {
+    .price-container {
+        margin-top: 16px;
+        img {
+            margin-left: 24px;
+            margin-right: 8px;
+        }
+    }
+    .container-calc {
+        flex-direction: column;
+        align-items: center;
+        //margin: 0px 24px 0px 24px;
+        p {
+            font-size: 18px;
+            width: 80%;
+            text-align: start;
+            margin-bottom: 8px;
+            margin-top: 16px;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            height: 50px;
+            border-radius: 32px;
+            .currency {
+                width: 25%;
+                display: flex;
+                justify-content: center;
+                font-size: 22px;
+                margin-top: unset;
+                margin-bottom: unset;
+            }
+            .container-coin-img {
+                width: 25%;
+                display: flex;
+                justify-content: center;
+                .coin-img {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+            input {
+                width: 80%;
+                height: 48px;
+                font-size: 22px;
+                text-align: center;
+                color: white;
+                border: unset;
+                border-right: 2px solid rgb(40, 40, 40);
+                border-top-left-radius: 32px;
+                border-bottom-left-radius: 32px;
+                background-color: rgb(55, 55, 55);
+
+                &:focus {
+                    outline: unset;
+                }
+            }
+        }
+        button {
+            font-size: 22px;
+            width: 80%;
+            height: 50px;
+            border-radius: 25px;
+            margin-top: 48px;
+            margin-bottom: 28px;
         }
     }
 }
