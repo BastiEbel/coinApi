@@ -19,7 +19,8 @@ import { DragScrollComponent } from 'ngx-drag-scroll';
 export class ScrollComponent implements OnInit, AfterViewInit {
   @Output('selectedCoins') selectedCoins: EventEmitter<any> =
     new EventEmitter();
-  @ViewChild('nav', { read: DragScrollComponent }) ds: DragScrollComponent;
+  @ViewChild('nav', { read: DragScrollComponent, static: true })
+  ds: DragScrollComponent;
 
   arrowLeft: boolean = false;
   arrowRight: boolean = false;
@@ -69,6 +70,7 @@ export class ScrollComponent implements OnInit, AfterViewInit {
   moveRight() {
     try {
       this.ds.moveRight();
+
       setTimeout(() => {
         if (this.ds.currIndex != 0) {
           this.arrowLeft = false;

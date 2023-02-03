@@ -118,12 +118,38 @@
         }
     }
     .navi-container {
+        .navigation {
+            height: 20px;
+            width: 80px;
+            input {
+                width: 60px;
+                height: 6px;
+                font-size: 10px;
+            }
+            img {
+                height: 10px;
+            }
+        }
         .toggle-eur {
+            font-size: 12px;
             margin-right: 12px;
         }
     }
 }
-
+@media (max-width: 400px) {
+    .container {
+        height: 60px;
+    }
+    .header {
+        h1 {
+            font-size: 16px;
+        }
+        img {
+            height: 15px;
+            width: 15px;
+        }
+    }
+}
 /* IPhone SE */
 
 @media screen and (width: 375px) and (height: 667px) {

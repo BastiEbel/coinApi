@@ -132,9 +132,9 @@
     }
     .detail-container {
         height: 165px;
-        width: 94%;
+        width: 100%;
         margin-right: unset;
-        margin-left: 24px;
+        margin-left: unset;
         margin-bottom: 24px;
         .detail-view {
             font-size: 18px;
@@ -145,6 +145,36 @@
                     height: 30px;
                     width: 30px;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .minus-number {
+        font-size: 16px;
+    }
+
+    .plus-number {
+        font-size: 16px;
+    }
+    .detail-container {
+        height: 165px;
+        width: 100%;
+        margin-right: unset;
+        margin-left: unset;
+        margin-bottom: 24px;
+        .detail-view {
+            font-size: 16px;
+            .coin-name {
+                margin-left: 20px;
+                img {
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+            .coin-price {
+                width: 55%;
             }
         }
     }
