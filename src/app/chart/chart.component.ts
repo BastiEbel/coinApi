@@ -44,7 +44,9 @@ export class ChartComponent implements OnInit, AfterViewInit {
       this.renderService.coinOfMonth = false;
       this.clearChart();
       await this.renderService.dailyCoinPrice();
-      this.drawChart();
+      setTimeout(() => {
+        this.drawChart();
+      }, 250);
     } catch (err) {
       console.error(err);
     }

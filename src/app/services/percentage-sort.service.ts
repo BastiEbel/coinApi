@@ -38,17 +38,15 @@ export class PercentageSortService {
       let decimal = await this.renderService.currentCoin[
         'price_change_percentage_24h'
       ];
-
-      let current = this.renderService.currentCoin['current_price'];
-      let low = this.renderService.currentCoin['low_24h'];
-      let high = this.renderService.currentCoin['high_24h'];
-
       setTimeout(() => {
+        let current = this.renderService.currentCoin['current_price'];
+        let low = this.renderService.currentCoin['low_24h'];
+        let high = this.renderService.currentCoin['high_24h'];
         this.percentage = decimal.toFixed(2);
         this.shorCurrenttPrice = current.toFixed(2);
         this.shortLowPrice = low.toFixed(2);
         this.shortHighPrice = high.toFixed(2);
-      }, 750);
+      }, 250);
     } catch (err) {
       console.error(err);
     }

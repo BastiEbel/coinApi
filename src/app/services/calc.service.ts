@@ -10,14 +10,14 @@ export class CalcService {
   isReadonly: boolean = true;
   constructor(private renderService: RenderService) {}
 
-  async calcNewOne() {
+  calcNewOne() {
     this.amountField = 1;
-    let shortSum = await this.renderService.currentCoin['current_price'];
     setTimeout(() => {
+      let shortSum = this.renderService.currentCoin['current_price'];
+
       this.sum = shortSum.toFixed(2);
       this.isReadonly = true;
-    }, 750);
-
+    }, 250);
     return this.isReadonly;
   }
 

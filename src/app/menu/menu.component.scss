@@ -223,16 +223,21 @@
 /* Galaxy Fold */
 
 @media screen and (width: 280px) and (height: 653px) {
-    .button-info {
-        width: 90px;
-        font-size: medium;
+    .header {
+        h1 {
+            font-size: 12px;
+        }
+        img {
+            margin-right: 4px;
+        }
     }
-    .container {
-        height: 50px;
-    }
-    img {
-        width: 32px;
-        height: 32px;
+    .navi-container {
+        .toggle-eur {
+            font-size: 10px;
+        }
+        .navigation {
+            margin-right: 4px;
+        }
     }
 }
 

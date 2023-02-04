@@ -411,22 +411,22 @@ h3 {
 
 /* Galaxy Fold */
 
-/* @media screen and (width: 280px) and (height: 653px) {
-    h1 {
-        font-size: 24px;
-        -webkit-text-stroke-width: 2px;
+@media screen and (width: 280px) and (height: 653px) {
+    h3 {
+        font-size: 12px;
+        width: 95px;
     }
-    .ml-16 {
-        margin-left: 8px;
+    .btn {
+        width: 50px;
     }
-    .main-container {
-        flex-direction: column;
+    .container-info {
+        height: 210px;
+        margin-right: unset;
     }
-    p {
-        font-size: 16px;
-        margin-top: 24px;
+    canvas {
+        height: 165px !important;
     }
-} */
+}
 
 @media screen and (width: 653px) and (height: 280px) {
     .container-info {

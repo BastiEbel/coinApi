@@ -880,22 +880,54 @@
 
 /* Galaxy Fold */
 
-/* @media screen and (width: 280px) and (height: 653px) {
-    h1 {
-        font-size: 24px;
-        -webkit-text-stroke-width: 2px;
+@media screen and (width: 280px) and (height: 653px) {
+    .container {
+        .balance-container {
+            width: 94%;
+            height: 25vh;
+            .current-price {
+                font-size: 18px;
+            }
+            .diffrent-prices {
+                .separation {
+                    margin-left: 4px;
+                    margin-right: 4px;
+                }
+                p {
+                    font-size: 14px;
+                    .down {
+                        height: 14px;
+                        width: 14px;
+                    }
+                    .up {
+                        height: 14px;
+                        width: 14px;
+                    }
+                }
+            }
+        }
+        .container-Chart {
+            width: 94%;
+            .header-chart {
+                select {
+                    width: 160px;
+                }
+            }
+            .chart-overall {
+                canvas {
+                    height: 10vh !important;
+                    margin-right: 4px;
+                }
+                .container-legends {
+                    .legends-chart {
+                        margin-top: 4px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
     }
-    .ml-16 {
-        margin-left: 8px;
-    }
-    .main-container {
-        flex-direction: column;
-    }
-    p {
-        font-size: 16px;
-        margin-top: 24px;
-    }
-}*/
+}
 
 @media screen and (width: 653px) and (height: 280px) {
     .container {

@@ -1,7 +1,9 @@
 <div class="detail-container">
   <div
     (click)="openDialog(detail)"
-    *ngFor="let detail of renderService.result"
+    *ngFor="
+      let detail of renderService.result | searchPipe : renderService.search
+    "
     class="detail-view"
   >
     <div class="coin-name">
