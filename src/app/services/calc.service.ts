@@ -17,7 +17,7 @@ export class CalcService {
 
       this.sum = shortSum.toFixed(2);
       this.isReadonly = true;
-    }, 250);
+    }, 500);
     return this.isReadonly;
   }
 

@@ -46,7 +46,7 @@ export class PercentageSortService {
         this.shorCurrenttPrice = current.toFixed(2);
         this.shortLowPrice = low.toFixed(2);
         this.shortHighPrice = high.toFixed(2);
-      }, 250);
+      }, 500);
     } catch (err) {
       console.error(err);
     }

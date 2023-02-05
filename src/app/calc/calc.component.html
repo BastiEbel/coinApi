@@ -4,8 +4,8 @@
     [class.rotate-click]="activeAnimate"
     (click)="changeValue()"
     [src]="imgSrc"
-    (mouseover)="imgSrc = '/assets/icons/circle-hover.png'"
-    (mouseout)="imgSrc = '/assets/icons/circle.png'"
+    (mouseover)="imgSrc = 'assets/icons/circle-hover.png'"
+    (mouseout)="imgSrc = 'assets/icons/circle.png'"
     alt=""
   />
 </div>
@@ -14,7 +14,7 @@
     <b>{{ calcService.amountField }}</b>
   </p>
   <p class="name-color">{{ renderService.currentCoin["symbol"] }}</p>
-  <img src="/assets/icons/arrow_forward.png" alt="" />
+  <img src="assets/icons/arrow_forward.png" alt="" />
   <p>
     <b>{{ calcService.sum }}</b>
   </p>
