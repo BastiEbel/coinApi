@@ -338,6 +338,131 @@
         }
     }
 }
+@media (max-width: 400px) {
+    .head-container {
+        p {
+            font-size: 18px;
+        }
+        img {
+            height: 30px;
+            width: 30px;
+            &:hover {
+                height: 35px;
+                width: 35px;
+            }
+        }
+    }
+    .price-container {
+        margin-top: 16px;
+        p {
+            font-size: 16px;
+        }
+        img {
+            margin-left: 24px;
+            margin-right: 8px;
+        }
+    }
+    .container-calc {
+        flex-direction: column;
+        align-items: center;
+        p {
+            font-size: 18px;
+            width: 80%;
+            text-align: start;
+            margin-bottom: 8px;
+            margin-top: 16px;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            height: 30px;
+            border-radius: 32px;
+            .currency {
+                width: 25%;
+                display: flex;
+                justify-content: center;
+                font-size: 18px;
+                margin-top: unset;
+                margin-bottom: unset;
+            }
+            .container-coin-img {
+                width: 25%;
+                display: flex;
+                justify-content: center;
+                .coin-img {
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+            input {
+                width: 80%;
+                height: 28px;
+                font-size: 16px;
+                text-align: center;
+                color: white;
+                border: unset;
+                border-right: 2px solid rgb(40, 40, 40);
+                border-top-left-radius: 32px;
+                border-bottom-left-radius: 32px;
+                background-color: rgb(55, 55, 55);
+
+                &:focus {
+                    outline: unset;
+                }
+            }
+        }
+        button {
+            font-size: 16px;
+            width: 80%;
+            height: 30px;
+            border-radius: 25px;
+            margin-top: 48px;
+            margin-bottom: 28px;
+        }
+    }
+}
+@media (max-width: 350px) {
+    .head-container {
+        p {
+            font-size: 18px;
+        }
+        img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+    .price-container {
+        p {
+            font-size: 14px;
+        }
+    }
+    .container-calc {
+        .input-container {
+            width: 100%;
+            height: 30px;
+            input {
+                height: 28px;
+                font-size: 18px;
+            }
+            .container-coin-img {
+                .coin-img {
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+            .currency {
+                font-size: 16px;
+            }
+        }
+
+        button {
+            height: 40px;
+            font-size: 18px;
+        }
+    }
+}
 /* IPhone SE */
 
 /* @media screen and (width: 375px) and (height: 667px) {

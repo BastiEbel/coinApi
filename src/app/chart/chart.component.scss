@@ -1,6 +1,6 @@
 canvas {
     width: 98% !important;
-    height: 38vh !important;
+    height: 35vh !important;
     margin-bottom: 8px;
     margin-left: 16px;
     margin-right: 8px;
@@ -93,321 +93,107 @@ h3 {
         padding: unset;
     }
 }
-/* IPhone SE */
-
-/* @media screen and (width: 375px) and (height: 667px) {
-    .container {
-        height: unset;
-        margin-top: 16px;
+@media (max-width: 350px) {
+    h3 {
+        font-size: 12px;
+        width: 95px;
+    }
+    .btn {
+        width: 50px;
     }
     .container-info {
-        height: 218px !important;
+        height: 210px;
+        margin-right: unset;
     }
-    .main-container {
-        flex-direction: column;
-        margin-bottom: 22px;
-    }
-    p {
-        margin-bottom: 32px;
+    canvas {
+        height: 165px !important;
     }
 }
+/* IPhone SE */
 
 @media screen and (width: 667px) and (height: 375px) {
-    .main-container {
-        height: auto;
-        flex-direction: column;
-    }
     canvas {
-        max-width: 500px !important;
-        height: 350px !important;
-    }
-    p {
-        margin-bottom: 32px;
+        height: 100vh !important;
     }
 }
- */
+
 /*iPhone XR*/
 
-/* @media screen and (width: 414px) and (height: 896px) {
-    h1 {
-        -webkit-text-stroke-width: 2px;
-    }
-    .container {
-        height: unset;
-        margin-top: 16px;
-    }
-    .ml-16 {
-        margin-left: 16px;
-    }
+@media screen and (width: 896px) and (height: 414px) {
     canvas {
-        max-width: 300px !important;
-        height: 220px !important;
-    }
-    .main-container {
-        flex-direction: column;
-        margin-bottom: 22px;
+        height: 94vh !important;
     }
 }
-
-@media screen and (width: 896px) and (height: 414px) {
-    .main-container {
-        height: auto;
-        flex-direction: column;
-    }
-    p {
-        margin-bottom: 32px;
-    }
-} */
 
 /*iPhone 12 Pro*/
 
-/* @media screen and (width: 390px) and (height: 844px) {
-    h1 {
-        -webkit-text-stroke-width: 2px;
-    }
-    .container {
-        height: unset;
-        width: 90%;
-        margin-top: 16px;
-    }
+@media screen and (width: 844px) and (height: 390px) {
     canvas {
-        max-width: 300px !important;
-        height: 220px !important;
-    }
-    .ml-16 {
-        margin-left: 16px;
-    }
-    .main-container {
-        flex-direction: column;
-        margin-bottom: 22px;
+        height: 98vh !important;
     }
 }
-
-@media screen and (width: 844px) and (height: 390px) {
-    .main-container {
-        height: auto;
-        flex-direction: column;
-    }
-    p {
-        margin-bottom: 32px;
-    }
-} */
 
 /*Pixel 5*/
 
-/* @media screen and (width: 393px) and (height: 851px) {
-    h1 {
-        -webkit-text-stroke-width: 2px;
-    }
-    .container {
-        height: unset;
-        width: 90%;
-        margin-top: 16px;
-    }
+@media screen and (width: 851px) and (height: 393px) {
     canvas {
-        max-width: 300px !important;
-        height: 220px !important;
-    }
-    .ml-16 {
-        margin-left: 16px;
-    }
-    .main-container {
-        flex-direction: column;
-        margin-bottom: 22px;
+        height: 98vh !important;
     }
 }
-
-@media screen and (width: 851px) and (height: 393px) {
-    .main-container {
-        height: auto;
-        flex-direction: column;
-    }
-    p {
-        margin-bottom: 32px;
-    }
-} */
 
 /*Samsung S8*/
 
-/* @media screen and (width: 360px) and (height: 740px) {
-    h1 {
-        -webkit-text-stroke-width: 2px;
-    }
-    .container {
-        height: unset;
-        width: 90%;
-        margin-top: 16px;
-    }
-    .ml-16 {
-        margin-left: 16px;
-    }
-    .main-container {
-        flex-direction: column;
-        margin-bottom: 22px;
+@media screen and (width: 740px) and (height: 360px) {
+    canvas {
+        height: 100vh !important;
     }
 }
-
-@media screen and (width: 740px) and (height: 360px) {
-    .main-container {
-        height: auto;
-        flex-direction: column;
-    }
-    canvas {
-        max-width: 600px !important;
-        height: 400px !important;
-    }
-    p {
-        margin-bottom: 32px;
-    }
-} */
 
 /* Samsung S20 */
 
-/* @media screen and (width: 412px) and (height: 915px) {
-    h1 {
-        -webkit-text-stroke-width: 2px;
-    }
-    .container {
-        height: unset;
-        width: 90%;
-        margin-top: 16px;
-    }
+@media screen and (width: 915px) and (height: 412px) {
     canvas {
-        max-width: 300px !important;
-        height: 220px !important;
-    }
-    .ml-16 {
-        margin-left: 16px;
-    }
-    .main-container {
-        flex-direction: column;
-        margin-bottom: 22px;
+        height: 90vh !important;
     }
 }
-
-@media screen and (width: 915px) and (height: 412px) {
-    .main-container {
-        height: auto;
-        flex-direction: column;
-    }
-    p {
-        margin-bottom: 32px;
-    }
-    .container {
-        width: 100%;
-    }
-} */
 
 /*iPad Air*/
 
-/* @media screen and (width: 820px) and (height: 1180px) {
-    h1 {
-        font-size: 80px;
-    }
-    .button-container {
-        width: 90%;
-        margin-top: 16px;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 32px;
-    }
+@media screen and (width: 820px) and (height: 1180px) {
     canvas {
-        max-width: 450px !important;
-        height: 300px !important;
-    }
-    .main-container {
-        flex-direction: column;
-        margin-bottom: 22px;
-    }
-    p {
-        margin-top: 64px;
+        height: 32vh !important;
     }
 }
-
-@media screen and (width: 1180px) and (height: 820px) {
-    .main-container {
-        height: auto;
-    }
-    h1 {
-        font-size: 96px;
-    }
-} */
 
 /*iPad Mini */
 
 /* @media screen and (width: 768px) and (height: 1024px) {
-    h1 {
-        font-size: 80px;
-    }
-    canvas {
-        max-width: 450px !important;
-        height: 300px !important;
-    }
-    .main-container {
-        flex-direction: column;
-        margin-bottom: 22px;
-    }
-    p {
-        margin-top: 48px;
-    }
 } */
 
 /* Surface Pro*/
 
-/* @media screen and (width: 912px) and (height: 1368px) {
-    h1 {
-        font-size: 80px;
+@media screen and (width: 912px) and (height: 1368px) {
+    .container-info {
+        height: 508px;
     }
     canvas {
-        max-width: 500px !important;
-        height: 350px !important;
+        height: 32vh !important;
     }
-    .coin-main-container {
-        width: 300px;
-        margin-left: 16px;
-    }
-    .main-container {
-        height: 63vh;
-        margin-top: 64px;
-        flex-direction: column;
-    }
-    p {
-        font-size: 32px;
-        margin-top: 48px;
-    }
-} */
+}
 
 /*Surface Duo*/
 
-/* @media screen and (width: 540px) and (height: 720px) {
-    h1 {
-        font-size: 64px;
-    }
-    .ml-16 {
-        margin-left: 16px;
-    }
-    .main-container {
-        flex-direction: column;
-    }
-    p {
-        font-size: 20px;
-        margin-top: 24px;
+@media screen and (width: 540px) and (height: 720px) {
+    canvas {
+        height: 43vh !important;
     }
 }
 
 @media screen and (width: 720px) and (height: 540px) {
-    .main-container {
-        height: auto;
-        flex-direction: column;
+    canvas {
+        height: 70vh !important;
     }
-    p {
-        margin-bottom: 32px;
-    }
-    .container {
-        width: 100%;
-    }
-} */
+}
 
 /* Galaxy Fold */
 
@@ -440,21 +226,6 @@ h3 {
 /*Galaxy A51/71*/
 
 /* @media screen and (width: 412px) and (height: 914px) {
-    h1 {
-        font-size: 32px;
-        -webkit-text-stroke-width: 2px;
-    }
-    .ml-16 {
-        margin-left: 8px;
-        margin-right: 8px;
-    }
-    .main-container {
-        flex-direction: column;
-    }
-    p {
-        font-size: 20px;
-        margin-top: 32px;
-    }
 }*/
 
 @media screen and (width: 914px) and (height: 412px) {

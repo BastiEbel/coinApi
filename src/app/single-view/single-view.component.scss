@@ -66,6 +66,12 @@ b {
 }
 
 @media (max-width: 500px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
         max-width: 326px !important;
         max-height: 75vh !important;
@@ -77,6 +83,12 @@ b {
 }
 
 @media (max-width: 380px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
         max-width: 230px !important;
         max-height: 75vh !important;
@@ -90,135 +102,336 @@ b {
 /* IPhone SE */
 
 @media screen and (width: 375px) and (height: 667px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
-        max-width: 326px !important;
-        max-height: 75vh !important;
-        font-size: small !important;
+        max-width: unset !important;
+        font-size: 16px !important;
+        width: 90vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
+    }
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
     .content {
-        width: unset;
+        height: 35px;
     }
 }
 
 @media screen and (width: 667px) and (height: 375px) {
     .mat-dialog-content {
-        width: 92vw !important;
-        height: 55vh;
+        width: 90vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
-    .content {
-        width: unset;
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
 /*iPhone XR*/
 
 @media screen and (width: 414px) and (height: 896px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
-        width: 366px !important;
-        height: 81vh !important;
-        font-size: small !important;
+        max-width: unset !important;
+        font-size: 16px !important;
+        width: 90vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
+    }
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
         max-height: unset;
     }
     .content {
-        width: unset;
+        height: 35px;
     }
 }
 
 @media screen and (width: 896px) and (height: 414px) {
     .mat-dialog-content {
         width: 94vw !important;
-        height: 62vh;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
-    .mat-dialog-actions {
-        min-height: 40px;
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
 /*iPhone 12 Pro*/
 
 @media screen and (width: 390px) and (height: 844px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
-        width: 342px !important;
-        height: 80vh !important;
-        font-size: small !important;
+        max-width: unset !important;
+        font-size: 16px !important;
+        width: 90vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
+    }
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
         max-height: unset;
+    }
+    .content {
+        height: 35px;
     }
 }
 
 @media screen and (width: 844px) and (height: 390px) {
     .mat-dialog-content {
         width: 94vw !important;
-        height: 60vh;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
-    .mat-dialog-actions {
-        min-height: 40px;
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
 /*Pixel 5*/
 
 @media screen and (width: 393px) and (height: 851px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
-        width: 345px !important;
-        height: 80vh !important;
-        font-size: small !important;
+        max-width: unset !important;
+        font-size: 16px !important;
+        width: 90vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
+    }
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
         max-height: unset;
+    }
+    .content {
+        height: 35px;
     }
 }
 
 @media screen and (width: 851px) and (height: 393px) {
     .mat-dialog-content {
         width: 94vw !important;
-        height: 60vh;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
-    .mat-dialog-actions {
-        min-height: 40px;
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
 /*Samsung S8*/
 
 @media screen and (width: 360px) and (height: 740px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
-        width: 312px !important;
-        height: 78vh !important;
-        font-size: small !important;
+        max-width: unset !important;
+        font-size: 16px !important;
+        width: 90vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
+    }
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
         max-height: unset;
+    }
+    .content {
+        height: 35px;
     }
 }
 
 @media screen and (width: 740px) and (height: 360px) {
     .mat-dialog-content {
-        width: 93vw !important;
-        height: 58vh;
+        width: 94vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
-    .mat-dialog-actions {
-        min-height: 40px;
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
 /* Samsung S20 */
 
 @media screen and (width: 412px) and (height: 915px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
-        width: 364px !important;
-        height: 82vh !important;
-        font-size: small !important;
-        max-height: unset;
+        max-width: unset !important;
+        font-size: 16px !important;
+        width: 90vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
     .mat-dialog-container {
-        display: flex !important;
-        justify-content: center !important;
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
+    }
+    .content {
+        height: 35px;
     }
 }
 
 @media screen and (width: 915px) and (height: 412px) {
     .mat-dialog-content {
         width: 94vw !important;
-        height: 64vh;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
-    .mat-dialog-actions {
-        min-height: 40px;
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
@@ -233,67 +446,168 @@ b {
 /* Surface Duo */
 
 @media screen and (width: 540px) and (height: 720px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
-        width: 492px !important;
-        height: 77vh !important;
-        font-size: small !important;
+        max-width: unset !important;
+        font-size: 16px !important;
+        width: 90vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
+    }
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
         max-height: unset;
+    }
+    .content {
+        height: 35px;
     }
 }
 
 @media screen and (width: 720px) and (height: 540px) {
     .mat-dialog-content {
-        width: 93vw !important;
-        height: 73vh;
-        max-height: unset;
+        width: 94vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
-    .mat-dialog-actions {
-        min-height: 40px;
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
 /* Galaxy Fold */
 
 @media screen and (width: 280px) and (height: 653px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
-        width: 225px !important;
-        height: 73vh !important;
-        font-size: x-small !important;
+        max-width: unset !important;
+        font-size: 12px !important;
+        width: 84vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
+    }
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
         max-height: unset;
     }
     .content {
-        width: unset;
+        height: 35px;
     }
 }
 
 @media screen and (width: 653px) and (height: 280px) {
     .mat-dialog-content {
-        width: 92vw !important;
-        height: 48vh;
+        width: 94vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
-    .mat-dialog-actions {
-        min-height: 40px;
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
 /* Galaxy A51/71 */
 
 @media screen and (width: 412px) and (height: 914px) {
+    .plus-number {
+        font-size: unset;
+    }
+    .minus-number {
+        font-size: unset;
+    }
     .mat-dialog-content {
-        width: 364px !important;
-        height: 82vh !important;
-        font-size: small !important;
+        max-width: unset !important;
+        font-size: 12px !important;
+        width: 84vw !important;
+        font-size: larger;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
+    }
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
         max-height: unset;
+    }
+    .content {
+        height: 35px;
     }
 }
 
 @media screen and (width: 914px) and (height: 412px) {
     .mat-dialog-content {
         width: 94vw !important;
-        height: 64vh;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
-    .mat-dialog-actions {
-        min-height: 40px;
+    .mat-dialog-container {
+        width: 100vw !important;
+        height: unset !important;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
@@ -302,9 +616,16 @@ b {
 @media screen and (width: 1280px) and (height: 800px) {
     .mat-dialog-content {
         width: 500px !important;
-        height: 78vh !important;
-        font-size: small !important;
-        max-height: unset;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
 }
 
@@ -313,8 +634,15 @@ b {
 @media screen and (width: 1024px) and (height: 600px) {
     .mat-dialog-content {
         width: 500px !important;
-        height: 73vh !important;
-        font-size: small !important;
-        max-height: unset;
+        font-size: larger;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
+        padding: unset !important;
+        border-radius: 15px;
+        max-height: unset !important;
     }
 }

@@ -51,10 +51,10 @@
 
 @media (max-width: 1500px) {
     .minus-number {
-        font-size: 16px !important;
+        font-size: 16px;
     }
     .plus-number {
-        font-size: 16px !important;
+        font-size: 16px;
     }
 
     .detail-container {
@@ -152,11 +152,11 @@
 
 @media (max-width: 400px) {
     .minus-number {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .plus-number {
-        font-size: 16px;
+        font-size: 12px;
     }
     .detail-container {
         height: 165px;
@@ -165,24 +165,35 @@
         margin-left: unset;
         margin-bottom: 24px;
         .detail-view {
-            font-size: 16px;
+            font-size: 12px;
             .coin-name {
                 margin-left: 20px;
                 img {
-                    height: 20px;
-                    width: 20px;
+                    height: 15px;
+                    width: 15px;
                 }
             }
-            .coin-price {
-                width: 55%;
-            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .minus-number {
+        font-size: 12px !important;
+    }
+    .plus-number {
+        font-size: 12px !important;
+    }
+    .detail-container {
+        .detail-view {
+            font-size: 12px;
         }
     }
 }
 
 /* IPhone SE */
 
-@media screen and (width: 375px) and (height: 667px) {
+/* @media screen and (width: 375px) and (height: 667px) {
     h1 {
         font-size: xx-large;
     }
@@ -229,11 +240,11 @@
     .last-24 {
         width: 28%;
     }
-}
+} */
 
 /*iPhone XR*/
 
-@media screen and (width: 414px) and (height: 896px) {
+/* @media screen and (width: 414px) and (height: 896px) {
     h1 {
         font-size: xx-large;
     }
@@ -275,11 +286,11 @@
     .last-24 {
         font-size: smaller;
     }
-}
+} */
 
 /*iPhone 12 Pro*/
 
-@media screen and (width: 390px) and (height: 844px) {
+/* @media screen and (width: 390px) and (height: 844px) {
     h1 {
         font-size: x-large;
         margin-top: 16px;
@@ -327,11 +338,11 @@
     .last-24 {
         font-size: smaller;
     }
-}
+} */
 
 /*Pixel 5*/
 
-@media screen and (width: 393px) and (height: 851px) {
+/* @media screen and (width: 393px) and (height: 851px) {
     h1 {
         font-size: x-large;
         margin-top: 16px;
@@ -372,11 +383,11 @@
     .last-24 {
         font-size: smaller;
     }
-}
+} */
 
 /*Samsung S8*/
 
-@media screen and (width: 360px) and (height: 740px) {
+/* @media screen and (width: 360px) and (height: 740px) {
     h1 {
         font-size: x-large;
         margin-top: 16px;
@@ -422,11 +433,11 @@
         width: 28%;
         font-size: smaller;
     }
-}
+} */
 
 /* Samsung S20 */
 
-@media screen and (width: 412px) and (height: 915px) {
+/* @media screen and (width: 412px) and (height: 915px) {
     h1 {
         font-size: x-large;
         margin-top: 14px;
@@ -474,7 +485,7 @@
     .last-24 {
         font-size: smaller;
     }
-}
+} */
 
 /* iPad Air */
 
@@ -497,17 +508,8 @@
 /* Surface Pro 7 */
 
 @media screen and (width: 912px) and (height: 1368px) {
-    h1 {
-        margin-top: 32px;
-        font-size: xx-large;
-    }
-    .container {
-        height: calc(100vh - 350px);
-        margin-top: 0px;
-    }
-    .container-field {
-        height: 80px;
-        font-size: medium;
+    .detail-container {
+        height: 500px;
     }
 }
 

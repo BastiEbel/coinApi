@@ -260,26 +260,18 @@ img {
     .coin-main-container {
         width: 300px;
     }
-}
+}*/
 
 @media (max-width: 350px) {
-    canvas {
-        max-width: 200px !important;
-        height: 150px !important;
+    .container-top {
+        .balance-container {
+            height: 335px;
+        }
     }
     .coin-main-container {
-        width: 220px;
+        width: auto;
     }
-    .coin-container {
-        font-size: xx-small;
-    }
-    pagination-template {
-        flex-wrap: wrap;
-    }
-    pagination-template > div {
-        margin-top: 10px;
-    }
-} */
+}
 
 /* IPhone SE */
 
@@ -543,28 +535,22 @@ img {
 
 /* Surface Pro*/
 
-/* @media screen and (width: 912px) and (height: 1368px) {
-    h1 {
-        font-size: 80px;
+@media screen and (width: 912px) and (height: 1368px) {
+    .container-top {
+        .balance-container {
+            height: 500px;
+        }
+        .detail-container {
+            height: 500px;
+        }
     }
-    canvas {
-        max-width: 500px !important;
-        height: 350px !important;
-    }
-    .coin-main-container {
-        width: 300px;
-        margin-left: 16px;
-    }
-    .main-container {
-        height: 63vh;
-        margin-top: 64px;
+    .container-exchange {
+        height: 508px;
+        display: flex;
+        justify-content: space-evenly;
         flex-direction: column;
     }
-    p {
-        font-size: 32px;
-        margin-top: 48px;
-    }
-} */
+}
 
 /*Surface Duo*/
 
