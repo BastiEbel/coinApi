@@ -16,7 +16,7 @@
   <p class="name-color">{{ renderService.currentCoin["symbol"] }}</p>
   <img src="assets/icons/arrow_forward.png" alt="" />
   <p>
-    <b>{{ calcService.sum }}</b>
+    <b>{{ calcService.sum | currency : "DE" : "" }}</b>
   </p>
   <p class="name-color">{{ renderService.currencyName }}</p>
 </div>
