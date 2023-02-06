@@ -13,7 +13,7 @@
     </div>
     <div class="current-price">
       <p>
-        {{ percentageSort.shorCurrenttPrice }}
+        {{ percentageSort.shorCurrenttPrice | currency : "DE" : "" }}
         {{ renderService.currencyName }}
       </p>
       <p style="color: rgb(159, 159, 159)">
@@ -27,7 +27,7 @@
           price
         </p>
         <span
-          >{{ percentageSort.shortLowPrice }}
+          >{{ percentageSort.shortLowPrice | currency : "DE" : "" }}
           {{ renderService.currencyName }}</span
         >
       </div>
@@ -37,7 +37,7 @@
           <img class="up" src="assets/icons/up.png" alt="" /> 24h highest price
         </p>
         <span
-          >{{ percentageSort.shortHighPrice }}
+          >{{ percentageSort.shortHighPrice | currency : "DE" : "" }}
           {{ renderService.currencyName }}</span
         >
       </div>
@@ -91,7 +91,8 @@
             [class.d-none]="!percentageSort.highestCoin"
             style="color: white"
             class="percentage"
-            >{{ items["current_price"] }} {{ renderService.currencyName }}</span
+            >{{ items["current_price"] | currency : "DE" : "" }}
+            {{ renderService.currencyName }}</span
           >
           <span
             [class.d-none]="!percentageSort.lowestCoin"

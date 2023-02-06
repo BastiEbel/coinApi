@@ -8,7 +8,7 @@ import { RenderService } from '../services/render.service';
   styleUrls: ['./calc.component.scss'],
 })
 export class CalcComponent implements OnInit {
-  imgSrc = '/assets/icons/circle.png';
+  imgSrc = 'assets/icons/circle.png';
   activeAnimate: boolean = false;
 
   constructor(
@@ -20,7 +20,7 @@ export class CalcComponent implements OnInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this.calcService.calcNewOne();
-    }, 200);
+    }, 50);
   }
 
   /**

@@ -38,7 +38,7 @@
       >
       <span class="ml-32 mr-32 single-info"
         ><span class="name-color">Price</span>
-        {{ results.current_price.toFixed(2) }}
+        {{ results.current_price.toFixed(2) | currency : "DE" : "" }}
         {{ renderService.currencyName }}</span
       >
     </div>

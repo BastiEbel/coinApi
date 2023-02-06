@@ -5,7 +5,7 @@
     align-items: center;
 
     .balance-container {
-        width: 45%;
+        width: 48%;
         margin-left: 64px;
         margin-right: 32px;
         height: 18vh;
@@ -25,8 +25,8 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            margin-top: 16px;
-            font-size: 30px;
+            margin-top: 12px;
+            font-size: 20px;
             font-weight: bold;
             p {
                 margin-block-end: unset;
@@ -49,7 +49,7 @@
                 margin-block-end: unset;
                 margin-top: 16px;
                 margin-bottom: 12px;
-                font-size: 18px;
+                font-size: 16px;
                 .up {
                     margin-right: 8px;
                     border-radius: 50%;
@@ -87,7 +87,7 @@
     }
 
     .container-Chart {
-        width: 45%;
+        width: 48%;
         height: 180px;
         display: flex;
         justify-content: center;
@@ -106,7 +106,7 @@
                 width: 210px;
                 background-color: black;
                 color: white;
-                font-size: 20px;
+                font-size: 18px;
                 font-family: "OpenSans";
                 font-weight: bold;
                 padding: 0px 8px 0px 8px;
@@ -124,7 +124,7 @@
             margin-top: 4px;
             margin-bottom: 12px;
             font-weight: bold;
-            font-size: 22px;
+            font-size: 18px;
             width: 100%;
         }
         .chart-overall {
@@ -150,7 +150,7 @@
                     align-items: center;
                     justify-content: space-between;
                     color: rgb(159, 159, 159);
-                    font-size: 20px;
+                    font-size: 18px;
                     margin-bottom: 8px;
                     margin-top: 8px;
                     .name-container {
@@ -161,28 +161,28 @@
                             height: 10px;
                             border-radius: 3px;
                             background-color: rgb(0, 136, 255);
-                            margin-right: 16px;
+                            margin-right: 10px;
                         }
                         .color-pink {
                             width: 20px;
                             height: 10px;
                             border-radius: 3px;
                             background-color: rgb(255, 51, 255);
-                            margin-right: 16px;
+                            margin-right: 10px;
                         }
                         .color-green {
                             width: 20px;
                             height: 10px;
                             border-radius: 3px;
                             background-color: rgb(51, 255, 51);
-                            margin-right: 16px;
+                            margin-right: 10px;
                         }
                         img {
                             margin-right: 8px;
                             width: 25px;
                         }
                         .acronym {
-                            margin-right: 32px;
+                            margin-right: 12px;
                         }
                     }
                 }
@@ -226,13 +226,13 @@
         .container-Chart {
             .header-chart {
                 select {
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
             .chart-overall {
                 .container-legends {
                     .legends-chart {
-                        font-size: 18px;
+                        font-size: 14px;
                     }
                 }
             }
@@ -273,7 +273,7 @@
                 }
             }
         }
-        .container-Chart {
+        /* .container-Chart {
             .chart-overall {
                 .container-legends {
                     .legends-chart {
@@ -285,7 +285,7 @@
                     }
                 }
             }
-        }
+        } */
     }
 }
 @media (max-width: 1300px) {
@@ -293,7 +293,7 @@
         .balance-container {
             margin-left: 16px;
             .current-price {
-                font-size: 20px;
+                font-size: 18px;
             }
         }
         .container-Chart {
@@ -302,7 +302,7 @@
                 select {
                     height: 30px;
                     width: 180px;
-                    font-size: 16px;
+                    font-size: 14px;
                 }
             }
             .chart-overall {
@@ -312,7 +312,7 @@
                 }
                 .container-legends {
                     .legends-chart {
-                        font-size: 16px;
+                        font-size: 14px;
                     }
                 }
             }
@@ -321,17 +321,17 @@
 }
 @media (max-width: 1200px) {
     .plus-number {
-        font-size: 18px;
+        font-size: 14px;
     }
     .minus-number {
-        font-size: 18px;
+        font-size: 14px;
     }
     .container {
         .container-Chart {
             .chart-overall {
                 .container-legends {
                     .legends-chart {
-                        font-size: 14px;
+                        font-size: 12px;
                     }
                 }
             }
@@ -411,11 +411,11 @@
                 }
             }
             .current-price {
-                font-size: 28px;
+                font-size: 22px;
             }
             .diffrent-prices {
                 p {
-                    font-size: 22px;
+                    font-size: 18px;
                     .up {
                         height: 24px;
                         width: 24px;
@@ -426,7 +426,7 @@
                     }
                 }
                 span {
-                    font-size: 20px;
+                    font-size: 16px;
                     font-weight: bold;
                 }
                 .separation-small {
@@ -447,7 +447,7 @@
                 select {
                     height: 35px;
                     width: 210px;
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
             .chart-overall {
@@ -457,13 +457,13 @@
                 }
                 .container-legends {
                     .legends-chart {
-                        font-size: 20px;
+                        font-size: 16px;
                         .minus-number {
-                            font-size: 20px;
+                            font-size: 16px;
                         }
 
                         .plus-number {
-                            font-size: 20px;
+                            font-size: 16px;
                         }
                     }
                 }
@@ -510,7 +510,7 @@
             }
             .diffrent-prices {
                 p {
-                    font-size: 18px;
+                    font-size: 16px;
                     .up {
                         height: 24px;
                         width: 24px;
@@ -521,7 +521,7 @@
                     }
                 }
                 span {
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: bold;
                 }
                 .separation-small {
@@ -548,13 +548,13 @@
                 }
                 .container-legends {
                     .legends-chart {
-                        font-size: 14px;
+                        font-size: 12px;
                         .minus-number {
-                            font-size: 14px;
+                            font-size: 12px;
                         }
 
                         .plus-number {
-                            font-size: 14px;
+                            font-size: 12px;
                         }
                     }
                 }
@@ -639,7 +639,7 @@
             width: 94%;
             height: 17vh;
             .current-price {
-                font-size: 18px;
+                font-size: 16px;
             }
             .diffrent-prices {
                 .separation {
@@ -647,7 +647,7 @@
                     margin-right: 4px;
                 }
                 p {
-                    font-size: 14px;
+                    font-size: 12px;
                     .down {
                         height: 14px;
                         width: 14px;
@@ -691,6 +691,11 @@
         }
         .container-Chart {
             width: 90%;
+            .chart-overall {
+                canvas {
+                    height: 20vh !important;
+                }
+            }
         }
     }
 }
@@ -737,6 +742,11 @@
         }
         .container-Chart {
             width: 90%;
+            .chart-overall {
+                canvas {
+                    height: 15vh !important;
+                }
+            }
         }
     }
 }
@@ -745,6 +755,13 @@
     .container {
         .balance-container {
             height: 46vh;
+        }
+        .container-Chart {
+            .chart-overall {
+                canvas {
+                    height: 38vh !important;
+                }
+            }
         }
     }
 }
@@ -759,6 +776,11 @@
         }
         .container-Chart {
             width: 90%;
+            .chart-overall {
+                canvas {
+                    height: 15vh !important;
+                }
+            }
         }
     }
 }
@@ -767,6 +789,13 @@
     .container {
         .balance-container {
             height: 46vh;
+        }
+        .container-Chart {
+            .chart-overall {
+                canvas {
+                    height: 35vh !important;
+                }
+            }
         }
     }
 }
@@ -777,6 +806,13 @@
     .container {
         .balance-container {
             height: 25vh;
+        }
+        .container-Chart {
+            .chart-overall {
+                canvas {
+                    height: 12vh !important;
+                }
+            }
         }
     }
 }
@@ -855,6 +891,13 @@
     .container {
         .balance-container {
             height: 25vh;
+        }
+        .container-Chart {
+            .chart-overall {
+                canvas {
+                    height: 20vh !important;
+                }
+            }
         }
     }
 }

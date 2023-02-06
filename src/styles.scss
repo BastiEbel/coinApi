@@ -1,58 +1,18 @@
 @font-face {
     font-family: "OpenSans";
-    src: url("/assets/fonts/OpenSans-Regular.ttf") format("ttf");
+    src: url("assets/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+* {
+    font-family: "OpenSans" !important;
 }
 body,
 html {
     background-color: rgb(0, 0, 0);
     margin: 0px;
     color: whitesmoke;
-    font-family: "OpenSans", bold;
+    font-family: "OpenSans-Bold";
 }
 
-/* .mr-10 {
-    margin-right: 10%;
-}
-
-.ml-10 {
-    margin-left: 10%;
-}
-
-.mb-64 {
-    margin-bottom: 64px;
-}
-
-.mt-64 {
-    margin-top: 64px;
-}
-
-.mt-32 {
-    margin-top: 32px;
-}
-
-.ml-32 {
-    margin-left: 32px;
-}
-
-.mr-32 {
-    margin-right: 32px;
-}
-
-.mb-32 {
-    margin-bottom: 32px;
-}
-
-.mr-16 {
-    margin-right: 16px;
-}
-
-.ml-16 {
-    margin-left: 16px;
-}
-
-.mr-8 {
-    margin-right: 8px;
-} */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -87,7 +47,6 @@ input::-webkit-inner-spin-button {
 }
 .drag-scroll-content {
     overflow-x: hidden !important;
-    //display: contents !important;
 }
 .mat-slide-toggle-content {
     font-size: 20px;
@@ -107,12 +66,12 @@ input::-webkit-inner-spin-button {
 
 .minus-number {
     color: red;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .plus-number {
     color: rgb(0, 212, 0);
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .border-none {

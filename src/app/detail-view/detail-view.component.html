@@ -12,7 +12,7 @@
     </div>
     <div class="coin-price">
       <span
-        >{{ detail.current_price.toFixed(2) }}
+        >{{ detail.current_price.toFixed(2) | currency : "DE" : "" }}
         {{ renderService.currencyName }}</span
       >
       <span
