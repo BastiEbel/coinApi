@@ -43,9 +43,9 @@
     <input
       [readonly]="calcService.isReadonly"
       name="payField"
-      type="number"
+      type="text"
       (input)="calcNewQuantity($event)"
-      value="{{ calcService.sum }}"
+      value="{{ calcService.sum | currency : 'DE' : '' }}"
     />
     <p class="currency">{{ renderService.currencyName }}</p>
   </div>

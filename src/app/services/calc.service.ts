@@ -24,9 +24,7 @@ export class CalcService {
     if (this.isReadonly) {
       let shortSum =
         this.amountField * this.renderService.currentCoin['current_price'];
-      this.sum = shortSum.toLocaleString(undefined, {
-        maximumFractionDigits: 2,
-      });
+      this.sum = shortSum.toFixed(2);
     } else {
       let decimal = this.sum / this.renderService.currentCoin['current_price'];
       this.amountField = decimal.toFixed(5);

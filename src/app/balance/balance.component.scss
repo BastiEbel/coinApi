@@ -10,7 +10,7 @@
         margin-right: 32px;
         height: 18vh;
         .header-balance {
-            margin-top: 12px;
+            margin-top: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -25,7 +25,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            margin-top: 12px;
+            margin-top: 8px;
             font-size: 20px;
             font-weight: bold;
             p {
@@ -47,7 +47,7 @@
                 align-items: center;
                 margin-block-start: unset;
                 margin-block-end: unset;
-                margin-top: 16px;
+                margin-top: 12px;
                 margin-bottom: 12px;
                 font-size: 16px;
                 .up {
@@ -75,7 +75,7 @@
 
             .separation-small {
                 border: 1px solid rgb(50, 50, 50);
-                height: 50px;
+                height: 60px;
             }
         }
     }
