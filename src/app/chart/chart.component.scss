@@ -1,6 +1,6 @@
 canvas {
     width: 98% !important;
-    height: 35vh !important;
+    height: 85% !important;
     margin-bottom: 8px;
     margin-left: 16px;
     margin-right: 8px;
@@ -56,9 +56,6 @@ h3 {
     color: white;
 }
 @media (max-width: 600px) {
-    canvas {
-        height: 30vh !important;
-    }
     .container-info {
         height: 370px;
     }
@@ -71,9 +68,6 @@ h3 {
     }
 }
 @media (max-width: 500px) {
-    canvas {
-        height: 250px !important;
-    }
     .container-info {
         height: 315px;
     }
@@ -105,93 +99,13 @@ h3 {
         height: 210px;
         margin-right: unset;
     }
-    canvas {
-        height: 165px !important;
-    }
 }
-/* IPhone SE */
-
-@media screen and (width: 667px) and (height: 375px) {
-    canvas {
-        height: 100vh !important;
-    }
-}
-
-/*iPhone XR*/
-
-@media screen and (width: 896px) and (height: 414px) {
-    canvas {
-        height: 94vh !important;
-    }
-}
-
-/*iPhone 12 Pro*/
-
-@media screen and (width: 844px) and (height: 390px) {
-    canvas {
-        height: 98vh !important;
-    }
-}
-
-/*Pixel 5*/
-
-@media screen and (width: 851px) and (height: 393px) {
-    canvas {
-        height: 98vh !important;
-    }
-}
-
-/*Samsung S8*/
-
-@media screen and (width: 740px) and (height: 360px) {
-    canvas {
-        height: 100vh !important;
-    }
-}
-
-/* Samsung S20 */
-
-@media screen and (width: 915px) and (height: 412px) {
-    canvas {
-        height: 90vh !important;
-    }
-}
-
-/*iPad Air*/
-
-@media screen and (width: 820px) and (height: 1180px) {
-    canvas {
-        height: 32vh !important;
-    }
-}
-
-/*iPad Mini */
-
-/* @media screen and (width: 768px) and (height: 1024px) {
-} */
 
 /* Surface Pro*/
 
 @media screen and (width: 912px) and (height: 1368px) {
     .container-info {
         height: 508px;
-    }
-    canvas {
-        height: 32vh !important;
-    }
-}
-
-/*Surface Duo*/
-
-@media screen and (width: 540px) and (height: 720px) {
-    canvas {
-        height: 43vh !important;
-    }
-}
-
-@media screen and (width: 720px) and (height: 540px) {
-    canvas {
-        height: 70vh !important;
     }
 }
 
@@ -209,36 +123,10 @@ h3 {
         height: 210px;
         margin-right: unset;
     }
-    canvas {
-        height: 165px !important;
-    }
 }
 
 @media screen and (width: 653px) and (height: 280px) {
     .container-info {
         height: 280px;
     }
-    canvas {
-        height: 80vh !important;
-    }
 }
-
-/*Galaxy A51/71*/
-
-/* @media screen and (width: 412px) and (height: 914px) {
-}*/
-
-@media screen and (width: 914px) and (height: 412px) {
-    canvas {
-        height: 90vh !important;
-    }
-}
-
-/*Nest Hub*/
-
-@media screen and (width: 1024px) and (height: 600px) {
-    canvas {
-        height: 60vh !important;
-    }
-}
-/*Nest Hub Max*/
