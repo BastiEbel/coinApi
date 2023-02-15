@@ -78,7 +78,6 @@ drag-scroll {
     right: 0px;
     height: 210px;
     width: 90px;
-    // bottom: 0px;
     background: linear-gradient(to right, transparent, black);
     z-index: 10;
     .img-right {
@@ -95,7 +94,6 @@ drag-scroll {
     left: 0px;
     height: 210px;
     width: 90px;
-    //bottom: 0px;
     background: linear-gradient(to left, transparent, black);
     z-index: 10;
 
@@ -115,33 +113,8 @@ drag-scroll {
     drag-scroll {
         width: calc(100vw - 5px);
     }
-    /* .scroll-right {
-        bottom: -180px;
-    }
-
-    .scroll-left {
-        bottom: -180px;
-    } */
-}
-@media (max-width: 900px) {
-    /* .scroll-right {
-        bottom: -380px;
-    }
-
-    .scroll-left {
-        bottom: -380px;
-    } */
 }
 
-@media (max-width: 800px) {
-    /* .scroll-right {
-        bottom: -585px;
-    }
-
-    .scroll-left {
-        bottom: -585px;
-    } */
-}
 @media (max-width: 700px) {
     drag-scroll {
         height: 180px;
@@ -168,305 +141,20 @@ drag-scroll {
         width: 30px;
     }
     .scroll-right {
-        // bottom: -548px;
         height: 180px;
     }
 
     .scroll-left {
-        //bottom: -548px;
         height: 180px;
     }
-}
-@media (max-width: 600px) {
-    /* .scroll-right {
-        bottom: -486px;
-    }
-
-    .scroll-left {
-        bottom: -486px;
-    } */
-}
-@media (max-width: 500px) {
-    /* .scroll-right {
-        bottom: -690px;
-    }
-
-    .scroll-left {
-        bottom: -690px;
-    } */
-}
-@media (max-width: 400px) {
-    /* .scroll-right {
-        bottom: -608px;
-    }
-
-    .scroll-left {
-        bottom: -608px;
-    } */
-}
-@media (max-width: 350px) {
-    /* .scroll-right {
-        bottom: -488px;
-    }
-
-    .scroll-left {
-        bottom: -488px;
-    } */
-}
-@media screen and (width: 1536px) and (height: 864px) {
-    /* .scroll-right {
-        bottom: -110px;
-    }
-
-    .scroll-left {
-        bottom: -110px;
-    } */
-}
-@media screen and (width: 1440px) and (height: 900px) {
-    /* .scroll-right {
-        bottom: -182px;
-    }
-
-    .scroll-left {
-        bottom: -182px;
-    } */
-}
-@media screen and (width: 1366px) and (height: 768px) {
-    /* .scroll-right {
-        bottom: -206px;
-    }
-
-    .scroll-left {
-        bottom: -206px;
-    } */
-}
-@media screen and (width: 1024px) and (height: 768px) {
-    /* .scroll-right {
-        bottom: -206px;
-    }
-
-    .scroll-left {
-        bottom: -206px;
-    } */
-}
-/* IPhone SE */
-
-@media screen and (width: 375px) and (height: 667px) {
-    /* .scroll-right {
-        bottom: -924px;
-    }
-
-    .scroll-left {
-        bottom: -924px;
-    } */
-}
-
-@media screen and (width: 667px) and (height: 375px) {
-    /* .scroll-right {
-        bottom: -1148px;
-    }
-
-    .scroll-left {
-        bottom: -1148px;
-    } */
-}
-
-/*iPhone XR*/
-
-@media screen and (width: 414px) and (height: 896px) {
-    /*  .scroll-right {
-        bottom: -768px;
-    }
-
-    .scroll-left {
-        bottom: -768px;
-    } */
-}
-
-@media screen and (width: 896px) and (height: 414px) {
-    /* .scroll-right {
-        bottom: -943px;
-    }
-
-    .scroll-left {
-        bottom: -943px;
-    } */
-}
-
-/*iPhone 12 Pro*/
-
-@media screen and (width: 390px) and (height: 844px) {
-    /* .scroll-right {
-        bottom: -746px;
-    }
-
-    .scroll-left {
-        bottom: -746px;
-    } */
-}
-
-@media screen and (width: 844px) and (height: 390px) {
-    /* .scroll-right {
-        bottom: -964px;
-    }
-
-    .scroll-left {
-        bottom: -964px;
-    } */
-}
-
-/*Pixel 5*/
-
-@media screen and (width: 393px) and (height: 851px) {
-    /* .scroll-right {
-        bottom: -740px;
-    }
-
-    .scroll-left {
-        bottom: -740px;
-    } */
-}
-
-@media screen and (width: 851px) and (height: 393px) {
-    /* .scroll-right {
-        bottom: -964px;
-    }
-
-    .scroll-left {
-        bottom: -964px;
-    } */
-}
-
-/*Samsung S8*/
-@media screen and (width: 360px) and (height: 740px) {
-    /* .scroll-right {
-        bottom: -852px;
-    }
-
-    .scroll-left {
-        bottom: -852px;
-    } */
-}
-
-@media screen and (width: 740px) and (height: 360px) {
-    /* .scroll-right {
-        bottom: -1203px;
-    }
-
-    .scroll-left {
-        bottom: -1203px;
-    } */
-}
-
-/* Samsung S20 */
-
-@media screen and (width: 412px) and (height: 915px) {
-    /* .scroll-right {
-        bottom: -748px;
-    }
-
-    .scroll-left {
-        bottom: -748px;
-    } */
-}
-
-@media screen and (width: 915px) and (height: 412px) {
-    /* .scroll-right {
-        bottom: -740px;
-    }
-
-    .scroll-left {
-        bottom: -740px;
-    } */
 }
 
 /*iPad Air*/
-
-@media screen and (width: 820px) and (height: 1180px) {
-    /* .scroll-right {
-        bottom: -175px;
-    }
-
-    .scroll-left {
-        bottom: -175px;
-    } */
-}
 
 @media screen and (width: 1180px) and (height: 820px) {
     .over-coin-container {
         margin-left: unset;
     }
-    /* .scroll-right {
-        bottom: -154px;
-    }
-
-    .scroll-left {
-        bottom: -154px;
-    } */
-}
-
-/*iPad Mini */
-@media screen and (width: 1024px) and (height: 768px) {
-    /* .scroll-right {
-        bottom: -208px;
-    }
-
-    .scroll-left {
-        bottom: -208px;
-    } */
-}
-
-@media screen and (width: 768px) and (height: 1024px) {
-    /* .scroll-right {
-        bottom: -538px;
-    }
-
-    .scroll-left {
-        bottom: -538px;
-    } */
-}
-
-/* Surface Pro*/
-@media screen and (width: 1368px) and (height: 912px) {
-    /* .scroll-right {
-        bottom: -62px;
-    }
-
-    .scroll-left {
-        bottom: -62px;
-    } */
-}
-
-@media screen and (width: 912px) and (height: 1368px) {
-    /* .scroll-right {
-        bottom: 0px;
-    }
-
-    .scroll-left {
-        bottom: 0px;
-    } */
-}
-
-/*Surface Duo*/
-
-@media screen and (width: 540px) and (height: 720px) {
-    /* .scroll-right {
-        bottom: -740px;
-    }
-
-    .scroll-left {
-        bottom: -740px;
-    } */
-}
-
-@media screen and (width: 720px) and (height: 540px) {
-    /* .scroll-right {
-        bottom: -1022px;
-    }
-
-    .scroll-left {
-        bottom: -1022px;
-    } */
 }
 
 /* Galaxy Fold */
@@ -484,68 +172,10 @@ drag-scroll {
         margin-left: unset;
     }
     .scroll-right {
-        //bottom: -784px;
         height: 145px;
     }
 
     .scroll-left {
-        //bottom: -784px;
         height: 145px;
     }
-}
-
-@media screen and (width: 653px) and (height: 280px) {
-    /* .scroll-right {
-        bottom: -1088px;
-    }
-
-    .scroll-left {
-        bottom: -1088px;
-    } */
-}
-
-/*Galaxy A51/71*/
-
-@media screen and (width: 412px) and (height: 914px) {
-    /* .scroll-right {
-        bottom: -750px;
-    }
-
-    .scroll-left {
-        bottom: -750px;
-    } */
-}
-
-@media screen and (width: 914px) and (height: 412px) {
-    /* .scroll-right {
-        bottom: -743px;
-    }
-
-    .scroll-left {
-        bottom: -743px;
-    } */
-}
-
-/*Nest Hub*/
-
-@media screen and (width: 1024px) and (height: 600px) {
-    /* .scroll-right {
-        bottom: -375px;
-    }
-
-    .scroll-left {
-        bottom: -375px;
-    } */
-}
-
-/*Nest Hub Max*/
-
-@media screen and (width: 1280px) and (height: 800px) {
-    /* .scroll-right {
-        bottom: -175px;
-    }
-
-    .scroll-left {
-        bottom: -175px;
-    } */
 }
