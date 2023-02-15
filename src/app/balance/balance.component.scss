@@ -8,9 +8,10 @@
         width: 48%;
         margin-left: 64px;
         margin-right: 32px;
-        height: 18vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .header-balance {
-            margin-top: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -400,7 +401,7 @@
 
         .balance-container {
             width: 90%;
-            height: 18vh;
+            margin-top: 24px;
             margin-left: unset;
             margin-right: unset;
             .header-balance {
@@ -435,6 +436,7 @@
             }
         }
         .separation {
+            margin-top: 16px;
             height: unset;
             width: 90%;
         }
@@ -637,7 +639,6 @@
     .container {
         .balance-container {
             width: 94%;
-            height: 17vh;
             .current-price {
                 font-size: 16px;
             }
@@ -687,7 +688,6 @@
     .container {
         .balance-container {
             width: 90%;
-            height: 27vh;
         }
         .container-Chart {
             width: 90%;
@@ -702,9 +702,6 @@
 
 @media screen and (width: 667px) and (height: 375px) {
     .container {
-        .balance-container {
-            height: 47vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -719,9 +716,6 @@
 
 @media screen and (width: 896px) and (height: 414px) {
     .container {
-        .balance-container {
-            height: 44vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -738,7 +732,6 @@
     .container {
         .balance-container {
             width: 90%;
-            height: 21vh;
         }
         .container-Chart {
             width: 90%;
@@ -753,9 +746,6 @@
 
 @media screen and (width: 844px) and (height: 390px) {
     .container {
-        .balance-container {
-            height: 46vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -772,7 +762,6 @@
     .container {
         .balance-container {
             width: 90%;
-            height: 21vh;
         }
         .container-Chart {
             width: 90%;
@@ -787,9 +776,6 @@
 
 @media screen and (width: 851px) and (height: 393px) {
     .container {
-        .balance-container {
-            height: 46vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -804,9 +790,6 @@
 
 @media screen and (width: 360px) and (height: 740px) {
     .container {
-        .balance-container {
-            height: 25vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -819,9 +802,6 @@
 
 @media screen and (width: 740px) and (height: 360px) {
     .container {
-        .balance-container {
-            height: 50vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -836,9 +816,6 @@
 
 @media screen and (width: 915px) and (height: 412px) {
     .container {
-        .balance-container {
-            height: 43vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -853,9 +830,6 @@
 
 @media screen and (width: 820px) and (height: 1180px) {
     .container {
-        .balance-container {
-            height: 16vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -876,9 +850,6 @@
 
 @media screen and (width: 912px) and (height: 1368px) {
     .container {
-        .balance-container {
-            height: 16vh;
-        }
         .container-Chart {
             height: 270px;
         }
@@ -889,9 +860,6 @@
 
 @media screen and (width: 540px) and (height: 720px) {
     .container {
-        .balance-container {
-            height: 25vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -904,9 +872,6 @@
 
 @media screen and (width: 720px) and (height: 540px) {
     .container {
-        .balance-container {
-            height: 34vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -923,7 +888,6 @@
     .container {
         .balance-container {
             width: 94%;
-            height: 25vh;
             .current-price {
                 font-size: 18px;
             }
@@ -970,9 +934,6 @@
 
 @media screen and (width: 653px) and (height: 280px) {
     .container {
-        .balance-container {
-            height: 65vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -991,9 +952,6 @@
 
 @media screen and (width: 914px) and (height: 412px) {
     .container {
-        .balance-container {
-            height: 45vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -1008,9 +966,6 @@
 
 @media screen and (width: 1024px) and (height: 600px) {
     .container {
-        .balance-container {
-            height: 25vh;
-        }
         .container-Chart {
             .chart-overall {
                 canvas {
@@ -1020,4 +975,3 @@
         }
     }
 }
-/*Nest Hub Max*/

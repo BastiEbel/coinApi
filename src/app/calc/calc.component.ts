@@ -20,7 +20,7 @@ export class CalcComponent implements OnInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this.calcService.calcNewOne();
-    }, 50);
+    }, 200);
   }
 
   /**
