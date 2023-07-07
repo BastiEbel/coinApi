@@ -29,9 +29,9 @@ export class ScrollComponent implements OnInit, AfterViewInit {
     public service: UrlCoinService,
     public renderService: RenderService,
     private cdref: ChangeDetectorRef
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   ngAfterViewInit() {
     this.renderService.getData();
     this.cdref.detectChanges();
@@ -101,12 +101,13 @@ export class ScrollComponent implements OnInit, AfterViewInit {
    * @param id give the id to the service and put it in the url
    *
    */
-  async selectedCoin(id) {
+  async selectedCoin(name: string, i: number) {
     try {
       this.renderService.currentCoin = [];
+      this.renderService.coinId = i;
       for (let i = 0; i < this.renderService.result.length; i++) {
-        if (id == this.renderService.result[i]['id']) {
-          this.service.dailyCoin = id;
+        if (name == this.renderService.result[i]['id']) {
+          this.service.dailyCoin = name;
           this.renderService.coinName = this.renderService.result[i]['name'];
           this.renderService.currentCoin = this.renderService.result[i];
         }

@@ -9,7 +9,7 @@ export class UrlCoinService {
   dailyCoin: string = 'bitcoin';
   currency: string = 'eur';
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) { }
 
   /**
    *

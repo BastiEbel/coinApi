@@ -13,7 +13,7 @@
     <div
       drag-scroll-item
       (click)="renderService.isactive = results"
-      (click)="selectedCoin(results.id)"
+      (click)="selectedCoin(results.id, i)"
       [class.active]="results === renderService.isactive"
       class="coin-container bg-container"
       *ngFor="

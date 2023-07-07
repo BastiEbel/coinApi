@@ -20,7 +20,7 @@ export class BalanceComponent implements OnInit {
     Chart.register(...registerables);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngAfterViewInit() {
     this.showData();

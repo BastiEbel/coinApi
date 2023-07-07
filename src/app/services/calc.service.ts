@@ -8,7 +8,8 @@ export class CalcService {
   amountField: any = 1;
   sum: any;
   isReadonly: boolean = true;
-  constructor(private renderService: RenderService) {}
+  constructor(private renderService: RenderService) {
+  }
 
   calcNewOne() {
     this.amountField = 1;
@@ -16,7 +17,7 @@ export class CalcService {
       let shortSum = this.renderService.currentCoin['current_price'];
       this.sum = shortSum.toFixed(2);
       this.isReadonly = true;
-    }, 500);
+    }, 1000);
     return this.isReadonly;
   }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UrlCoinService } from './url-coin.service';
-import { firstValueFrom } from 'rxjs';
+import { Observable, firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,8 +19,9 @@ export class RenderService {
   coinPrice: any = [];
   coindate: any = [];
   date = new Date();
+  coinId: number = 0;
 
-  constructor(private service: UrlCoinService) {}
+  constructor(private service: UrlCoinService) { }
 
   /**
    * this function gets the data for the coins
@@ -29,7 +30,7 @@ export class RenderService {
   async getData() {
     let res = await firstValueFrom(this.service.getFullList());
     this.result = res;
-    this.currentCoin = this.result[0];
+    this.currentCoin = this.result[this.coinId];
     this.service.isLoading = false;
   }
 
@@ -53,7 +54,7 @@ export class RenderService {
    * function map to json for the timestamp
    *
    */
-  dailyTime(priceData) {
+  dailyTime(priceData: any) {
     let getTimeData = [];
     priceData['prices'].map((getTime) => {
       getTimeData.push(getTime);
@@ -69,7 +70,7 @@ export class RenderService {
    * function map to json for the timestamp
    *
    */
-  getDailyTime(getTimeData) {
+  getDailyTime(getTimeData: Array<any>) {
     let currentDate: any = [];
     let timestamp;
     for (let i = 0; i < getTimeData.length; i++) {
@@ -95,7 +96,7 @@ export class RenderService {
         this.service.getTwoWeekCoins()
       );
       this.dailyTime(weeklyPriceData);
-      weeklyPriceData['prices'].map((weeklyPrice) => {
+      weeklyPriceData['prices'].map((weeklyPrice: Array<any>) => {
         this.coinPrice.push(weeklyPrice[1]);
       });
     } catch (err) {

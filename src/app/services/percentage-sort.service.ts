@@ -20,7 +20,7 @@ export class PercentageSortService {
   constructor(
     private renderService: RenderService,
     private service: UrlCoinService
-  ) {}
+  ) { }
 
   async getSortData() {
     this.data = [];
@@ -46,7 +46,7 @@ export class PercentageSortService {
         this.shorCurrenttPrice = current.toFixed(2);
         this.shortLowPrice = low.toFixed(2);
         this.shortHighPrice = high.toFixed(2);
-      }, 500);
+      }, 750);
     } catch (err) {
       console.error(err);
     }
@@ -60,7 +60,7 @@ export class PercentageSortService {
     let element = this.data;
     Object.assign(this.item, element);
     this.item = this.data.sort(
-      (a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h
+      (a: any, b: any) => b.price_change_percentage_24h - a.price_change_percentage_24h
     );
     this.getChartData();
     return this.item, this.percentageValue;
@@ -73,7 +73,7 @@ export class PercentageSortService {
     this.item = [];
     let element = this.data;
     Object.assign(this.item, element);
-    this.item = this.data.sort((a, b) => b.current_price - a.current_price);
+    this.item = this.data.sort((a: any, b: any) => b.current_price - a.current_price);
     this.getChartData();
     return this.item, this.highestCoin;
   }

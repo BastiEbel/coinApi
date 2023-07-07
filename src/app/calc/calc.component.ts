@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CalcService } from '../services/calc.service';
 import { RenderService } from '../services/render.service';
 
@@ -13,14 +13,15 @@ export class CalcComponent implements OnInit {
 
   constructor(
     public renderService: RenderService,
-    public calcService: CalcService
-  ) {}
+    public calcService: CalcService, private cdref: ChangeDetectorRef
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   ngAfterViewInit() {
     setTimeout(() => {
       this.calcService.calcNewOne();
     }, 200);
+    this.cdref.detectChanges();
   }
 
   /**
@@ -28,7 +29,7 @@ export class CalcComponent implements OnInit {
    * @param event
    * @returns
    */
-  sendNewAmount(event) {
+  sendNewAmount(event: any) {
     try {
       this.calcService.amountField = event.target.value;
       return this.calcService.amountField;
@@ -37,7 +38,7 @@ export class CalcComponent implements OnInit {
     }
   }
 
-  calcNewQuantity(event) {
+  calcNewQuantity(event: any) {
     try {
       this.calcService.sum = event.target.value;
     } catch (err) {
