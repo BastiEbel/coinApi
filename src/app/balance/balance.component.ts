@@ -61,7 +61,7 @@ export class BalanceComponent implements OnInit {
    * @param $event
    *
    */
-  onChange($event) {
+  onChange($event: any) {
     try {
       let isSelected =
         $event.target.options[$event.target.options.selectedIndex].value;

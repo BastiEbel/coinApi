@@ -42,7 +42,7 @@ export class RenderService {
     try {
       let priceData = await firstValueFrom(this.service.getDailyCoins());
       this.dailyTime(priceData);
-      priceData['prices'].map((price) => {
+      priceData['prices'].map((price: Array<any>) => {
         this.coinPrice.push(price[1]);
       });
     } catch (err) {
@@ -56,7 +56,7 @@ export class RenderService {
    */
   dailyTime(priceData: any) {
     let getTimeData = [];
-    priceData['prices'].map((getTime) => {
+    priceData['prices'].map((getTime: any) => {
       getTimeData.push(getTime);
     });
     if (this.coinOfDay) {

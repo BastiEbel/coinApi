@@ -92,7 +92,7 @@ export class ScrollComponent implements OnInit, AfterViewInit {
    * function scrolls to the correct position at first load
    *
    */
-  moveTo(index) {
+  moveTo(index: number) {
     this.ds.moveTo(index);
   }
 

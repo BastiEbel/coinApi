@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UrlCoinService } from '../services/url-coin.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SingleViewComponent } from '../single-view/single-view.component';
 import { RenderService } from '../services/render.service';
@@ -10,7 +9,7 @@ import { RenderService } from '../services/render.service';
   styleUrls: ['./detail-view.component.scss'],
 })
 export class DetailViewComponent implements OnInit {
-  constructor(public renderService: RenderService, public dialog: MatDialog) {}
+  constructor(public renderService: RenderService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getDetail();
@@ -21,7 +20,7 @@ export class DetailViewComponent implements OnInit {
    * @param results give the info about data for the dialog box
    *
    */
-  openDialog(results: any): void {
+  openDialog(results: Array<any>): void {
     try {
       this.dialog.open(SingleViewComponent, {
         maxWidth: '100vw',

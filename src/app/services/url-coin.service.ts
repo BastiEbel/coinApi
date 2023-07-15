@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,13 +10,13 @@ export class UrlCoinService {
   dailyCoin: string = 'bitcoin';
   currency: string = 'eur';
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   /**
    *
    * @returns  it returns the REST APi (url)
    */
-  getFullList() {
+  getFullList(): Observable<any> {
     this.isLoading = true;
     return this.http.get(
       `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.currency}&page=1&per_page=49&order=market_cap_desc`
